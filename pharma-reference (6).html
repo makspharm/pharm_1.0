@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фармсправочник</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f7f5;--text:#111;--muted:#888;--border:#e0e0e0;--white:#fff}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ══════════════════ LOADING ══════════════════ */
+#loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:1000;flex-direction:column;gap:14px}
+.loader{width:32px;height:32px;border:2.5px solid var(--border);border-top-color:#111;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.06em}
+
+/* ══════════════════ TOAST ══════════════════ */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;padding:10px 20px;border-radius:100px;font-size:.82rem;font-weight:600;opacity:0;transition:all .25s;pointer-events:none;z-index:999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ══════════════════ SEARCH PAGE ══════════════════ */
+#search-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;gap:16px}
+.search-wrap{width:100%;max-width:640px;position:relative}
+.search-bar{display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border);border-radius:100px;padding:6px 6px 6px 28px;gap:10px;transition:border-color .2s,box-shadow .2s}
+.search-bar:focus-within{border-color:#111;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.search-bar input{flex:1;border:none;outline:none;font-family:'Manrope',sans-serif;font-size:1rem;background:transparent;color:var(--text);min-width:0}
+.search-bar input::placeholder{color:var(--muted)}
+.search-btn{width:42px;height:42px;background:#111;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s}
+.search-btn:hover{background:#333}
+.search-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--white);border:1.5px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);display:none;z-index:100;max-height:340px;overflow-y:auto}
+.dropdown.open{display:block}
+.dropdown-item{padding:14px 22px;cursor:pointer;font-size:.93rem;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .15s;border-bottom:1px solid #f0f0ee}
+.dropdown-item:last-child{border-bottom:none}
+.dropdown-item:hover{background:var(--bg)}
+.di-name{font-weight:600}.di-sub{color:var(--muted);font-size:.8rem}
+.di-del{background:none;border:none;cursor:pointer;padding:4px 6px;border-radius:6px;color:#ccc;font-size:.8rem;transition:background .15s,color .15s;flex-shrink:0}
+.di-del:hover{background:#fef2f2;color:#c00}
+
+.add-drug-wrap{width:100%;max-width:640px}
+.add-drug-bar{display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border);border-radius:100px;padding:6px 6px 6px 22px;gap:10px;transition:border-color .2s,box-shadow .2s}
+.add-drug-bar:focus-within{border-color:#111;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.add-drug-bar input{flex:1;border:none;outline:none;font-family:'Manrope',sans-serif;font-size:.9rem;background:transparent;color:var(--text);min-width:0}
+.add-drug-bar input::placeholder{color:var(--muted)}
+.add-btn{height:36px;background:#111;border:none;border-radius:100px;display:flex;align-items:center;gap:6px;padding:0 16px;cursor:pointer;flex-shrink:0;transition:background .2s;color:#fff;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap}
+.add-btn:hover{background:#333}
+.add-btn:disabled{background:#999;cursor:not-allowed}
+.add-btn svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round}
+
+/* ══════════════════ DRUG PAGE ══════════════════ */
+#drug-page{display:none;min-height:100vh}
+.drug-header{position:sticky;top:0;z-index:50;background:rgba(247,247,245,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.drug-header-left{display:flex;align-items:center;gap:12px}
+.back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:.85rem;color:var(--muted);padding:6px 10px;border-radius:8px;transition:background .15s,color .15s}
+.back-btn:hover{background:#ebebeb;color:var(--text)}
+.back-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+.drug-header-title{font-size:1.05rem;font-weight:700}
+.edit-page-btn{display:flex;align-items:center;gap:7px;background:#111;color:#fff;border:1.5px solid #111;border-radius:10px;padding:8px 18px;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s;white-space:nowrap}
+.edit-page-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.1}
+.edit-page-btn:hover{background:#333}
+.edit-page-btn.active{background:var(--white);color:#111}
+.edit-page-btn.active:hover{background:#f0f0ee}
+
+.drug-body{display:flex;align-items:flex-start;min-height:calc(100vh - 57px)}
+.drug-content{flex:1;max-width:720px;margin:0 auto;padding:40px 32px 80px}
+
+/* ══════════════════ EDITOR PANEL ══════════════════ */
+.editor-panel{width:0;overflow:hidden;transition:width .32s cubic-bezier(.4,0,.2,1);border-left:0px solid var(--border);background:var(--white);position:sticky;top:57px;height:calc(100vh - 57px);flex-shrink:0}
+.editor-panel.open{width:440px;border-left-width:1.5px;overflow-y:auto}
+.ep-inner{padding:28px 24px 48px;min-width:440px}
+.ep-title{font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.ep-section{margin-bottom:28px}
+.ep-section-label{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#bbb;margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.ep-field{margin-bottom:12px}
+.ep-field label{display:block;font-size:.73rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+.ep-input{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--bg);color:var(--text);transition:border-color .15s,background .15s}
+.ep-input:focus{border-color:#111;background:var(--white)}
+.ep-textarea{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--bg);color:var(--text);resize:vertical;min-height:80px;line-height:1.65;transition:border-color .15s,background .15s}
+.ep-textarea:focus{border-color:#111;background:var(--white)}
+.ep-select{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--bg);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}
+.ep-select:focus{border-color:#111;background-color:var(--white)}
+.ep-tag-row{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.ep-tag-dot{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+.ep-tag-dot.green{background:#22c55e}.ep-tag-dot.yellow{background:#eab308}.ep-tag-dot.red{background:#ef4444}.ep-tag-dot.violet{background:#a78bfa}
+.ep-tag-lbl{font-size:.73rem;color:var(--muted);width:80px;flex-shrink:0;font-weight:600}
+.ep-tag-input{flex:1;font-family:'Manrope',sans-serif;font-size:.84rem;border:1.5px solid var(--border);border-radius:8px;padding:7px 11px;outline:none;background:var(--bg);color:var(--text);transition:border-color .15s}
+.ep-tag-input:focus{border-color:#111;background:var(--white)}
+.ep-tag-hint{font-size:.68rem;color:#c0c0c0;margin:-4px 0 8px 98px}
+.ep-note-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px}
+.ep-note-num{width:22px;height:22px;border-radius:6px;background:#111;color:#fff;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:9px}
+.ep-note-right{flex:1;display:flex;flex-direction:column}
+.ep-note-input{width:100%;font-family:'Manrope',sans-serif;font-size:.85rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--bg);color:var(--text);resize:none;line-height:1.55;min-height:44px;transition:border-color .15s,background .15s}
+.ep-note-input:focus{border-color:#111;background:var(--white)}
+.ep-note-remove{background:none;border:none;cursor:pointer;align-self:flex-end;font-family:'Manrope',sans-serif;font-size:.68rem;color:#ccc;padding:3px 0;margin-top:3px;transition:color .15s}
+.ep-note-remove:hover{color:#c00}
+.ep-dos-item{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.ep-dos-item .ep-input{margin-bottom:8px;background:var(--white)}
+.ep-dos-item .ep-textarea{background:var(--white);min-height:68px}
+.ep-lnk-item{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
+.ep-lnk-item .ep-input,.ep-lnk-item .ep-textarea,.ep-lnk-item .ep-select{margin-bottom:8px;background:var(--white)}
+.ep-lnk-tags-row{display:flex;gap:6px;margin-bottom:8px}
+.ep-lnk-tags-row .ep-input{margin-bottom:0}
+.ep-remove-btn{background:none;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:.72rem;color:#c0c0c0;padding:5px 0;margin-top:4px;transition:color .15s;display:block}
+.ep-remove-btn:hover{color:#c00}
+.ep-add-btn{width:100%;background:none;border:1.5px dashed var(--border);border-radius:10px;padding:10px;font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;margin-top:2px}
+.ep-add-btn:hover{border-color:#999;color:var(--text);background:#fafaf8}
+.ep-save-btn{width:100%;background:#111;color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:background .15s;margin-top:6px}
+.ep-save-btn:hover{background:#333}
+.ep-save-btn:disabled{background:#999;cursor:not-allowed}
+
+/* ══════════════════ VIEW ELEMENTS ══════════════════ */
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.drug-mnn-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:3px}
+.drug-title{font-size:2rem;font-weight:700;letter-spacing:-.5px;margin-bottom:6px}
+.drug-subtitle{color:var(--muted);font-size:.92rem;margin-bottom:22px;font-style:italic}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.tag{font-size:.78rem;font-weight:600;padding:5px 13px;border-radius:8px;border:1px solid transparent;letter-spacing:.02em}
+.tag.green{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.38);color:#15803d}
+.tag.yellow{background:rgba(234,179,8,.11);border-color:rgba(234,179,8,.38);color:#7a4f00}
+.tag.red{background:rgba(239,68,68,.10);border-color:rgba(239,68,68,.35);color:#b91c1c}
+.tag.violet{background:rgba(167,139,250,.13);border-color:rgba(167,139,250,.42);color:#6d28d9}
+.instr-block{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.instr-block span{font-size:.93rem}
+.instr-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--text);background:#f0f0ee;padding:7px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s}
+.instr-link:hover{background:#e0e0de}
+.instr-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.2}
+.facts-block{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:16px;color:var(--text)}
+.facts-list{list-style:none}
+.facts-list li{padding:7px 0;font-size:.9rem;line-height:1.55;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:8px}
+.facts-list li:last-child{border-bottom:none}
+.facts-list li::before{content:'—';opacity:.35;flex-shrink:0;margin-top:1px}
+.dosage-section{margin-bottom:16px}
+.dosage-cards{display:flex;flex-direction:column;gap:12px}
+.dosage-card{background:#111;border:1.5px solid #111;border-radius:14px;overflow:hidden}
+.dosage-card-head{padding:14px 20px 12px;border-bottom:1px solid rgba(255,255,255,.12);font-size:.93rem;font-weight:700;color:#fff}
+.dosage-card-body{padding:16px 20px;font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.8)}
+.section-divider{border:none;border-top:1.5px solid var(--border);margin:32px 0}
+.links-block{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:22px 24px}
+.links-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:14px}
+.link-card{border:1.5px solid var(--border);border-radius:12px;overflow:hidden}
+.link-card-body{padding:16px 18px}
+.link-card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chip{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.12);color:#111;letter-spacing:.02em}
+.link-card-note{font-size:.88rem;line-height:1.6;color:#333;margin-bottom:10px}
+.link-card-cite{font-size:.78rem;line-height:1.55;color:var(--muted);font-style:italic;background:#f7f7f5;border-radius:8px;padding:10px 12px;position:relative;margin-bottom:0;padding-right:90px}
+.cite-copy-btn{position:absolute;top:8px;right:8px;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:3px 8px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);transition:all .15s;white-space:nowrap}
+.cite-copy-btn:hover{background:#111;color:#fff;border-color:#111}
+.link-card-foot{padding:0 18px 14px}
+.link-card-url{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:border-color .15s}
+.link-card-url:hover{border-color:var(--text)}
+.link-card-url svg{width:11px;height:11px;stroke:var(--muted);fill:none;stroke-width:2.2}
+</style>
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loader"></div>
+  <div class="loader-text">Загрузка…</div>
+</div>
+<div id="toast"></div>
+
+<!-- ═══════════════════ SEARCH PAGE ═══════════════════ -->
+<div id="search-page" style="display:none">
+  <div class="search-wrap">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Найти ЛС…" autocomplete="off"/>
+      <button class="search-btn" onclick="doSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+    </div>
+    <div class="dropdown" id="dropdown"></div>
+  </div>
+  <div class="add-drug-wrap">
+    <div class="add-drug-bar">
+      <input type="text" id="add-drug-input" placeholder="Добавить ЛС…" autocomplete="off" onkeydown="if(event.key==='Enter')addDrug()"/>
+      <button class="add-btn" id="add-btn" onclick="addDrug()">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Добавить
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ DRUG PAGE ═══════════════════ -->
+<div id="drug-page">
+  <header class="drug-header">
+    <div class="drug-header-left">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+      <span class="drug-header-title" id="header-title"></span>
+    </div>
+    <button class="edit-page-btn" id="edit-toggle-btn" onclick="toggleEditor()">
+      <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Редактировать
+    </button>
+  </header>
+  <div class="drug-body">
+    <div class="drug-content">
+      <div class="drug-title" id="drug-title"></div>
+      <div id="mnn-wrap">
+        <div class="drug-mnn-label">МНН</div>
+        <div class="drug-subtitle" id="drug-subtitle"></div>
+      </div>
+      <div class="tags" id="drug-tags"></div>
+      <div id="instr-section">
+        <div class="section-label">Инструкция</div>
+        <div class="instr-block">
+          <span>Инструкция / ОХЛП</span>
+          <a class="instr-link" id="instr-link" href="#" target="_blank">
+            Открыть
+            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="facts-block" id="facts-block">
+        <ul class="facts-list" id="facts-list"></ul>
+      </div>
+      <div class="dosage-section" id="dosage-section">
+        <div class="section-label">Особенности дозирования</div>
+        <div class="dosage-cards" id="dosage-cards-view"></div>
+      </div>
+      <hr class="section-divider" id="section-divider">
+      <div class="links-block" id="links-section">
+        <div class="section-label">Ссылки</div>
+        <ul class="links-list" id="links-list"></ul>
+      </div>
+    </div>
+
+    <div class="editor-panel" id="editor-panel">
+      <div class="ep-inner">
+        <div class="ep-title">Редактор ЛС</div>
+        <div class="ep-section">
+          <div class="ep-section-label">Основное</div>
+          <div class="ep-field"><label>Название</label><input class="ep-input" id="ep-name" type="text" placeholder="Торговое название"/></div>
+          <div class="ep-field"><label>МНН</label><input class="ep-input" id="ep-subtitle" type="text" placeholder="напр. Ibuprofenum"/></div>
+          <div class="ep-field"><label>Ссылка на инструкцию / ОХЛП</label><input class="ep-input" id="ep-instr-url" type="url" placeholder="https://…"/></div>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Теги</div>
+          <div class="ep-tag-row"><span class="ep-tag-dot green"></span><span class="ep-tag-lbl">Группа</span><input class="ep-tag-input" id="ep-tag-green" type="text" placeholder="напр. НПВС"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot yellow"></span><span class="ep-tag-lbl">ЖНВЛП</span><input class="ep-tag-input" id="ep-tag-yellow" type="text" placeholder="ЖНВЛП / не ЖНВЛП"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot red"></span><span class="ep-tag-lbl">Возраст</span><input class="ep-tag-input" id="ep-tag-red" type="text" placeholder="напр. С 3 месяцев"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot violet"></span><span class="ep-tag-lbl">Доп. тег</span><input class="ep-tag-input" id="ep-tag-violet" type="text" placeholder="необязательно"/></div>
+          <div class="ep-tag-hint">Фиолетовый тег появится только если заполнен</div>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Заметки</div>
+          <div id="ep-notes"></div>
+          <button class="ep-add-btn" onclick="epAddNote()">+ Добавить заметку</button>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Особенности дозирования</div>
+          <div id="ep-dosages"></div>
+          <button class="ep-add-btn" onclick="epAddDosage()">+ Добавить режим дозирования</button>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Ссылки</div>
+          <div id="ep-links"></div>
+          <button class="ep-add-btn" onclick="epAddLink()">+ Добавить ссылку</button>
+        </div>
+        <button class="ep-save-btn" id="ep-save-btn" onclick="applyEdits()">Применить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+//  SUPABASE CONFIG
+// ══════════════════════════════════════════════
+const SUPABASE_URL = 'https://rczexrioikgtylrmwria.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjemV4cmlvaWtndHlscm13cmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzczMTMsImV4cCI6MjA4OTAxMzMxM30.74I267z6epyhEebzrejQdidn_d0QGN955GHXAVxhcY0';
+const HEADERS = { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
+
+async function dbGetAll() {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs?select=*`, { headers: HEADERS });
+  return await r.json();
+}
+async function dbInsert(drug) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs`, {
+    method: 'POST', headers: { ...HEADERS, 'Prefer': 'return=representation' },
+    body: JSON.stringify({ id: drug.id, data: drug })
+  });
+  return await r.json();
+}
+async function dbUpdate(drug) {
+  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${drug.id}`, {
+    method: 'PATCH', headers: { ...HEADERS, 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ data: drug })
+  });
+}
+async function dbDelete(id) {
+  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${id}`, { method: 'DELETE', headers: HEADERS });
+}
+
+// ══════════════════════════════════════════════
+//  CONSTANTS & STATE
+// ══════════════════════════════════════════════
+const LINK_TYPES = ['КР','Систематический обзор','Метаанализ','РКИ','Когортное исследование','ИКС','Серия случаев','Исследование in vitro','Другое','Заполнить'];
+let drugs = [];
+let currentDrug = null;
+let editorOpen  = false;
+
+// ══════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════
+async function init() {
+  try {
+    const rows = await dbGetAll();
+    drugs = (rows || []).map(r => r.data).filter(Boolean);
+  } catch(e) {
+    showToast('Ошибка загрузки данных');
+  }
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('search-page').style.display    = 'flex';
+}
+init();
+
+// ══════════════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ══════════════════════════════════════════════
+//  SEARCH
+// ══════════════════════════════════════════════
+const searchInput = document.getElementById('search-input');
+const dropdown    = document.getElementById('dropdown');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) { dropdown.classList.remove('open'); return; }
+  const matches = drugs.filter(d => d.name.toLowerCase().includes(q) || (d.subtitle||'').toLowerCase().includes(q));
+  renderDropdown(matches);
+});
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') dropdown.classList.remove('open');
+  if (e.key === 'Enter')  doSearch();
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) dropdown.classList.remove('open');
+});
+
+function renderDropdown(items) {
+  if (!items.length) {
+    dropdown.innerHTML = '<div class="dropdown-item"><span class="di-sub">Ничего не найдено</span></div>';
+    dropdown.classList.add('open'); return;
+  }
+  dropdown.innerHTML = items.map(d => `
+    <div class="dropdown-item" onclick="openDrug('${d.id}')">
+      <div><div class="di-name">${d.name}</div><div class="di-sub">${d.subtitle||''}</div></div>
+      <button class="di-del" onclick="event.stopPropagation();deleteDrug('${d.id}')" title="Удалить">✕</button>
+    </div>`).join('');
+  dropdown.classList.add('open');
+}
+
+function doSearch() {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) return;
+  const match = drugs.find(d => d.name.toLowerCase().includes(q));
+  if (match) openDrug(match.id);
+}
+
+// ══════════════════════════════════════════════
+//  ADD / DELETE
+// ══════════════════════════════════════════════
+async function addDrug() {
+  const inp = document.getElementById('add-drug-input');
+  const name = inp.value.trim();
+  if (!name) return;
+  const btn = document.getElementById('add-btn');
+  btn.disabled = true;
+  const drug = { id:'drug_'+Date.now(), name, subtitle:'', instrUrl:'', tags:{green:'',yellow:'',red:'',violet:''}, facts:[], dosages:[], links:[] };
+  try {
+    await dbInsert(drug);
+    drugs.push(drug);
+    inp.value = '';
+    showToast('ЛС добавлено');
+    openDrug(drug.id);
+  } catch(e) {
+    showToast('Ошибка при добавлении');
+  }
+  btn.disabled = false;
+}
+
+async function deleteDrug(id) {
+  if (!confirm('Удалить этот препарат?')) return;
+  try {
+    await dbDelete(id);
+    drugs = drugs.filter(d => d.id !== id);
+    showToast('Удалено');
+    const q = searchInput.value.trim().toLowerCase();
+    if (q) renderDropdown(drugs.filter(d => d.name.toLowerCase().includes(q)));
+    else dropdown.classList.remove('open');
+  } catch(e) {
+    showToast('Ошибка при удалении');
+  }
+}
+
+// ══════════════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════════════
+function openDrug(id) {
+  const drug = drugs.find(d => d.id === id);
+  if (!drug) return;
+  currentDrug = JSON.parse(JSON.stringify(drug));
+  editorOpen = false;
+  renderDrugPage(currentDrug);
+  document.getElementById('search-page').style.display = 'none';
+  document.getElementById('drug-page').style.display   = 'block';
+  document.getElementById('editor-panel').classList.remove('open');
+  document.getElementById('edit-toggle-btn').classList.remove('active');
+  document.getElementById('edit-toggle-btn').innerHTML = svgEdit() + ' Редактировать';
+  dropdown.classList.remove('open');
+  window.scrollTo(0,0);
+}
+
+function goBack() {
+  document.getElementById('drug-page').style.display   = 'none';
+  document.getElementById('search-page').style.display = 'flex';
+}
+
+// ══════════════════════════════════════════════
+//  EDITOR TOGGLE
+// ══════════════════════════════════════════════
+function toggleEditor() {
+  editorOpen = !editorOpen;
+  document.getElementById('editor-panel').classList.toggle('open', editorOpen);
+  const btn = document.getElementById('edit-toggle-btn');
+  btn.classList.toggle('active', editorOpen);
+  btn.innerHTML = svgEdit() + (editorOpen ? ' Закрыть' : ' Редактировать');
+  if (editorOpen) fillEditorFromDrug(currentDrug);
+}
+function svgEdit() {
+  return `<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`;
+}
+
+// ══════════════════════════════════════════════
+//  RENDER VIEW
+// ══════════════════════════════════════════════
+function renderDrugPage(drug) {
+  document.getElementById('header-title').textContent = drug.name;
+  document.getElementById('drug-title').textContent   = drug.name;
+  const mnnWrap = document.getElementById('mnn-wrap');
+  if (drug.subtitle && drug.subtitle.trim()) {
+    document.getElementById('drug-subtitle').textContent = drug.subtitle;
+    mnnWrap.style.display = '';
+  } else { mnnWrap.style.display = 'none'; }
+
+  const tagOrder = [{key:'green',cls:'green'},{key:'yellow',cls:'yellow'},{key:'red',cls:'red'},{key:'violet',cls:'violet'}];
+  document.getElementById('drug-tags').innerHTML = tagOrder
+    .filter(t => drug.tags[t.key] && drug.tags[t.key].trim())
+    .map(t => `<span class="tag ${t.cls}">${drug.tags[t.key]}</span>`).join('');
+
+  const instrSection = document.getElementById('instr-section');
+  if (drug.instrUrl && drug.instrUrl.trim()) {
+    document.getElementById('instr-link').href = drug.instrUrl;
+    instrSection.style.display = '';
+  } else { instrSection.style.display = 'none'; }
+
+  const factsBlock = document.getElementById('facts-block');
+  const facts = (drug.facts||[]).filter(f => f.trim());
+  if (facts.length) {
+    document.getElementById('facts-list').innerHTML = facts.map(f => `<li><span>${f}</span></li>`).join('');
+    factsBlock.style.display = '';
+  } else { factsBlock.style.display = 'none'; }
+
+  const dosageSection = document.getElementById('dosage-section');
+  if ((drug.dosages||[]).length) {
+    document.getElementById('dosage-cards-view').innerHTML = drug.dosages.map(d => `
+      <div class="dosage-card">
+        <div class="dosage-card-head">${d.title}</div>
+        <div class="dosage-card-body">${d.body}</div>
+      </div>`).join('');
+    dosageSection.style.display = '';
+  } else { dosageSection.style.display = 'none'; }
+
+  const linksSection = document.getElementById('links-section');
+  if ((drug.links||[]).length) {
+    document.getElementById('links-list').innerHTML = drug.links.map((l,li) => renderLinkCard(l,li)).join('');
+    linksSection.style.display = '';
+  } else { linksSection.style.display = 'none'; }
+
+  const divider = document.getElementById('section-divider');
+  divider.style.display = ((drug.links||[]).length && (facts.length || (drug.dosages||[]).length)) ? '' : 'none';
+}
+
+function renderLinkCard(l, li) {
+  const chips = [l.type, l.tag2, l.tag3].filter(t => t && t.trim());
+  const chipsHtml = chips.length ? `<div class="link-card-chips">${chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>` : '';
+  const noteHtml  = l.note ? `<div class="link-card-note">${l.note}</div>` : '';
+  const citeHtml  = l.cite ? `<div class="link-card-cite">${l.cite}<button class="cite-copy-btn" onclick="copyCite(${li})">Копировать</button></div>` : '';
+  const footHtml  = l.url  ? `<div class="link-card-foot"><a class="link-card-url" href="${l.url}" target="_blank">Открыть статью<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>` : '';
+  return `<li><div class="link-card"><div class="link-card-body">${chipsHtml}${noteHtml}${citeHtml}</div>${footHtml}</div></li>`;
+}
+
+function copyCite(li) {
+  const cite = currentDrug.links[li]?.cite || '';
+  if (!cite) return;
+  navigator.clipboard.writeText(cite).then(() => {
+    const btns = document.querySelectorAll('.cite-copy-btn');
+    if (btns[li]) { btns[li].textContent = '✓ Скопировано'; setTimeout(()=>{ btns[li].textContent='Копировать'; },2000); }
+  });
+}
+
+// ══════════════════════════════════════════════
+//  FILL EDITOR
+// ══════════════════════════════════════════════
+function fillEditorFromDrug(drug) {
+  document.getElementById('ep-name').value       = drug.name       || '';
+  document.getElementById('ep-subtitle').value   = drug.subtitle   || '';
+  document.getElementById('ep-instr-url').value  = drug.instrUrl   || '';
+  document.getElementById('ep-tag-green').value  = drug.tags.green  || '';
+  document.getElementById('ep-tag-yellow').value = drug.tags.yellow || '';
+  document.getElementById('ep-tag-red').value    = drug.tags.red    || '';
+  document.getElementById('ep-tag-violet').value = drug.tags.violet || '';
+  renderEpNotes(drug.facts||[]);
+  renderEpDosages(drug.dosages||[]);
+  renderEpLinks(drug.links||[]);
+}
+
+function renderEpNotes(notes) {
+  document.getElementById('ep-notes').innerHTML = notes.map((n,i) => `
+    <div class="ep-note-item">
+      <div class="ep-note-num">${i+1}</div>
+      <div class="ep-note-right">
+        <textarea class="ep-note-input" id="ep-note-${i}" rows="2">${esc(n)}</textarea>
+        <button class="ep-note-remove" onclick="epRemoveNote(${i})">Удалить</button>
+      </div>
+    </div>`).join('');
+}
+function epAddNote() { epSyncNotes(); currentDrug.facts.push(''); renderEpNotes(currentDrug.facts); setTimeout(()=>{ const el=document.getElementById(`ep-note-${currentDrug.facts.length-1}`); if(el)el.focus(); },50); }
+function epRemoveNote(i) { epSyncNotes(); currentDrug.facts.splice(i,1); renderEpNotes(currentDrug.facts); }
+function epSyncNotes() { (currentDrug.facts||[]).forEach((_,i)=>{ const n=document.getElementById(`ep-note-${i}`); if(n)currentDrug.facts[i]=n.value; }); }
+
+function renderEpDosages(dosages) {
+  document.getElementById('ep-dosages').innerHTML = dosages.map((d,i) => `
+    <div class="ep-dos-item">
+      <input class="ep-input" id="ep-dos-title-${i}" value="${esc(d.title)}" placeholder="Название группы…"/>
+      <textarea class="ep-textarea" id="ep-dos-body-${i}">${esc(d.body)}</textarea>
+      <button class="ep-remove-btn" onclick="epRemoveDosage(${i})">Удалить блок</button>
+    </div>`).join('');
+}
+function epAddDosage() { epSyncDosages(); currentDrug.dosages.push({title:'',body:''}); renderEpDosages(currentDrug.dosages); }
+function epRemoveDosage(i) { epSyncDosages(); currentDrug.dosages.splice(i,1); renderEpDosages(currentDrug.dosages); }
+function epSyncDosages() { (currentDrug.dosages||[]).forEach((_,i)=>{ const t=document.getElementById(`ep-dos-title-${i}`),b=document.getElementById(`ep-dos-body-${i}`); if(t)currentDrug.dosages[i].title=t.value; if(b)currentDrug.dosages[i].body=b.value; }); }
+
+function renderEpLinks(links) {
+  const typeOptions = LINK_TYPES.map(t=>`<option value="${t}">${t}</option>`).join('');
+  document.getElementById('ep-links').innerHTML = links.map((l,i) => `
+    <div class="ep-lnk-item">
+      <div class="ep-field" style="margin-bottom:8px"><label>Тип источника</label>
+        <select class="ep-select" id="ep-lnk-type-${i}" onchange="epToggleLnkCustom(${i})">
+          <option value="">— выбрать —</option>${typeOptions}
+        </select>
+      </div>
+      <div id="ep-lnk-custom-wrap-${i}" style="display:none;margin-bottom:8px">
+        <input class="ep-input" id="ep-lnk-custom-${i}" value="${esc(l.typeCustom||'')}" placeholder="Введите тип источника…"/>
+      </div>
+      <div class="ep-lnk-tags-row">
+        <input class="ep-input" id="ep-lnk-tag2-${i}" value="${esc(l.tag2||'')}" placeholder="Тег 2 (необязательно)"/>
+        <input class="ep-input" id="ep-lnk-tag3-${i}" value="${esc(l.tag3||'')}" placeholder="Тег 3 (необязательно)"/>
+      </div>
+      <textarea class="ep-textarea" id="ep-lnk-note-${i}" style="min-height:60px" placeholder="Заметка по ссылке…">${esc(l.note||'')}</textarea>
+      <textarea class="ep-textarea" id="ep-lnk-cite-${i}" style="min-height:56px;margin-top:8px" placeholder="Текст для цитирования…">${esc(l.cite||'')}</textarea>
+      <input class="ep-input" id="ep-lnk-url-${i}" value="${esc(l.url||'')}" placeholder="https://…" style="margin-top:8px"/>
+      <button class="ep-remove-btn" onclick="epRemoveLink(${i})">Удалить ссылку</button>
+    </div>`).join('');
+  links.forEach((l,i)=>{ const sel=document.getElementById(`ep-lnk-type-${i}`); if(sel){ sel.value=LINK_TYPES.includes(l.type)?l.type:(l.typeCustom?'Заполнить':''); epToggleLnkCustom(i); } });
+}
+function epToggleLnkCustom(i) { const sel=document.getElementById(`ep-lnk-type-${i}`),wrap=document.getElementById(`ep-lnk-custom-wrap-${i}`); if(sel&&wrap) wrap.style.display=sel.value==='Заполнить'?'block':'none'; }
+function epAddLink() { epSyncLinks(); currentDrug.links.push({type:'',tag2:'',tag3:'',note:'',cite:'',url:''}); renderEpLinks(currentDrug.links); }
+function epRemoveLink(i) { epSyncLinks(); currentDrug.links.splice(i,1); renderEpLinks(currentDrug.links); }
+function epSyncLinks() {
+  (currentDrug.links||[]).forEach((_,i)=>{
+    const sel=document.getElementById(`ep-lnk-type-${i}`),cust=document.getElementById(`ep-lnk-custom-${i}`);
+    const t2=document.getElementById(`ep-lnk-tag2-${i}`),t3=document.getElementById(`ep-lnk-tag3-${i}`);
+    const note=document.getElementById(`ep-lnk-note-${i}`),cite=document.getElementById(`ep-lnk-cite-${i}`),url=document.getElementById(`ep-lnk-url-${i}`);
+    if(sel){ currentDrug.links[i].type=sel.value==='Заполнить'?(cust?cust.value.trim():''):sel.value; currentDrug.links[i].typeCustom=cust?cust.value.trim():''; }
+    if(t2) currentDrug.links[i].tag2=t2.value.trim();
+    if(t3) currentDrug.links[i].tag3=t3.value.trim();
+    if(note)currentDrug.links[i].note=note.value.trim();
+    if(cite)currentDrug.links[i].cite=cite.value.trim();
+    if(url) currentDrug.links[i].url=url.value.trim();
+  });
+}
+
+// ══════════════════════════════════════════════
+//  APPLY EDITS
+// ══════════════════════════════════════════════
+async function applyEdits() {
+  const btn = document.getElementById('ep-save-btn');
+  btn.disabled = true; btn.textContent = 'Сохранение…';
+
+  currentDrug.name     = document.getElementById('ep-name').value.trim();
+  currentDrug.subtitle = document.getElementById('ep-subtitle').value.trim();
+  currentDrug.instrUrl = document.getElementById('ep-instr-url').value.trim();
+  currentDrug.tags = {
+    green:  document.getElementById('ep-tag-green').value.trim(),
+    yellow: document.getElementById('ep-tag-yellow').value.trim(),
+    red:    document.getElementById('ep-tag-red').value.trim(),
+    violet: document.getElementById('ep-tag-violet').value.trim(),
+  };
+  epSyncNotes();    currentDrug.facts   = (currentDrug.facts||[]).filter(f=>f.trim());
+  epSyncDosages();  currentDrug.dosages = (currentDrug.dosages||[]).filter(d=>d.title||d.body);
+  epSyncLinks();    currentDrug.links   = (currentDrug.links||[]).filter(l=>l.type||l.note||l.url);
+
+  try {
+    await dbUpdate(currentDrug);
+    const idx = drugs.findIndex(d => d.id === currentDrug.id);
+    if (idx > -1) drugs[idx] = JSON.parse(JSON.stringify(currentDrug));
+    renderDrugPage(currentDrug);
+    showToast('✓ Сохранено');
+  } catch(e) {
+    showToast('Ошибка при сохранении');
+  }
+  btn.disabled = false; btn.textContent = 'Применить изменения';
+}
+
+function esc(str) { return (str||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+</script>
+</body>
+</html>
