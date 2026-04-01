@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Справочник ЛС</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f7f5;--text:#111;--muted:#777;--border:#e0e0e0;--white:#fff;
+  --surface:#f0f0ee;--surface2:#e8e8e6;
+  --instr-btn:#f0f0ee;--instr-btn-hover:#e0e0de;
+  --cite-bg:#f7f7f5;
+  --lock-bg:rgba(247,247,245,.88);--lock-bg-hover:rgba(247,247,245,.7);
+  --loader-top:#111;
+  --dosage-bg:#111;--dosage-border:#111;
+  --dosage-head-border:rgba(255,255,255,.12);
+  --dosage-text:#fff;--dosage-body:rgba(255,255,255,.82);
+  --dosage-chip-bg:rgba(255,255,255,.1);--dosage-chip-border:rgba(255,255,255,.22);
+  --dosage-chip-color:rgba(255,255,255,.88);
+  --dosage-chip-red-bg:rgba(239,68,68,.25);--dosage-chip-red-border:rgba(239,68,68,.5);--dosage-chip-red-color:#fca5a5;
+  --dosage-chip-violet-bg:rgba(167,139,250,.22);--dosage-chip-violet-border:rgba(167,139,250,.5);--dosage-chip-violet-color:#c4b5fd;
+  --dosage-info-rgb:255,255,255;
+  --catalog-item-border:#f0f0ee;--drop-item-border:#f0f0ee;
+  --fav-border:#111;
+  --search-btn-bg:#111;--search-btn-hover:#333;
+  --add-btn-bg:#111;--add-btn-hover:#333;
+  --edit-btn-bg:#111;--edit-btn-border:#111;--edit-btn-active-bg:#fff;--edit-btn-active-color:#111;
+  --pwd-ok-bg:#111;--pwd-ok-hover:#333;
+  --back-btn-hover:#ebebeb;
+  --search-focus-border:#111;
+  --folder-btn-hover:#f0f0ee;--folder-btn-hover-border:#bbb;
+  --folder-svg:#555;
+  --header-bg:rgba(247,247,245,.93);
+  --tag-green-bg:rgba(34,197,94,.12);--tag-green-border:rgba(34,197,94,.38);--tag-green-color:#15803d;
+  --tag-yellow-bg:rgba(234,179,8,.11);--tag-yellow-border:rgba(234,179,8,.38);--tag-yellow-color:#7a4f00;
+  --tag-red-bg:rgba(239,68,68,.10);--tag-red-border:rgba(239,68,68,.35);--tag-red-color:#b91c1c;
+  --tag-violet-bg:rgba(167,139,250,.13);--tag-violet-border:rgba(167,139,250,.42);--tag-violet-color:#6d28d9;
+  --pdf-color:#cc0000;--pdf-border:#fca5a5;
+  --del-hover-bg:#fef2f2;
+  --ep-input-bg:#f7f7f5;--ep-input-focus-bg:#fff;--ep-input-focus-border:#111;
+  --ep-save-bg:#111;--ep-save-hover:#333;--ep-save-color:#fff;
+  --ep-move-hover:#f0f0ee;
+  --ep-add-hover-bg:#fafaf8;
+  --link-card-note-color:#333;
+  --catalog-arrow:#ccc;
+  --di-del-color:#ccc;
+  --di-del-hover-bg:#fef2f2;
+  --ep-section-lbl-color:#bbb;
+  --ep-remove-color:#c0c0c0;
+  --drug-label-color:#bbb;
+  --toast-bg:#111;--toast-color:#fff;
+  --pwd-input-focus-bg:#fff;
+}
+html.dark{
+  --bg:#111;--text:#dedad4;--muted:#7a7570;--border:#2c2c2a;--white:#1a1917;
+  --surface:#222;--surface2:#2a2a28;
+  --instr-btn:#262623;--instr-btn-hover:#2e2e2b;
+  --cite-bg:#1a1917;
+  --lock-bg:rgba(17,17,17,.92);--lock-bg-hover:rgba(17,17,17,.78);
+  --loader-top:#dedad4;
+  --dosage-bg:#e8e5df;--dosage-border:#e8e5df;
+  --dosage-head-border:rgba(0,0,0,.14);
+  --dosage-text:#111;--dosage-body:rgba(0,0,0,.72);
+  --dosage-chip-bg:rgba(0,0,0,.08);--dosage-chip-border:rgba(0,0,0,.18);
+  --dosage-chip-color:rgba(0,0,0,.72);
+  --dosage-chip-red-bg:rgba(185,28,28,.12);--dosage-chip-red-border:rgba(185,28,28,.35);--dosage-chip-red-color:#b91c1c;
+  --dosage-chip-violet-bg:rgba(109,40,217,.12);--dosage-chip-violet-border:rgba(109,40,217,.32);--dosage-chip-violet-color:#6d28d9;
+  --dosage-info-rgb:0,0,0;
+  --catalog-item-border:#222;--drop-item-border:#222;
+  --fav-border:#dedad4;
+  --search-btn-bg:#dedad4;--search-btn-hover:#ccc9c3;
+  --add-btn-bg:#dedad4;--add-btn-hover:#ccc9c3;
+  --edit-btn-bg:#dedad4;--edit-btn-border:#dedad4;--edit-btn-active-bg:#1a1917;--edit-btn-active-color:#dedad4;
+  --pwd-ok-bg:#dedad4;--pwd-ok-hover:#ccc9c3;
+  --back-btn-hover:#252523;
+  --search-focus-border:#dedad4;
+  --folder-btn-hover:#252523;--folder-btn-hover-border:#555;
+  --folder-svg:#999;
+  --header-bg:rgba(17,17,17,.95);
+  --tag-green-bg:rgba(34,197,94,.1);--tag-green-border:rgba(34,197,94,.28);--tag-green-color:#4ade80;
+  --tag-yellow-bg:rgba(234,179,8,.1);--tag-yellow-border:rgba(234,179,8,.28);--tag-yellow-color:#fbbf24;
+  --tag-red-bg:rgba(239,68,68,.1);--tag-red-border:rgba(239,68,68,.28);--tag-red-color:#f87171;
+  --tag-violet-bg:rgba(167,139,250,.12);--tag-violet-border:rgba(167,139,250,.32);--tag-violet-color:#a78bfa;
+  --pdf-color:#f87171;--pdf-border:rgba(248,113,113,.4);
+  --del-hover-bg:#2a1818;
+  --ep-input-bg:#151513;--ep-input-focus-bg:#1a1917;--ep-input-focus-border:#dedad4;
+  --ep-save-bg:#dedad4;--ep-save-hover:#ccc9c3;--ep-save-color:#111;
+  --ep-move-hover:#252523;
+  --ep-add-hover-bg:#1f1f1d;
+  --link-card-note-color:var(--text);
+  --catalog-arrow:#555;
+  --di-del-color:#555;
+  --di-del-hover-bg:#2a1818;
+  --ep-section-lbl-color:#555;
+  --ep-remove-color:#555;
+  --drug-label-color:#555;
+  --toast-bg:#dedad4;--toast-color:#111;
+  --pwd-input-focus-bg:#1a1917;
+}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
+
+/* ══════════════════ LOADING ══════════════════ */
+#loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:1000;flex-direction:column;gap:14px}
+.loader{width:32px;height:32px;border:2.5px solid var(--border);border-top-color:var(--loader-top);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.06em}
+
+/* ══════════════════ TOAST ══════════════════ */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--toast-bg);color:var(--toast-color);padding:10px 20px;border-radius:100px;font-size:.82rem;font-weight:600;opacity:0;transition:all .25s;pointer-events:none;z-index:999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ══════════════════ CATALOG MODAL ══════════════════ */
+.folder-btn{position:fixed;top:16px;right:16px;width:38px;height:38px;background:var(--white);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:400;transition:background .15s,border-color .15s;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.folder-btn:hover{background:var(--folder-btn-hover);border-color:var(--folder-btn-hover-border)}
+.folder-btn svg{width:17px;height:17px;stroke:var(--folder-svg);fill:none;stroke-width:1.8}
+.catalog-overlay{position:fixed;inset:0;background:rgba(0,0,0,.18);z-index:300;display:none;align-items:flex-start;justify-content:flex-end;padding:68px 24px 0}
+.catalog-overlay.open{display:flex}
+.catalog-modal{background:var(--white);border:1.5px solid var(--border);border-radius:18px;width:320px;max-height:70vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.catalog-header{padding:16px 20px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.catalog-header-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.catalog-count{font-size:.72rem;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:20px;font-weight:600}
+.catalog-list{overflow-y:auto;flex:1}
+.catalog-item{padding:12px 20px;cursor:pointer;border-bottom:1px solid var(--catalog-item-border);transition:background .12s;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.catalog-item:last-child{border-bottom:none}
+.catalog-item:hover{background:var(--bg)}
+.catalog-item-name{font-size:.9rem;font-weight:600}
+.catalog-item-sub{font-size:.75rem;color:var(--muted);font-style:italic}
+.catalog-empty{padding:24px 20px;text-align:center;color:var(--muted);font-size:.85rem}
+.catalog-letter{padding:6px 20px 4px;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);opacity:.5;pointer-events:none;user-select:none}
+.catalog-arrow{color:var(--catalog-arrow);font-size:.8rem;flex-shrink:0}
+
+/* ══════════════════ SEARCH PAGE ══════════════════ */
+#search-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:80px 2rem 2rem;gap:16px}
+.catalog-hint{font-size:.78rem;color:var(--muted);margin-top:4px;cursor:pointer;transition:color .15s;display:inline-flex;align-items:center;gap:4px}
+.catalog-hint:hover{color:var(--text)}
+.catalog-hint svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.2}
+.search-wrap{width:100%;max-width:640px;position:relative}
+.search-bar{display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border);border-radius:100px;padding:6px 6px 6px 28px;gap:10px;transition:border-color .2s,box-shadow .2s}
+.search-bar:focus-within{border-color:var(--search-focus-border);box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.search-bar input{flex:1;border:none;outline:none;font-family:'Manrope',sans-serif;font-size:1rem;background:transparent;color:var(--text);min-width:0}
+.search-bar input::placeholder{color:var(--muted)}
+.search-btn{width:42px;height:42px;background:var(--search-btn-bg);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s}
+.search-btn:hover{background:var(--search-btn-hover)}
+.search-btn svg{width:18px;height:18px;stroke:var(--bg);fill:none;stroke-width:2.2;stroke-linecap:round}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--white);border:1.5px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);display:none;z-index:100;max-height:340px;overflow-y:auto}
+.dropdown.open{display:block}
+.dropdown-item{padding:14px 22px;cursor:pointer;font-size:.93rem;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .15s;border-bottom:1px solid var(--drop-item-border)}
+.dropdown-item:last-child{border-bottom:none}
+.dropdown-item:hover{background:var(--bg)}
+.di-name{font-weight:600}.di-sub{color:var(--muted);font-size:.8rem}
+.di-del{background:none;border:none;cursor:pointer;padding:4px 6px;border-radius:6px;color:var(--di-del-color);font-size:.8rem;transition:background .15s,color .15s;flex-shrink:0}
+.di-del:hover{background:var(--di-del-hover-bg);color:#e05555}
+
+.add-drug-wrap{width:100%;max-width:640px}
+.add-drug-bar{display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border);border-radius:100px;padding:6px 6px 6px 22px;gap:10px;transition:border-color .2s,box-shadow .2s}
+.add-drug-bar:focus-within{border-color:var(--search-focus-border);box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.add-drug-bar input{flex:1;border:none;outline:none;font-family:'Manrope',sans-serif;font-size:.9rem;background:transparent;color:var(--text);min-width:0}
+.add-drug-bar input::placeholder{color:var(--muted)}
+.add-btn{height:36px;background:var(--add-btn-bg);border:none;border-radius:100px;display:flex;align-items:center;gap:6px;padding:0 16px;cursor:pointer;flex-shrink:0;transition:background .2s;color:var(--bg);font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap}
+.add-btn:hover{background:var(--add-btn-hover)}
+.add-btn:disabled{background:var(--muted);cursor:not-allowed}
+.add-btn svg{width:14px;height:14px;stroke:var(--bg);fill:none;stroke-width:2.5;stroke-linecap:round}
+
+/* ══════════════════ DRUG PAGE ══════════════════ */
+#drug-page{display:none;min-height:100vh}
+.drug-header{position:sticky;top:0;z-index:50;background:var(--header-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:13px 16px 13px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.drug-header-left{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.drug-header-title{font-size:1.05rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.drug-header-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:.85rem;color:var(--muted);padding:6px 10px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap;flex-shrink:0}
+.back-btn:hover{background:var(--back-btn-hover);color:var(--text)}
+.back-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+.edit-page-btn{display:flex;align-items:center;gap:7px;background:var(--edit-btn-bg);color:var(--bg);border:1.5px solid var(--edit-btn-border);border-radius:10px;padding:8px 14px;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s;white-space:nowrap}
+.edit-page-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.1}
+.edit-page-btn:hover{opacity:.85}
+.edit-page-btn.active{background:var(--edit-btn-active-bg);color:var(--edit-btn-active-color)}
+.edit-page-btn.active:hover{background:var(--surface)}
+.header-icon-btn{height:34px;background:none;border:1.5px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,border-color .15s;flex-shrink:0;padding:0 8px;gap:5px;min-width:34px}
+.header-icon-btn:hover{background:var(--folder-btn-hover);border-color:var(--folder-btn-hover-border)}
+.header-icon-btn svg{width:15px;height:15px;stroke:var(--folder-svg);fill:none;stroke-width:1.8;flex-shrink:0}
+.header-icon-btn .icon-label{display:none;font-size:.68rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.01em}
+@media(min-width:900px){.header-icon-btn .icon-label{display:inline}}
+@media(max-width:600px){.drug-header{padding:10px 8px;gap:6px}.edit-page-btn>span{display:none}.edit-page-btn{padding:8px 10px;gap:0}.drug-header-title{font-size:.88rem;max-width:120px}.header-icon-btn .icon-label{display:none!important}.drug-header-right{gap:4px}}
+
+.drug-body{position:relative;display:flex;align-items:flex-start;min-height:calc(100vh - 57px)}
+.drug-content{flex:1;max-width:720px;margin:0 auto;padding:40px 32px 80px}
+
+/* ══════════════════ LEFT NAV ══════════════════ */
+.drug-left-nav{display:none;position:fixed;top:77px;width:180px;max-height:calc(100vh - 100px);overflow-y:auto;padding:4px 0}
+@media(min-width:1100px){
+  .drug-left-nav{display:block}
+  .drug-left-nav{left:calc(50% - 360px - 196px)}
+}
+@media(min-width:1400px){
+  .drug-left-nav{left:calc(50% - 360px - 210px)}
+}
+.drug-left-nav-list{list-style:none;display:flex;flex-direction:column;gap:1px}
+.drug-left-nav-item{display:flex;align-items:center;gap:0;padding:5px 10px 5px 0;cursor:pointer;transition:color .15s;text-decoration:none;border:none;background:none;font-family:'Manrope',sans-serif;text-align:left;width:100%;color:var(--muted);font-size:.75rem;font-weight:500;line-height:1.4;position:relative}
+.drug-left-nav-item:hover{color:var(--text)}
+.drug-left-nav-item.active{color:var(--text);font-weight:600}
+.drug-left-nav-bar{width:2px;min-width:2px;height:100%;border-radius:2px;background:transparent;margin-right:10px;align-self:stretch;transition:background .2s;flex-shrink:0}
+.drug-left-nav-item.active .drug-left-nav-bar{background:var(--text)}
+.drug-left-nav-item:hover .drug-left-nav-bar{background:var(--border)}
+.drug-left-nav-sub{font-size:.68rem;color:var(--muted);opacity:.7;display:block;margin-top:1px}
+.drug-left-nav.editor-open{display:none!important}
+/* ══════════════════ EDITOR PANEL ══════════════════ */
+.editor-panel{width:0;overflow:hidden;transition:width .32s cubic-bezier(.4,0,.2,1);border-left:0px solid var(--border);background:var(--white);position:sticky;top:57px;height:calc(100vh - 57px);flex-shrink:0;display:flex;flex-direction:column}
+.editor-panel.open{width:440px;border-left-width:1.5px}
+.ep-inner{padding:28px 24px 16px;min-width:440px;overflow-y:auto;flex:1}
+.ep-footer{min-width:440px;padding:12px 24px 16px;border-top:1.5px solid var(--border);background:var(--white);flex-shrink:0}
+.ep-title{font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.ep-section{margin-bottom:28px}
+.ep-section-label{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ep-section-lbl-color);margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.ep-field{margin-bottom:12px}
+.ep-field label{display:block;font-size:.73rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+.ep-input{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--ep-input-bg);color:var(--text);transition:border-color .15s,background .15s}
+.ep-input:focus{border-color:var(--ep-input-focus-border);background:var(--ep-input-focus-bg)}
+.ep-textarea{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--ep-input-bg);color:var(--text);resize:vertical;min-height:80px;line-height:1.65;transition:border-color .15s,background .15s}
+.ep-textarea:focus{border-color:var(--ep-input-focus-border);background:var(--ep-input-focus-bg)}
+.ep-select{width:100%;font-family:'Manrope',sans-serif;font-size:.87rem;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;outline:none;background:var(--ep-input-bg);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}
+.ep-select:focus{border-color:var(--ep-input-focus-border);background-color:var(--ep-input-focus-bg)}
+.ep-tag-row{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.ep-tag-dot{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+.ep-tag-dot.green{background:#22c55e}.ep-tag-dot.yellow{background:#eab308}.ep-tag-dot.red{background:#ef4444}.ep-tag-dot.violet{background:#a78bfa}
+.ep-tag-lbl{font-size:.73rem;color:var(--muted);width:80px;flex-shrink:0;font-weight:600}
+.ep-tag-input{flex:1;font-family:'Manrope',sans-serif;font-size:.84rem;border:1.5px solid var(--border);border-radius:8px;padding:7px 11px;outline:none;background:var(--ep-input-bg);color:var(--text);transition:border-color .15s}
+.ep-tag-input:focus{border-color:var(--ep-input-focus-border);background:var(--ep-input-focus-bg)}
+.ep-dos-item{background:var(--ep-input-bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.ep-dos-item .ep-input{margin-bottom:8px;background:var(--white)}
+.ep-dos-item .ep-textarea{background:var(--white);min-height:68px}
+.ep-lnk-item{background:var(--ep-input-bg);border:1.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
+.ep-lnk-item .ep-input,.ep-lnk-item .ep-textarea,.ep-lnk-item .ep-select{margin-bottom:8px;background:var(--white)}
+.ep-lnk-tags-row{display:flex;gap:6px;margin-bottom:8px}
+.ep-lnk-tags-row .ep-input{margin-bottom:0}
+.ep-remove-btn{background:none;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--muted);padding:5px 0;margin-top:4px;transition:color .15s;display:block}
+.ep-remove-btn:hover{color:var(--tag-red-color)}
+.ep-move-btns{display:flex;gap:3px;flex-shrink:0}
+.ep-move-btn{background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .15s;padding:0}
+.ep-move-btn:hover{background:var(--ep-move-hover);border-color:var(--muted);color:var(--text)}
+.ep-move-btn:disabled{opacity:.25;cursor:default}
+.ep-move-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round}
+.ep-add-btn{width:100%;background:none;border:1.5px dashed var(--border);border-radius:10px;padding:10px;font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;margin-top:2px}
+.ep-add-btn:hover{border-color:var(--muted);color:var(--text);background:var(--ep-add-hover-bg)}
+.ep-save-btn{width:100%;background:var(--ep-save-bg);color:var(--bg);border:none;border-radius:10px;padding:12px;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:background .15s;margin-top:6px}
+.ep-save-btn:hover{background:var(--ep-save-hover)}
+.ep-save-btn:disabled{background:var(--muted);cursor:not-allowed}
+.ep-delete-btn{width:100%;background:none;color:var(--tag-red-color);border:1.5px solid var(--tag-red-border);border-radius:10px;padding:11px;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s;margin-top:8px}
+.ep-delete-btn:hover{background:var(--del-hover-bg);border-color:var(--tag-red-color)}
+
+/* ══════════════════ VIEW ELEMENTS ══════════════════ */
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.drug-mnn-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.drug-title{font-size:2rem;font-weight:700;letter-spacing:-.5px;margin-bottom:6px}
+.drug-subtitle{color:var(--muted);font-size:.92rem;margin-bottom:4px;font-style:italic}
+.drug-trade-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;margin-top:10px}
+.drug-trade{color:var(--muted);font-size:.88rem;margin-bottom:22px}
+.dosage-card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.dosage-chip{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px;background:var(--dosage-chip-bg);border:1px solid var(--dosage-chip-border);color:var(--dosage-chip-color);letter-spacing:.02em}
+.dosage-chip.red{background:var(--dosage-chip-red-bg);border-color:var(--dosage-chip-red-border);color:var(--dosage-chip-red-color)}
+.dosage-chip.violet{background:var(--dosage-chip-violet-bg);border-color:var(--dosage-chip-violet-border);color:var(--dosage-chip-violet-color)}
+
+/* instr links list */
+.instr-links-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.instr-link-item{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.instr-link-name{font-size:.9rem;color:var(--text)}
+.instr-link-btn{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:600;color:var(--text);background:var(--instr-btn);padding:6px 12px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s;flex-shrink:0}
+.instr-link-btn:hover{background:var(--instr-btn-hover)}
+.instr-link-btn svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+/* info bubble */
+.info-bubble{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(128,128,128,.5);color:rgba(128,128,128,.8);font-size:9px;font-weight:700;cursor:pointer;flex-shrink:0;transition:all .15s;font-style:normal;margin-left:6px;vertical-align:middle;user-select:none;line-height:1}
+.info-bubble:hover{border-color:rgba(128,128,128,.9);color:rgba(128,128,128,1);background:rgba(128,128,128,.12)}
+.dosage-card .info-bubble{border-color:rgba(var(--dosage-info-rgb),.4);color:rgba(var(--dosage-info-rgb),.65)}
+.dosage-card .info-bubble:hover{border-color:rgba(var(--dosage-info-rgb),.7);color:rgba(var(--dosage-info-rgb),.9);background:rgba(var(--dosage-info-rgb),.1)}
+
+/* info modal */
+.info-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:700;display:none;align-items:center;justify-content:center;padding:24px}
+.info-overlay.open{display:flex}
+.info-modal{background:var(--white);border:1.5px solid var(--border);border-radius:18px;width:100%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.18);overflow:hidden;cursor:pointer}
+.info-modal-body{padding:24px 26px;font-size:.92rem;line-height:1.75;color:var(--text);white-space:pre-wrap;max-height:70vh;overflow-y:auto}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.tag{font-size:.78rem;font-weight:600;padding:5px 13px;border-radius:8px;border:1px solid transparent;letter-spacing:.02em}
+.tag.green{background:var(--tag-green-bg);border-color:var(--tag-green-border);color:var(--tag-green-color)}
+.tag.yellow{background:var(--tag-yellow-bg);border-color:var(--tag-yellow-border);color:var(--tag-yellow-color)}
+.tag.red{background:var(--tag-red-bg);border-color:var(--tag-red-border);color:var(--tag-red-color)}
+.tag.violet{background:var(--tag-violet-bg);border-color:var(--tag-violet-border);color:var(--tag-violet-color)}
+.instr-block{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.instr-block span{font-size:.93rem}
+.instr-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--text);background:var(--instr-btn);padding:7px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s}
+.instr-link:hover{background:var(--instr-btn-hover)}
+.instr-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.2}
+.facts-block{margin-bottom:20px}
+.facts-cards{display:flex;flex-direction:column;gap:10px}
+.facts-card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:16px 20px;color:var(--text)}
+.facts-card-title{font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);margin-bottom:6px;text-transform:uppercase}
+.facts-card-body{font-size:.9rem;line-height:1.6}
+.dosage-section{margin-bottom:16px;margin-top:20px}
+.dosage-cards{display:flex;flex-direction:column;gap:12px}
+.dosage-card{background:var(--dosage-bg);border:1.5px solid var(--dosage-border);border-radius:14px;overflow:hidden}
+.dosage-card-head{padding:14px 20px 12px;border-bottom:1px solid var(--dosage-head-border);font-size:.93rem;font-weight:700;color:var(--dosage-text)}
+.dosage-card-body{padding:16px 20px;font-size:.88rem;line-height:1.65;color:var(--dosage-body)}
+.section-divider{border:none;border-top:1.5px solid var(--border);margin:32px 0}
+.links-block{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:22px 24px}
+.links-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:14px}
+.link-card{border:1.5px solid var(--border);border-radius:12px;overflow:hidden}
+.link-card-body{padding:16px 18px}
+.link-card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chip{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px;background:rgba(128,128,128,.08);border:1px solid rgba(128,128,128,.18);color:var(--text);letter-spacing:.02em}
+.link-card-note{font-size:.88rem;line-height:1.6;color:var(--text);margin-bottom:10px}
+.link-card-cite{font-size:.78rem;line-height:1.55;color:var(--muted);font-style:italic;background:var(--cite-bg);border-radius:8px;padding:10px 12px;position:relative;margin-bottom:0;padding-right:90px}
+.cite-copy-btn{position:absolute;top:8px;right:8px;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:3px 8px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);transition:all .15s;white-space:nowrap}
+.cite-copy-btn:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+.link-card-foot{padding:0 18px 14px}
+.link-card-url{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:border-color .15s}
+.link-card-url:hover{border-color:var(--text)}
+.link-card-url svg{width:11px;height:11px;stroke:var(--muted);fill:none;stroke-width:2.2}
+.link-card-pdf{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:600;color:var(--pdf-color);text-decoration:none;border-bottom:1px solid var(--pdf-border);padding-bottom:1px;transition:border-color .15s;margin-left:14px}
+.link-card-pdf:hover{border-color:var(--pdf-color)}
+.link-card-pdf svg{width:11px;height:11px;stroke:var(--pdf-color);fill:none;stroke-width:2.2}
+.link-card.fav{border:1.5px solid var(--fav-border);}
+.fav-star{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;flex-shrink:0}
+.fav-star svg{width:14px;height:14px;transition:all .15s}
+.link-card-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.ep-fav-btn{background:none;border:1.5px solid var(--border);border-radius:8px;padding:5px 10px;font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:5px}
+.ep-fav-btn svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;transition:all .15s}
+.ep-fav-btn.active{background:rgba(234,179,8,.12);border-color:rgba(234,179,8,.5);color:var(--tag-yellow-color)}
+.ep-fav-btn.active svg{fill:#eab308;stroke:#eab308}
+
+/* ══════════════════ PASSWORD MODAL ══════════════════ */
+.pwd-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:600;display:none;align-items:center;justify-content:center}
+.pwd-overlay.open{display:flex}
+.pwd-modal{background:var(--white);border-radius:18px;padding:32px 28px;width:320px;box-shadow:0 16px 48px rgba(0,0,0,.16)}
+.pwd-modal-title{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.pwd-modal-sub{font-size:.8rem;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.pwd-input{width:100%;font-family:'Manrope',sans-serif;font-size:.9rem;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;outline:none;background:var(--bg);color:var(--text);transition:border-color .15s;margin-bottom:10px}
+.pwd-input:focus{border-color:var(--ep-input-focus-border);background:var(--ep-input-focus-bg)}
+.pwd-input.error{border-color:#ef4444;animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pwd-error{font-size:.75rem;color:#ef4444;margin-bottom:10px;display:none}
+.pwd-actions{display:flex;gap:8px}
+.pwd-btn-ok{flex:1;background:var(--ep-save-bg);color:var(--ep-save-color);border:none;border-radius:10px;padding:10px;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:background .15s}
+.pwd-btn-ok:hover{background:var(--ep-save-hover)}
+.pwd-btn-cancel{background:none;border:1.5px solid var(--border);border-radius:10px;padding:10px 16px;font-family:'Manrope',sans-serif;font-size:.85rem;color:var(--muted);cursor:pointer;transition:all .15s}
+.pwd-btn-cancel:hover{border-color:var(--muted);color:var(--text)}
+
+/* locked section overlay */
+.ep-locked{position:relative}
+.ep-lock-overlay{position:absolute;inset:0;background:var(--lock-bg);backdrop-filter:blur(2px);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .15s;z-index:10}
+.ep-lock-overlay:hover{background:var(--lock-bg-hover)}
+.ep-lock-overlay svg{width:15px;height:15px;stroke:var(--muted);fill:none;stroke-width:2}
+.ep-lock-overlay span{font-size:.78rem;font-weight:600;color:var(--muted)}
+.quick-links-block{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.quick-link-item{display:flex;align-items:center;justify-content:space-between;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;gap:12px}
+.quick-link-label{font-size:.88rem;color:var(--muted)}
+.quick-link-label span{font-size:.72rem;color:var(--drug-label-color);display:block;margin-top:2px}
+.quick-link-btn{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--text);background:var(--instr-btn);padding:7px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s;flex-shrink:0}
+.quick-link-btn:hover{background:var(--instr-btn-hover)}
+.quick-link-btn svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+/* ══════════════════ CALC & TOPICS MODALS ══════════════════ */
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.18);z-index:300;display:none;align-items:flex-start;justify-content:flex-end;padding:68px 24px 0}
+.panel-overlay.open{display:flex}
+.panel-modal{background:var(--white);border:1.5px solid var(--border);border-radius:18px;width:340px;max-height:80vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.panel-header{padding:16px 20px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.panel-header-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.panel-body{overflow-y:auto;flex:1;padding:8px 0}
+.panel-item{padding:14px 20px;cursor:pointer;border-bottom:1px solid var(--catalog-item-border);transition:background .12s;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.panel-item:last-child{border-bottom:none}
+.panel-item:hover{background:var(--bg)}
+.panel-item-name{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.panel-item-desc{font-size:.75rem;color:var(--muted)}
+.panel-empty{padding:24px 20px;text-align:center;color:var(--muted);font-size:.85rem}
+.add-topic-bar{display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:5px 5px 5px 12px;gap:8px}
+.add-topic-bar input{flex:1;border:none;outline:none;font-family:'Manrope',sans-serif;font-size:.85rem;background:transparent;color:var(--text)}
+.add-topic-bar input::placeholder{color:var(--muted)}
+
+/* centered calc modal */
+.center-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:500;display:none;align-items:center;justify-content:center;padding:24px}
+.center-overlay.open{display:flex}
+.center-modal{background:var(--white);border:1.5px solid var(--border);border-radius:20px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,.18);overflow:hidden}
+.center-modal-header{padding:20px 22px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.center-modal-title{font-size:.95rem;font-weight:700;color:var(--text)}
+.center-modal-close{width:28px;height:28px;background:var(--surface);border:none;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s}
+.center-modal-close:hover{background:var(--surface2)}
+.center-modal-close svg{width:13px;height:13px;stroke:var(--muted);fill:none;stroke-width:2.2}
+.center-modal-body{padding:20px 22px 24px}
+.calc-formula{font-size:.78rem;color:var(--muted);background:var(--bg);border-radius:8px;padding:8px 12px;margin-bottom:18px;font-family:monospace;letter-spacing:.02em}
+.calc-field{margin-bottom:14px}
+.calc-field label{display:block;font-size:.73rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+.calc-input{width:100%;font-family:'Manrope',sans-serif;font-size:.95rem;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;outline:none;background:var(--bg);color:var(--text);transition:border-color .15s,background .15s}
+.calc-input:focus{border-color:var(--text);background:var(--white)}
+.calc-result{margin-top:16px;background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:18px 20px;display:none;transition:all .2s}
+.calc-result.show{display:block}
+.calc-result-val{font-size:2rem;font-weight:700;color:var(--text);letter-spacing:-.5px}
+.calc-result-label{font-size:.75rem;color:var(--muted);margin-top:2px}
+.calc-result-badge-pill{font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surface);color:var(--muted);border:1px solid var(--border);white-space:nowrap;align-self:center}
+</style>
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loader"></div>
+  <div class="loader-text">Загрузка…</div>
+</div>
+<div id="toast"></div>
+
+<!-- Info modal -->
+<div class="info-overlay" id="info-overlay" onclick="closeInfoModal()">
+  <div class="info-modal" onclick="event.stopPropagation()">
+    <div class="info-modal-body" id="info-modal-body"></div>
+  </div>
+</div>
+
+<!-- Password modal -->
+<div class="pwd-overlay" id="pwd-overlay">
+  <div class="pwd-modal">
+    <div class="pwd-modal-title">Защищённый раздел</div>
+    <div class="pwd-modal-sub">Введите пароль администратора для редактирования этого раздела</div>
+    <input class="pwd-input" id="pwd-input" type="password" placeholder="Пароль…" onkeydown="if(event.key==='Enter')checkPassword()"/>
+    <div class="pwd-error" id="pwd-error">Неверный пароль</div>
+    <div class="pwd-actions">
+      <button class="pwd-btn-cancel" onclick="closePwdModal()">Отмена</button>
+      <button class="pwd-btn-ok" onclick="checkPassword()">Войти</button>
+    </div>
+  </div>
+</div>
+
+<div id="header-btns-fixed" style="position:fixed;top:16px;right:16px;z-index:400;display:flex;gap:8px;align-items:center">
+  <button class="folder-btn" onclick="toggleCatalog()" title="Все препараты" style="position:static">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <button class="folder-btn" onclick="toggleCalc()" title="Калькуляторы" style="position:static">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--folder-svg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4H6l6 8-6 8h12"/></svg>
+  </button>
+  <button class="folder-btn" onclick="tryOpenTemplates()" title="Шаблоны" style="position:static" id="btn-templates">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+  </button>
+  <button class="folder-btn" id="btn-admin-login" onclick="if(!isAdmin)openPwdModal()" title="Режим редактора" style="position:static">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  </button>
+  <button class="folder-btn" id="theme-btn" onclick="toggleTheme()" title="Сменить тему" style="position:static">
+    <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg id="theme-icon-sun"  viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+<div class="catalog-overlay" id="catalog-overlay" onclick="if(event.target===this)toggleCatalog()">
+  <div class="catalog-modal">
+    <div class="catalog-header">
+      <span class="catalog-header-title">Все препараты</span>
+      <span class="catalog-count" id="catalog-count">0</span>
+    </div>
+    <div class="catalog-list" id="catalog-list"></div>
+  </div>
+</div>
+
+<!-- ═══ CALC LIST (side panel) ═══ -->
+<div class="catalog-overlay" id="calc-overlay" onclick="if(event.target===this)closeCalc()">
+  <div class="catalog-modal" style="width:320px">
+    <div class="catalog-header">
+      <span class="catalog-header-title">Калькуляторы</span>
+    </div>
+    <div class="catalog-list">
+      <div class="catalog-item" onclick="openCalcModal('bsa')" style="flex-direction:column;align-items:flex-start;gap:2px">
+        <div class="catalog-item-name">Площадь поверхности тела (формула Мостеллера)</div>
+      </div>
+      <div class="catalog-item" onclick="openCalcModal('schwartz')" style="flex-direction:column;align-items:flex-start;gap:2px">
+        <div class="catalog-item-name">СКФ по формуле Шварца</div>
+        <div class="catalog-item-sub">Bedside Schwartz 2009</div>
+      </div>
+      <div class="catalog-item" onclick="openCalcModal('crconv')" style="flex-direction:column;align-items:flex-start;gap:2px">
+        <div class="catalog-item-name">Конвертер креатинина</div>
+        <div class="catalog-item-sub">мкмоль/л ↔ мг/дл ↔ ммоль/л</div>
+      </div>
+      <div class="catalog-item" onclick="openCalcModal('cg')" style="flex-direction:column;align-items:flex-start;gap:2px">
+        <div class="catalog-item-name">КК по формуле Кокрофта–Голта</div>
+        <div class="catalog-item-sub">Cockcroft–Gault</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BSA CALCULATOR ═══ -->
+<div class="center-overlay" id="bsa-overlay" onclick="if(event.target===this)closeCalcModal('bsa')">
+  <div class="center-modal">
+    <div class="center-modal-header">
+      <div class="center-modal-title">Площадь поверхности тела (формула Мостеллера)</div>
+      <button class="center-modal-close" onclick="closeCalcModal('bsa')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="center-modal-body">
+      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="bsa-h" type="number" placeholder="напр. 170" oninput="calcBSALive()"/></div>
+      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="bsa-w" type="number" placeholder="напр. 70" oninput="calcBSALive()"/></div>
+      <div class="calc-result" id="bsa-result">
+        <div class="calc-result-val" id="bsa-val">—</div>
+        <div class="calc-result-label">м²</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCHWARTZ GFR CALCULATOR ═══ -->
+<div class="center-overlay" id="schwartz-overlay" onclick="if(event.target===this)closeCalcModal('schwartz')">
+  <div class="center-modal">
+    <div class="center-modal-header">
+      <div class="center-modal-title">СКФ по формуле Шварца</div>
+      <button class="center-modal-close" onclick="closeCalcModal('schwartz')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="center-modal-body">
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">Bedside Schwartz 2009 · коэффициент <strong style="color:var(--text)">0.413</strong></div>
+      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="sch-h" type="number" placeholder="напр. 130" oninput="calcSchwartzLive()"/></div>
+      <div class="calc-field">
+        <label>Сывороточный креатинин</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input class="calc-input" id="sch-cr" type="number" placeholder="напр. 88.4" oninput="calcSchwartzLive()" style="flex:1"/>
+          <select class="calc-input" id="sch-unit" onchange="calcSchwartzLive()" style="flex:0 0 110px;padding:10px 8px;cursor:pointer">
+            <option value="umol">мкмоль/л</option>
+            <option value="mgdl">мг/дл</option>
+            <option value="mmol">ммоль/л</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result" id="sch-result">
+        <div class="calc-result-val" id="sch-val">—</div>
+        <div class="calc-result-label">мл/мин/1,73 м²</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CREATININE CONVERTER ═══ -->
+<div class="center-overlay" id="crconv-overlay" onclick="if(event.target===this)closeCalcModal('crconv')">
+  <div class="center-modal">
+    <div class="center-modal-header">
+      <div class="center-modal-title">Конвертер креатинина</div>
+      <button class="center-modal-close" onclick="closeCalcModal('crconv')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="center-modal-body">
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:16px">Введите значение в любом поле — остальные пересчитаются автоматически</div>
+      <div class="calc-field">
+        <label>мкмоль/л</label>
+        <input class="calc-input" id="cr-umol" type="number" placeholder="напр. 88.4" oninput="convertCr('umol')"/>
+      </div>
+      <div class="calc-field">
+        <label>мг/дл</label>
+        <input class="calc-input" id="cr-mgdl" type="number" placeholder="напр. 1.0" oninput="convertCr('mgdl')"/>
+      </div>
+      <div class="calc-field" style="margin-bottom:0">
+        <label>ммоль/л</label>
+        <input class="calc-input" id="cr-mmol" type="number" placeholder="напр. 0.0884" oninput="convertCr('mmol')"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COCKCROFT–GAULT CALCULATOR ═══ -->
+<div class="center-overlay" id="cg-overlay" onclick="if(event.target===this)closeCalcModal('cg')">
+  <div class="center-modal">
+    <div class="center-modal-header">
+      <div class="center-modal-title">КК по формуле Кокрофта–Голта</div>
+      <button class="center-modal-close" onclick="closeCalcModal('cg')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="center-modal-body">
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">Cockcroft–Gault 1976 · результат в мл/мин</div>
+      <div class="calc-field"><label>Возраст (лет)</label><input class="calc-input" id="cg-age" type="number" placeholder="напр. 60" oninput="calcCGLive()"/></div>
+      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="cg-wt" type="number" placeholder="напр. 70" oninput="calcCGLive()"/></div>
+      <div class="calc-field">
+        <label>Сывороточный креатинин</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input class="calc-input" id="cg-cr" type="number" placeholder="напр. 88.4" oninput="calcCGLive()" style="flex:1"/>
+          <select class="calc-input" id="cg-unit" onchange="calcCGLive()" style="flex:0 0 110px;padding:10px 8px;cursor:pointer">
+            <option value="umol">мкмоль/л</option>
+            <option value="mgdl">мг/дл</option>
+            <option value="mmol">ммоль/л</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-field" style="margin-bottom:0">
+        <label>Пол</label>
+        <select class="calc-input" id="cg-sex" onchange="calcCGLive()" style="cursor:pointer">
+          <option value="m">Мужской</option>
+          <option value="f">Женский (× 0.85)</option>
+        </select>
+      </div>
+      <div class="calc-result" id="cg-result">
+        <div class="calc-result-val" id="cg-val">—</div>
+        <div class="calc-result-label">мл/мин</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOPICS LIST OVERLAY (side panel like catalog) ═══ -->
+<div class="panel-overlay" id="topics-overlay" onclick="if(event.target===this)closeTopics()">
+  <div class="panel-modal">
+    <div class="panel-header">
+      <span class="panel-header-title">Шаблоны</span>
+      <span class="catalog-count" id="topics-count">0</span>
+    </div>
+    <div class="panel-body" id="topics-list"></div>
+    <div style="padding:12px 14px;border-top:1px solid var(--border);flex-shrink:0">
+      <div class="add-topic-bar">
+        <input type="text" id="add-topic-input" placeholder="Добавить шаблон…" autocomplete="off" onkeydown="if(event.key==='Enter')addTopic()"/>
+        <button class="add-btn" id="add-topic-btn" onclick="addTopic()">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Добавить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOPIC PAGE ═══ -->
+<div id="topic-page" style="display:none;min-height:100vh">
+  <header class="drug-header">
+    <div class="drug-header-left">
+      <button class="back-btn" onclick="goBackFromTopic()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+      <span class="drug-header-title" id="topic-header-title"></span>
+    </div>
+<div class="drug-header-right">
+      <button class="header-icon-btn" onclick="toggleCatalog()" title="Все препараты">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <span class="icon-label">Каталог</span>
+      </button>
+      <button class="header-icon-btn" onclick="toggleCalc()" title="Калькуляторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4H6l6 8-6 8h12"/></svg>
+        <span class="icon-label">Калькуляторы</span>
+      </button>
+      <button class="header-icon-btn btn-tpl-inline" onclick="tryOpenTemplates()" title="Шаблоны">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        <span class="icon-label">Шаблоны</span>
+      </button>
+      <button class="header-icon-btn btn-admin-inline" onclick="if(!isAdmin)openPwdModal()" title="Режим редактора">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span class="icon-label">Редактор</span>
+      </button>
+      <button class="header-icon-btn" onclick="toggleTheme()" title="Сменить тему">
+        <svg id="theme-icon-moon2" viewBox="0 0 24 24" fill="none" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="theme-icon-sun2" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="edit-page-btn" id="topic-edit-btn" onclick="toggleTopicEditor()">
+        <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <span>Редактировать</span>
+      </button>
+    </div>
+  </header>
+  <div class="drug-body">
+    <div class="drug-content" style="max-width:720px">
+      <div class="drug-title" id="topic-title"></div>
+      <div class="facts-block" id="topic-notes-block" style="margin-top:20px">
+        <div class="section-label">Заметки</div>
+        <div class="facts-cards" id="topic-notes-list"></div>
+      </div>
+    </div>
+    <div class="editor-panel" id="topic-editor-panel">
+      <div class="ep-inner">
+        <div class="ep-title">Редактор шаблона</div>
+        <div class="ep-section">
+          <div class="ep-section-label">Заголовок</div>
+          <div class="ep-field"><input class="ep-input" id="tep-title" type="text" placeholder="Название темы"/></div>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Заметки</div>
+          <div id="tep-notes"></div>
+          <button class="ep-add-btn" onclick="tepAddNote()">+ Добавить блок</button>
+        </div>
+        <div class="ep-locked" style="margin-top:8px">
+          <button class="ep-delete-btn" onclick="deleteTopicFromEditor()">Удалить шаблон</button>
+          <div class="ep-lock-overlay" id="tep-lock-delete" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+      </div>
+      <div class="ep-footer">
+        <button class="ep-save-btn" id="tep-save-btn" onclick="applyTopicEdits()">Применить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SEARCH PAGE ═══════════════════ -->
+<div id="search-page" style="display:none">
+  <div class="search-wrap">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Найти препарат…" autocomplete="off"/>
+      <button class="search-btn" onclick="doSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+    </div>
+    <div class="dropdown" id="dropdown"></div>
+  </div>
+  <div id="add-drug-wrap" style="display:none;width:100%;max-width:640px">
+    <div class="add-drug-bar">
+      <input type="text" id="add-drug-input" placeholder="Название нового препарата…" autocomplete="off" onkeydown="if(event.key==='Enter')addDrug()"/>
+      <button class="add-btn" id="add-btn" onclick="addDrug()">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Добавить
+      </button>
+    </div>
+  </div>
+  <span class="catalog-hint" onclick="toggleCatalog()">
+    или откройте список
+    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </span>
+</div>
+
+<!-- ═══════════════════ DRUG PAGE ═══════════════════ -->
+<div id="drug-page">
+  <header class="drug-header">
+    <div class="drug-header-left">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+      <span class="drug-header-title" id="header-title"></span>
+    </div>
+<div class="drug-header-right">
+      <button class="header-icon-btn" onclick="toggleCatalog()" title="Все препараты">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <span class="icon-label">Каталог</span>
+      </button>
+      <button class="header-icon-btn" onclick="toggleCalc()" title="Калькуляторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4H6l6 8-6 8h12"/></svg>
+        <span class="icon-label">Калькуляторы</span>
+      </button>
+      <button class="header-icon-btn btn-tpl-inline" onclick="tryOpenTemplates()" title="Шаблоны">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        <span class="icon-label">Шаблоны</span>
+      </button>
+      <button class="header-icon-btn btn-admin-inline" onclick="if(!isAdmin)openPwdModal()" title="Режим редактора">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span class="icon-label">Редактор</span>
+      </button>
+      <button class="header-icon-btn" onclick="toggleTheme()" title="Сменить тему">
+        <svg id="theme-icon-moon2" viewBox="0 0 24 24" fill="none" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="theme-icon-sun2" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="edit-page-btn" id="edit-toggle-btn" onclick="toggleEditor()">
+        <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <span>Редактировать</span>
+      </button>
+    </div>
+  </header>
+  <div class="drug-body">
+    <nav class="drug-left-nav" id="drug-left-nav">
+      <ul class="drug-left-nav-list" id="drug-left-nav-list"></ul>
+    </nav>
+    <div class="drug-content">
+      <div class="drug-title" id="drug-title"></div>
+      <div id="mnn-wrap">
+        <div class="drug-mnn-label">МНН</div>
+        <div class="drug-subtitle" id="drug-subtitle"></div>
+      </div>
+      <div id="trade-wrap">
+        <div class="drug-trade-label">Торговые названия</div>
+        <div class="drug-trade" id="drug-trade"></div>
+      </div>
+      <div class="tags" id="drug-tags"></div>
+      <div id="instr-section">
+        <div id="nav-anchor-instr" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+        <div class="instr-links-list" id="instr-links-list"></div>
+      </div>
+      <div class="quick-links-block" id="quick-links-block">
+        <div id="nav-anchor-ql-interaction" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+        <div class="quick-link-item" id="ql-interaction" style="display:none">
+          <div class="quick-link-label">Проверить взаимодействие ЛС</div>
+          <a class="quick-link-btn" id="ql-interaction-link" href="#" target="_blank">
+            Открыть
+            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div id="nav-anchor-ql-activity" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+        <div class="quick-link-item" id="ql-activity" style="display:none">
+          <div class="quick-link-label">
+            Природная активность
+            <span>Природная активность антибактериальных и противогрибковых препаратов</span>
+          </div>
+          <a class="quick-link-btn" id="ql-activity-link" href="#" target="_blank">
+            Открыть
+            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div id="nav-anchor-notes" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+      <div class="facts-block" id="facts-block">
+        <div class="facts-cards" id="facts-list"></div>
+      </div>
+      <div id="nav-anchor-dosages" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+      <div class="dosage-section" id="dosage-section">
+        <div class="section-label">Особенности дозирования</div>
+        <div class="dosage-cards" id="dosage-cards-view"></div>
+      </div>
+      <hr class="section-divider" id="section-divider">
+      <div id="nav-anchor-links" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>
+      <div class="links-block" id="links-section">
+        <div class="section-label" id="links-section-label">Ссылки</div>
+        <ul class="links-list" id="links-list"></ul>
+      </div>
+    </div>
+
+    <div class="editor-panel" id="editor-panel">
+      <div class="ep-inner">
+        <div class="ep-title">Редактор ЛС</div>
+
+        <!-- ── Добавить новый препарат ── -->
+        <div class="ep-section" id="ep-section-add">
+          <div class="ep-section-label">Новый препарат</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input class="ep-input" id="ep-add-drug-input" type="text" placeholder="Название препарата…" autocomplete="off" onkeydown="if(event.key==='Enter')addDrug()" style="flex:1;margin-bottom:0"/>
+            <button class="ep-save-btn" id="ep-add-btn" onclick="addDrug()" style="width:auto;padding:9px 16px;margin-top:0;white-space:nowrap">+ Добавить</button>
+          </div>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Основное</div>
+          <div class="ep-field"><label>Название</label><input class="ep-input" id="ep-name" type="text" placeholder="Торговое название"/></div>
+          <div class="ep-field"><label>МНН</label><input class="ep-input" id="ep-subtitle" type="text" placeholder="например меропенем"/></div>
+          <div class="ep-field"><label>Торговые названия</label><input class="ep-input" id="ep-trade" type="text" placeholder="например Сультасин, Кларуктам"/></div>
+        </div>
+        <div class="ep-section">
+          <div class="ep-section-label">Ссылки</div>
+          <div id="ep-links"></div>
+          <button class="ep-add-btn" onclick="epAddLink()">+ Добавить ссылку</button>
+        </div>
+
+        <!-- ── Только администратор ── -->
+        <div class="ep-section ep-locked" id="ep-section-main">
+          <div class="ep-section-label">Ссылки на документы</div>
+          <div id="ep-instr-links"></div>
+          <button class="ep-add-btn" onclick="epAddInstrLink()">+ Добавить ссылку</button>
+          <div class="ep-lock-overlay" id="ep-lock-main" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+        <div class="ep-section ep-locked" id="ep-section-tags">
+          <div class="ep-section-label">Теги</div>
+          <div class="ep-tag-row"><span class="ep-tag-dot green"></span><span class="ep-tag-lbl">Группа</span><input class="ep-tag-input" id="ep-tag-green" type="text" placeholder="напр. НПВС"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot yellow"></span><span class="ep-tag-lbl">ЖНВЛП</span><input class="ep-tag-input" id="ep-tag-yellow" type="text" placeholder="ЖНВЛП / не ЖНВЛП"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot red"></span><span class="ep-tag-lbl">Возраст</span><input class="ep-tag-input" id="ep-tag-red" type="text" placeholder="напр. С 3 месяцев"/></div>
+          <div class="ep-tag-row"><span class="ep-tag-dot violet"></span><span class="ep-tag-lbl">Доп. тег</span><input class="ep-tag-input" id="ep-tag-violet" type="text" placeholder="необязательно"/></div>
+          <div class="ep-lock-overlay" id="ep-lock-tags" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+        <div class="ep-section ep-locked" id="ep-section-notes">
+          <div class="ep-section-label">Заметки</div>
+          <div id="ep-notes"></div>
+          <button class="ep-add-btn" onclick="epAddNote()">+ Добавить заметку</button>
+          <div class="ep-lock-overlay" id="ep-lock-notes" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+        <div class="ep-section ep-locked" id="ep-section-dosages">
+          <div class="ep-section-label">Особенности дозирования</div>
+          <div id="ep-dosages"></div>
+          <button class="ep-add-btn" onclick="epAddDosage()">+ Добавить режим дозирования</button>
+          <div class="ep-lock-overlay" id="ep-lock-dosages" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+        <div class="ep-section ep-locked" id="ep-section-ql">
+          <div class="ep-section-label">Быстрые ссылки</div>
+          <div class="ep-field">
+            <label>Проверить взаимодействие ЛС</label>
+            <input class="ep-input" id="ep-ql-interaction" type="url" placeholder="https://…"/>
+          </div>
+          <div class="ep-field">
+            <label>Природная активность антибактериальных и противогрибковых препаратов</label>
+            <input class="ep-input" id="ep-ql-activity" type="url" placeholder="https://…"/>
+          </div>
+          <div class="ep-lock-overlay" id="ep-lock-ql" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+
+        <div class="ep-locked" style="margin-top:8px">
+          <button class="ep-delete-btn" onclick="deleteDrugFromEditor()">Удалить препарат</button>
+          <div class="ep-lock-overlay" id="ep-lock-delete" onclick="openPwdModal()" style="border-radius:10px">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+      </div>
+      <div class="ep-footer">
+        <button class="ep-save-btn" id="ep-save-btn-fixed" onclick="applyEdits()">Применить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+//  SUPABASE CONFIG
+// ══════════════════════════════════════════════
+const SUPABASE_URL = 'https://rczexrioikgtylrmwria.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjemV4cmlvaWtndHlscm13cmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzczMTMsImV4cCI6MjA4OTAxMzMxM30.74I267z6epyhEebzrejQdidn_d0QGN955GHXAVxhcY0';
+const HEADERS = { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
+
+async function dbGetAll() {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs?select=*`, { headers: HEADERS });
+  return await r.json();
+}
+async function dbInsert(drug) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs`, {
+    method: 'POST', headers: { ...HEADERS, 'Prefer': 'return=representation' },
+    body: JSON.stringify({ id: drug.id, data: drug })
+  });
+  return await r.json();
+}
+async function dbUpdate(drug) {
+  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${drug.id}`, {
+    method: 'PATCH', headers: { ...HEADERS, 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ data: drug })
+  });
+}
+async function dbDelete(id) {
+  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${id}`, { method: 'DELETE', headers: HEADERS });
+}
+
+// ══════════════════════════════════════════════
+//  CONSTANTS & STATE
+// ══════════════════════════════════════════════
+const LINK_TYPES = ['КР','Систематический обзор','Метаанализ','РКИ','Когортное исследование','ИКС','Серия случаев','Исследование in vitro','Другое','Заполнить'];
+// Пароль хранится в виде SHA-256 хеша — сам пароль в коде не виден
+// Чтобы сменить пароль: запустите в консоли браузера:
+//   crypto.subtle.digest('SHA-256', new TextEncoder().encode('НовыйПароль'))
+//     .then(b => console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
+// и замените строку ниже полученным хешем
+const ADMIN_HASH = '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'; // пароль: admin123
+async function checkAdminPassword(pwd) {
+  const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pwd));
+  const hash = [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,'0')).join('');
+  return hash === ADMIN_HASH;
+}
+let drugs = [];
+let currentDrug = null;
+let editorOpen  = false;
+let isAdmin     = false;
+
+// ══════════════════════════════════════════════
+//  THEME
+// ══════════════════════════════════════════════
+function applyTheme(dark) {
+  document.documentElement.classList.toggle('dark', dark);
+  // fixed header icons (search page)
+  const s1 = document.getElementById('theme-icon-sun');
+  const m1 = document.getElementById('theme-icon-moon');
+  if (s1) s1.style.display = dark ? 'none' : '';
+  if (m1) m1.style.display = dark ? '' : 'none';
+  // inline header icons (drug/topic pages)
+  document.querySelectorAll('#theme-icon-sun2').forEach(el => el.style.display = dark ? 'none' : '');
+  document.querySelectorAll('#theme-icon-moon2').forEach(el => el.style.display = dark ? '' : 'none');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+function toggleTheme() {
+  applyTheme(!document.documentElement.classList.contains('dark'));
+}
+applyTheme(localStorage.getItem('theme') === 'dark');
+
+// ══════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════
+async function init() {
+  try {
+    const [drugRows, topicRows] = await Promise.all([dbGetAll(), dbGetTopics()]);
+    drugs  = (drugRows  || []).map(r => r.data).filter(Boolean);
+    topics = (topicRows || []).map(r => r.data).filter(Boolean);
+  } catch(e) {
+    showToast('Ошибка загрузки данных');
+  }
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('search-page').style.display    = 'flex';
+  document.getElementById('catalog-count').textContent = drugs.length;
+  updateLockState();
+}
+init();
+
+// ══════════════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ══════════════════════════════════════════════
+//  PASSWORD
+// ══════════════════════════════════════════════
+function openPwdModal() {
+  document.getElementById('pwd-overlay').classList.add('open');
+  document.getElementById('pwd-input').value = '';
+  document.getElementById('pwd-error').style.display = 'none';
+  document.getElementById('pwd-input').classList.remove('error');
+  setTimeout(() => document.getElementById('pwd-input').focus(), 50);
+}
+
+function closePwdModal() {
+  document.getElementById('pwd-overlay').classList.remove('open');
+}
+
+async function checkPassword() {
+  const val = document.getElementById('pwd-input').value;
+  const ok  = await checkAdminPassword(val);
+  if (ok) {
+    isAdmin = true;
+    closePwdModal();
+    updateLockState();
+    updateTopicLockState();
+    if (window._pendingAfterAuth) {
+      const fn = window._pendingAfterAuth;
+      window._pendingAfterAuth = null;
+      fn();
+    }
+  } else {
+    const inp = document.getElementById('pwd-input');
+    const err = document.getElementById('pwd-error');
+    inp.classList.add('error');
+    err.style.display = 'block';
+    if (inp) inp.value = '';
+    if (epInp) epInp.value = '';
+    setTimeout(() => inp.classList.remove('error'), 400);
+  }
+}
+
+function updateLockState() {
+  const locks = ['ep-lock-main','ep-lock-tags','ep-lock-notes','ep-lock-dosages','ep-lock-ql','ep-lock-delete','tep-lock-delete'];
+  locks.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = isAdmin ? 'none' : 'flex';
+  });
+  // Show/hide editor-only UI
+  const adminEls = ['ep-section-add','add-drug-wrap','edit-toggle-btn','topic-edit-btn'];
+  adminEls.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = isAdmin ? '' : 'none';
+  });
+  // Templates buttons — fixed + inline in headers
+  document.querySelectorAll('#btn-templates, .btn-tpl-inline').forEach(el => {
+    el.style.display = isAdmin ? '' : 'none';
+  });
+  // Admin buttons — fixed + inline in headers
+  const svgLock = `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+  const svgUnlock = `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 8.46-3.54" stroke-linecap="round"/></svg>`;
+  // fixed кнопка (folder-btn) — только SVG
+  const fixedBtn = document.getElementById('btn-admin-login');
+  if (fixedBtn) {
+    fixedBtn.title = isAdmin ? 'Режим редактора активен' : 'Режим редактора';
+    fixedBtn.innerHTML = isAdmin ? svgUnlock : svgLock;
+    fixedBtn.style.borderColor = isAdmin ? 'var(--muted)' : '';
+    fixedBtn.onclick = isAdmin ? null : () => openPwdModal();
+  }
+  // inline кнопки в хедере (header-icon-btn) — SVG + label
+  document.querySelectorAll('.btn-admin-inline').forEach(el => {
+    el.title = isAdmin ? 'Режим редактора активен' : 'Режим редактора';
+    el.innerHTML = (isAdmin ? svgUnlock : svgLock) + `<span class="icon-label">Редактор</span>`;
+    el.style.borderColor = isAdmin ? 'var(--muted)' : '';
+    el.onclick = isAdmin ? null : () => openPwdModal();
+  });
+}
+
+function updateCatalogCount() {
+  document.getElementById('catalog-count').textContent = drugs.length;
+}
+document.getElementById('pwd-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('pwd-overlay')) closePwdModal();
+});
+
+// Ctrl+Shift+E — войти в режим редактора (десктоп)
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'E') {
+    e.preventDefault();
+    if (!isAdmin) openPwdModal();
+  }
+});
+
+
+// ══════════════════════════════════════════════
+//  SEARCH
+// ══════════════════════════════════════════════
+const searchInput = document.getElementById('search-input');
+const dropdown    = document.getElementById('dropdown');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) { dropdown.classList.remove('open'); return; }
+  const matches = drugs.filter(d =>
+    d.name.toLowerCase().includes(q) ||
+    (d.subtitle||'').toLowerCase().includes(q) ||
+    (d.trade||'').toLowerCase().includes(q)
+  );
+  renderDropdown(matches);
+});
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') dropdown.classList.remove('open');
+  if (e.key === 'Enter')  doSearch();
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) dropdown.classList.remove('open');
+});
+
+function renderDropdown(items) {
+  if (!items.length) {
+    dropdown.innerHTML = '<div class="dropdown-item"><span class="di-sub">Ничего не найдено</span></div>';
+    dropdown.classList.add('open'); return;
+  }
+  dropdown.innerHTML = items.map(d => `
+    <div class="dropdown-item" onclick="openDrug('${d.id}')">
+      <div><div class="di-name">${d.name}</div><div class="di-sub">${d.subtitle||''}</div></div>
+      <button class="di-del" onclick="event.stopPropagation();deleteDrug('${d.id}')" title="Удалить" style="display:${isAdmin?'':'none'}">✕</button>
+    </div>`).join('');
+  dropdown.classList.add('open');
+}
+
+function doSearch() {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) return;
+  const match = drugs.find(d =>
+    d.name.toLowerCase().includes(q) ||
+    (d.subtitle||'').toLowerCase().includes(q) ||
+    (d.trade||'').toLowerCase().includes(q)
+  );
+  if (match) openDrug(match.id);
+}
+
+// ══════════════════════════════════════════════
+//  ADD / DELETE
+// ══════════════════════════════════════════════
+async function addDrug() {
+  // поддержка двух полей — на главной и в редакторе
+  const inp = document.getElementById('add-drug-input') || document.getElementById('ep-add-drug-input');
+  const epInp = document.getElementById('ep-add-drug-input');
+  const activeInp = (epInp && epInp.value.trim()) ? epInp : inp;
+  const name = activeInp ? activeInp.value.trim() : '';
+  if (!name) return;
+  const btn = document.getElementById('add-btn') || document.getElementById('ep-add-btn');
+  btn.disabled = true;
+  const drug = { id:'drug_'+Date.now(), name, subtitle:'', instrLinks:[], tags:{green:'',yellow:'',red:'',violet:''}, facts:[], dosages:[], links:[] };
+  try {
+    await dbInsert(drug);
+    drugs.push(drug);
+    inp.value = '';
+    showToast('ЛС добавлено');
+    updateCatalogCount();
+    openDrug(drug.id);
+    // автооткрытие редактора для нового препарата
+    if (!editorOpen) toggleEditor();
+  } catch(e) {
+    showToast('Ошибка при добавлении');
+  }
+  btn.disabled = false;
+}
+
+async function deleteDrug(id) {
+  if (!confirm('Удалить этот препарат?')) return;
+  try {
+    await dbDelete(id);
+    drugs = drugs.filter(d => d.id !== id);
+    showToast('Удалено');
+    updateCatalogCount();
+    const q = searchInput.value.trim().toLowerCase();
+    if (q) renderDropdown(drugs.filter(d =>
+      d.name.toLowerCase().includes(q) ||
+      (d.subtitle||'').toLowerCase().includes(q) ||
+      (d.trade||'').toLowerCase().includes(q)
+    ));
+    else dropdown.classList.remove('open');
+  } catch(e) {
+    showToast('Ошибка при удалении');
+  }
+}
+
+// ══════════════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════════════
+function openDrug(id) {
+  const drug = drugs.find(d => d.id === id);
+  if (!drug) return;
+  currentDrug = JSON.parse(JSON.stringify(drug));
+  editorOpen = false;
+  renderDrugPage(currentDrug);
+  document.getElementById('search-page').style.display = 'none';
+  document.getElementById('drug-page').style.display   = 'block';
+  document.getElementById('editor-panel').classList.remove('open');
+  document.getElementById('drug-left-nav').classList.remove('editor-open');
+  document.getElementById('edit-toggle-btn').classList.remove('active');
+  document.getElementById('edit-toggle-btn').innerHTML = svgEdit() + ' Редактировать';
+  dropdown.classList.remove('open');
+  document.getElementById('header-btns-fixed').style.display = 'none';
+  window.scrollTo(0,0);
+  updateLockState();
+}
+
+function goBack() {
+  document.getElementById('drug-page').style.display   = 'none';
+  document.getElementById('search-page').style.display = 'flex';
+  document.getElementById('header-btns-fixed').style.display = 'flex';
+  updateLockState();
+}
+
+// ══════════════════════════════════════════════
+//  EDITOR TOGGLE
+// ══════════════════════════════════════════════
+function toggleEditor() {
+  editorOpen = !editorOpen;
+  document.getElementById('editor-panel').classList.toggle('open', editorOpen);
+  document.getElementById('drug-left-nav').classList.toggle('editor-open', editorOpen);
+  const btn = document.getElementById('edit-toggle-btn');
+  btn.classList.toggle('active', editorOpen);
+  btn.innerHTML = svgEdit() + (editorOpen ? ' Закрыть' : ' Редактировать');
+  if (editorOpen) { fillEditorFromDrug(currentDrug); updateLockState(); }
+}
+function svgEdit() {
+  return `<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`;
+}
+
+// ══════════════════════════════════════════════
+//  RENDER VIEW
+// ══════════════════════════════════════════════
+function renderDrugPage(drug) {
+  document.getElementById('header-title').textContent = drug.name;
+  document.getElementById('drug-title').textContent   = drug.name;
+  const mnnWrap = document.getElementById('mnn-wrap');
+  if (drug.subtitle && drug.subtitle.trim()) {
+    document.getElementById('drug-subtitle').textContent = drug.subtitle;
+    mnnWrap.style.display = '';
+  } else { mnnWrap.style.display = 'none'; }
+
+  const tradeWrap = document.getElementById('trade-wrap');
+  if (drug.trade && drug.trade.trim()) {
+    document.getElementById('drug-trade').textContent = drug.trade;
+    tradeWrap.style.display = '';
+  } else { tradeWrap.style.display = 'none'; }
+
+  const tagOrder = [{key:'green',cls:'green'},{key:'yellow',cls:'yellow'},{key:'red',cls:'red'},{key:'violet',cls:'violet'}];
+  const tags = drug.tags || {};
+  document.getElementById('drug-tags').innerHTML = tagOrder
+    .filter(t => tags[t.key] && tags[t.key].trim())
+    .map(t => `<span class="tag ${t.cls}">${tags[t.key]}</span>`).join('');
+
+  const instrSection = document.getElementById('instr-section');
+  const instrLinks = (drug.instrLinks||[]).filter(l => l.url && l.url.trim());
+  // backward compat: legacy instrUrl
+  if (!instrLinks.length && drug.instrUrl && drug.instrUrl.trim()) {
+    instrLinks.push({name:'Инструкция / ОХЛП', url: drug.instrUrl});
+  }
+  if (instrLinks.length) {
+    document.getElementById('instr-links-list').innerHTML = instrLinks.map((l,i) => `
+      ${i > 0 ? `<div id="nav-anchor-instr-${i}" style="position:relative;top:-100px;visibility:hidden;pointer-events:none"></div>` : ''}
+      <div class="instr-link-item">
+        <span class="instr-link-name">${esc(l.name||'Инструкция / ОХЛП')}</span>
+        <a class="instr-link-btn" href="${esc(l.url)}" target="_blank">
+          Открыть
+          <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>`).join('');
+    instrSection.style.display = '';
+  } else { instrSection.style.display = 'none'; }
+
+  const factsBlock = document.getElementById('facts-block');
+  const rawFacts = (drug.facts||[]);
+  const facts = rawFacts.filter(f => (typeof f === 'string' ? f : f.text||f.title||'').trim());
+  if (facts.length) {
+    document.getElementById('facts-list').innerHTML = facts.map(f => {
+      const title = typeof f === 'string' ? '' : (f.title||'');
+      const text  = typeof f === 'string' ? f   : (f.text||'');
+      return `<div class="facts-card">
+        ${title.trim() ? `<div class="facts-card-title">${esc(title)}</div>` : ''}
+        <div class="facts-card-body">${nl2br(text)}</div>
+      </div>`;
+    }).join('');
+    factsBlock.style.display = '';
+  } else { factsBlock.style.display = 'none'; }
+
+  const dosageSection = document.getElementById('dosage-section');
+  if ((drug.dosages||[]).length) {
+    document.getElementById('dosage-cards-view').innerHTML = drug.dosages.map((d,di) => {
+      const chips = [d.tag1, d.tag2, d.tag3].filter(t=>t&&t.trim()).map(t=>`<span class="dosage-chip">${t}</span>`).join('');
+      const chipR = d.tagr && d.tagr.trim() ? `<span class="dosage-chip red">${d.tagr}</span>` : '';
+      const chipV = d.tagv && d.tagv.trim() ? `<span class="dosage-chip violet">${d.tagv}</span>` : '';
+      const chipsHtml = (chips||chipR||chipV) ? `<div class="dosage-card-chips">${chips}${chipR}${chipV}</div>` : '';
+      const infoBubble = d.info && d.info.trim()
+        ? `<span class="info-bubble" title="Пояснительная бригада" onclick="openInfoModal(${di},'dosage')" tabindex="0">i</span>`
+        : '';
+      return `<div class="dosage-card">
+        <div class="dosage-card-head" style="display:flex;align-items:center;justify-content:space-between">
+          <span>${esc(d.title)}</span>${infoBubble}
+        </div>
+        ${chipsHtml ? `<div style="padding:10px 20px 0">${chipsHtml}</div>` : ''}
+        <div class="dosage-card-body">${nl2br(d.body)}</div>
+      </div>`;
+    }).join('');
+    dosageSection.style.display = '';
+  } else { dosageSection.style.display = 'none'; }
+
+  const linksSection = document.getElementById('links-section');
+  if ((drug.links||[]).length) {
+    document.getElementById('links-list').innerHTML = drug.links.map((l,li) => renderLinkCard(l,li)).join('');
+    document.getElementById('links-section-label').textContent = `Ссылки (${drug.links.length})`;
+    linksSection.style.display = '';
+  } else { linksSection.style.display = 'none'; }
+
+  const divider = document.getElementById('section-divider');
+  divider.style.display = ((drug.links||[]).length && (facts.length || (drug.dosages||[]).length)) ? '' : 'none';
+
+  // quick links
+  const qlI = document.getElementById('ql-interaction');
+  const qlA = document.getElementById('ql-activity');
+  if (drug.qlInteraction && drug.qlInteraction.trim()) {
+    document.getElementById('ql-interaction-link').href = drug.qlInteraction;
+    qlI.style.display = '';
+  } else { qlI.style.display = 'none'; }
+  if (drug.qlActivity && drug.qlActivity.trim()) {
+    document.getElementById('ql-activity-link').href = drug.qlActivity;
+    qlA.style.display = '';
+  } else { qlA.style.display = 'none'; }
+
+  buildLeftNav(drug);
+}
+
+// ══════════════════════════════════════════════
+//  LEFT NAV
+// ══════════════════════════════════════════════
+let _navObserver = null;
+
+function buildLeftNav(drug) {
+  const nav = document.getElementById('drug-left-nav-list');
+  const sections = [];
+
+  // Инструкции — каждая со своим anchor
+  const instrLinks = (drug.instrLinks||[]).filter(l=>l.url&&l.url.trim());
+  if (!instrLinks.length && drug.instrUrl && drug.instrUrl.trim())
+    instrLinks.push({name:'Инструкция / ОХЛП', url: drug.instrUrl});
+  const dedupSections = [];
+  instrLinks.forEach((l,i) => {
+    dedupSections.push({label: l.name||'Инструкция / ОХЛП', anchor: i===0 ? 'nav-anchor-instr' : 'nav-anchor-instr-'+i});
+  });
+
+  // Быстрые ссылки
+  if (drug.qlInteraction && drug.qlInteraction.trim())
+    dedupSections.push({label:'Взаимодействие ЛС', anchor:'nav-anchor-ql-interaction'});
+  if (drug.qlActivity && drug.qlActivity.trim())
+    dedupSections.push({label:'Природная активность', anchor:'nav-anchor-ql-activity'});
+
+  // Заметки — каждый блок отдельно
+  const facts = (drug.facts||[]).filter(f=>(typeof f==='string'?f:f.text||f.title||'').trim());
+  facts.forEach((f,i) => {
+    const label = typeof f === 'string' ? 'Заметка' : (f.title||'Заметка');
+    dedupSections.push({label, anchor:'nav-anchor-notes', subIdx: i});
+  });
+
+  // Дозирование
+  if ((drug.dosages||[]).length)
+    dedupSections.push({label:'Дозирование', anchor:'nav-anchor-dosages'});
+
+  // Ссылки
+  if ((drug.links||[]).length)
+    dedupSections.push({label:'Ссылки', anchor:'nav-anchor-links'});
+
+  if (!dedupSections.length) { nav.innerHTML = ''; return; }
+
+  nav.innerHTML = dedupSections.map((s,idx) => `
+    <li>
+      <button class="drug-left-nav-item" data-anchor="${s.anchor}" data-idx="${idx}"
+        onclick="navScrollTo('${s.anchor}', ${s.subIdx !== undefined ? s.subIdx : -1})">
+        <span class="drug-left-nav-bar"></span>
+        <span>${s.label}</span>
+      </button>
+    </li>`).join('');
+
+  // IntersectionObserver
+  if (_navObserver) _navObserver.disconnect();
+  const anchorIds = [...new Set(dedupSections.map(s=>s.anchor))];
+  _navObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.drug-left-nav-item').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.anchor === e.target.id);
+        });
+      }
+    });
+  }, { rootMargin:'-10% 0px -75% 0px', threshold:0 });
+
+  anchorIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) _navObserver.observe(el);
+  });
+}
+
+function navScrollTo(anchorId, subIdx) {
+  let el = document.getElementById(anchorId);
+  // For note sub-items scroll to the specific fact card
+  if (subIdx >= 0 && anchorId === 'nav-anchor-notes') {
+    const cards = document.querySelectorAll('#facts-list .facts-card');
+    if (cards[subIdx]) el = cards[subIdx];
+  }
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - 90;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+
+function renderLinkCard(l, li) {
+  const chips = [l.type, l.tag2, l.tag3].filter(t => t && t.trim());
+  const starHtml = l.fav ? `<span class="fav-star" title="Избранное"><svg viewBox="0 0 24 24" style="fill:#eab308;stroke:#eab308;width:15px;height:15px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>` : '';
+  const chipsHtml = chips.length ? `<div class="link-card-chips">${chips.map(c=>`<span class="chip">${c}</span>`).join('')}${starHtml}</div>` : (l.fav ? `<div class="link-card-chips">${starHtml}</div>` : '');
+  const noteHtml  = l.note ? `<div class="link-card-note">${nl2br(l.note)}</div>` : '';
+  const citeHtml  = l.cite ? `<div class="link-card-cite">${nl2br(l.cite)}<button class="cite-copy-btn" onclick="copyCite(${li})">Копировать</button></div>` : '';
+  const urlHtml   = l.url  ? `<a class="link-card-url" href="${l.url}" target="_blank">Открыть статью<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>` : '';
+  const pdfHtml   = l.pdf  ? `<a class="link-card-pdf" href="${l.pdf}" target="_blank">PDF<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>` : '';
+  const footHtml  = (urlHtml || pdfHtml) ? `<div class="link-card-foot">${urlHtml}${pdfHtml}</div>` : '';
+  return `<li><div class="link-card${l.fav?' fav':''}"><div class="link-card-body">${chipsHtml}${noteHtml}${citeHtml}</div>${footHtml}</div></li>`;
+}
+
+function copyCite(li) {
+  const cite = currentDrug.links[li]?.cite || '';
+  if (!cite) return;
+  navigator.clipboard.writeText(cite).then(() => {
+    const btns = document.querySelectorAll('.cite-copy-btn');
+    if (btns[li]) { btns[li].textContent = '✓ Скопировано'; setTimeout(()=>{ btns[li].textContent='Копировать'; },2000); }
+  });
+}
+
+// ══════════════════════════════════════════════
+//  FILL EDITOR
+// ══════════════════════════════════════════════
+function fillEditorFromDrug(drug) {
+  const tags = drug.tags || {};
+  document.getElementById('ep-name').value       = drug.name       || '';
+  document.getElementById('ep-subtitle').value   = drug.subtitle   || '';
+  document.getElementById('ep-trade').value      = drug.trade      || '';
+  document.getElementById('ep-ql-interaction').value = drug.qlInteraction || '';
+  document.getElementById('ep-ql-activity').value    = drug.qlActivity    || '';
+  document.getElementById('ep-tag-green').value  = tags.green  || '';
+  document.getElementById('ep-tag-yellow').value = tags.yellow || '';
+  document.getElementById('ep-tag-red').value    = tags.red    || '';
+  document.getElementById('ep-tag-violet').value = tags.violet || '';
+  // migrate legacy instrUrl
+  if (!drug.instrLinks && drug.instrUrl && drug.instrUrl.trim()) {
+    drug.instrLinks = [{name:'Инструкция / ОХЛП', url: drug.instrUrl}];
+  }
+  renderEpInstrLinks(drug.instrLinks||[]);
+  renderEpNotes(drug.facts||[]);
+  renderEpDosages(drug.dosages||[]);
+  renderEpLinks(drug.links||[]);
+}
+
+function renderEpInstrLinks(links) {
+  document.getElementById('ep-instr-links').innerHTML = links.map((l,i) => `
+    <div class="ep-dos-item" style="padding:10px 12px;margin-bottom:6px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <span style="font-size:.7rem;font-weight:700;color:var(--ep-section-lbl-color);letter-spacing:.06em">ССЫЛКА ${i+1}</span>
+        <div class="ep-move-btns">
+          <button class="ep-move-btn" onclick="epMoveInstrLink(${i},-1)" ${i===0?'disabled':''} title="Вверх">
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </button>
+          <button class="ep-move-btn" onclick="epMoveInstrLink(${i},1)" ${i===links.length-1?'disabled':''} title="Вниз">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+      <input class="ep-input" id="ep-il-name-${i}" value="${esc(l.name||'')}" placeholder="Инструкция / ОХЛП" style="margin-bottom:6px"/>
+      <input class="ep-input" id="ep-il-url-${i}"  value="${esc(l.url||'')}"  placeholder="https://…" type="url"/>
+      <button class="ep-remove-btn" onclick="epRemoveInstrLink(${i})" style="margin-top:4px">Удалить</button>
+    </div>`).join('');
+}
+function epSyncInstrLinks() {
+  (currentDrug.instrLinks||[]).forEach((_,i) => {
+    const n = document.getElementById(`ep-il-name-${i}`);
+    const u = document.getElementById(`ep-il-url-${i}`);
+    if(n) currentDrug.instrLinks[i].name = n.value.trim();
+    if(u) currentDrug.instrLinks[i].url  = u.value.trim();
+  });
+}
+function epAddInstrLink() {
+  epSyncInstrLinks();
+  if (!currentDrug.instrLinks) currentDrug.instrLinks = [];
+  currentDrug.instrLinks.push({name:'', url:''});
+  renderEpInstrLinks(currentDrug.instrLinks);
+}
+function epRemoveInstrLink(i) {
+  epSyncInstrLinks();
+  currentDrug.instrLinks.splice(i,1);
+  renderEpInstrLinks(currentDrug.instrLinks);
+}
+function epMoveInstrLink(i, dir) {
+  epSyncInstrLinks();
+  const arr = currentDrug.instrLinks;
+  const j = i + dir;
+  if (j < 0 || j >= arr.length) return;
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+  renderEpInstrLinks(arr);
+}
+
+function renderEpNotes(notes) {
+  const n = notes.length;
+  document.getElementById('ep-notes').innerHTML = notes.map((v,i) => {
+    const title = typeof v === 'string' ? '' : (v.title||'');
+    const text  = typeof v === 'string' ? v   : (v.text||'');
+    return `
+    <div class="ep-dos-item">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-size:.7rem;font-weight:700;color:var(--ep-section-lbl-color);letter-spacing:.06em">ЗАМЕТКА ${i+1}</span>
+        <div class="ep-move-btns">
+          <button class="ep-move-btn" onclick="epMoveNote(${i},-1)" ${i===0?'disabled':''} title="Вверх">
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </button>
+          <button class="ep-move-btn" onclick="epMoveNote(${i},1)" ${i===n-1?'disabled':''} title="Вниз">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+      <input class="ep-input" id="ep-note-title-${i}" value="${esc(title)}" placeholder="Заголовок (необязательно)" style="margin-bottom:6px"/>
+      <textarea class="ep-textarea" id="ep-note-${i}" style="min-height:68px">${esc(text)}</textarea>
+      <button class="ep-remove-btn" onclick="epRemoveNote(${i})" style="margin-top:4px">Удалить</button>
+    </div>`;
+  }).join('');
+}
+function epAddNote() { epSyncNotes(); currentDrug.facts.push({title:'',text:''}); renderEpNotes(currentDrug.facts); setTimeout(()=>{ const el=document.getElementById(`ep-note-${currentDrug.facts.length-1}`); if(el)el.focus(); },50); }
+function epRemoveNote(i) { epSyncNotes(); currentDrug.facts.splice(i,1); renderEpNotes(currentDrug.facts); }
+function epMoveNote(i, dir) { epSyncNotes(); const arr=currentDrug.facts; const j=i+dir; if(j<0||j>=arr.length)return; [arr[i],arr[j]]=[arr[j],arr[i]]; renderEpNotes(arr); }
+function epSyncNotes() {
+  (currentDrug.facts||[]).forEach((_,i)=>{
+    const t   = document.getElementById(`ep-note-title-${i}`);
+    const n   = document.getElementById(`ep-note-${i}`);
+    const inf = document.getElementById(`ep-note-info-${i}`);
+    if(n) currentDrug.facts[i] = {
+      title: t ? t.value : '',
+      text:  n.value,
+      info:  inf ? inf.value.trim() : ''
+    };
+  });
+}
+
+function renderEpDosages(dosages) {
+  const n = dosages.length;
+  document.getElementById('ep-dosages').innerHTML = dosages.map((d,i) => `
+    <div class="ep-dos-item">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div class="ep-move-btns">
+          <button class="ep-move-btn" onclick="epMoveDosage(${i},-1)" ${i===0?'disabled':''} title="Вверх">
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </button>
+          <button class="ep-move-btn" onclick="epMoveDosage(${i},1)" ${i===n-1?'disabled':''} title="Вниз">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px">
+        <input class="ep-input" id="ep-dos-tag1-${i}" value="${esc(d.tag1||'')}" placeholder="Тег 1"/>
+        <input class="ep-input" id="ep-dos-tag2-${i}" value="${esc(d.tag2||'')}" placeholder="Тег 2"/>
+        <input class="ep-input" id="ep-dos-tag3-${i}" value="${esc(d.tag3||'')}" placeholder="Тег 3"/>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+        <input class="ep-input" id="ep-dos-tagr-${i}" value="${esc(d.tagr||'')}" placeholder="Красный тег"/>
+        <input class="ep-input" id="ep-dos-tagv-${i}" value="${esc(d.tagv||'')}" placeholder="Фиолетовый тег"/>
+      </div>
+      <input class="ep-input" id="ep-dos-title-${i}" value="${esc(d.title||'')}" placeholder="Название группы…" style="margin-bottom:8px"/>
+      <textarea class="ep-textarea" id="ep-dos-body-${i}" style="min-height:80px">${esc(d.body||'')}</textarea>
+      <div class="ep-field" style="margin-top:8px;margin-bottom:0">
+        <label style="display:flex;align-items:center;gap:4px">
+          <span style="width:14px;height:14px;border-radius:50%;border:1.5px solid var(--muted);display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:var(--muted);flex-shrink:0">i</span>
+          Пояснительная бригада (необязательно)
+        </label>
+        <textarea class="ep-textarea" id="ep-dos-info-${i}" style="min-height:56px">${esc(d.info||'')}</textarea>
+      </div>
+      <button class="ep-remove-btn" onclick="epRemoveDosage(${i})" style="margin-top:6px">Удалить блок</button>
+    </div>`).join('');
+}
+function epAddDosage() { epSyncDosages(); currentDrug.dosages.push({title:'',tag1:'',tag2:'',tag3:'',tagr:'',tagv:'',body:'',info:''}); renderEpDosages(currentDrug.dosages); }
+function epRemoveDosage(i) { epSyncDosages(); currentDrug.dosages.splice(i,1); renderEpDosages(currentDrug.dosages); }
+function epMoveDosage(i, dir) { epSyncDosages(); const arr=currentDrug.dosages; const j=i+dir; if(j<0||j>=arr.length)return; [arr[i],arr[j]]=[arr[j],arr[i]]; renderEpDosages(arr); }
+function epSyncDosages() {
+  (currentDrug.dosages||[]).forEach((_,i)=>{
+    const t=document.getElementById(`ep-dos-title-${i}`),b=document.getElementById(`ep-dos-body-${i}`);
+    const t1=document.getElementById(`ep-dos-tag1-${i}`),t2=document.getElementById(`ep-dos-tag2-${i}`);
+    const t3=document.getElementById(`ep-dos-tag3-${i}`),tr=document.getElementById(`ep-dos-tagr-${i}`);
+    const tv=document.getElementById(`ep-dos-tagv-${i}`),inf=document.getElementById(`ep-dos-info-${i}`);
+    if(t)  currentDrug.dosages[i].title = t.value;
+    if(b)  currentDrug.dosages[i].body  = b.value;
+    if(t1) currentDrug.dosages[i].tag1  = t1.value.trim();
+    if(t2) currentDrug.dosages[i].tag2  = t2.value.trim();
+    if(t3) currentDrug.dosages[i].tag3  = t3.value.trim();
+    if(tr) currentDrug.dosages[i].tagr  = tr.value.trim();
+    if(tv) currentDrug.dosages[i].tagv  = tv.value.trim();
+    if(inf)currentDrug.dosages[i].info  = inf.value.trim();
+  });
+}
+
+function renderEpLinks(links) {
+  const n = links.length;
+  const typeOptions = LINK_TYPES.map(t=>`<option value="${t}">${t}</option>`).join('');
+  document.getElementById('ep-links').innerHTML = links.map((l,i) => `
+    <div class="ep-lnk-item">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-size:.72rem;font-weight:700;color:var(--drug-label-color);letter-spacing:.06em">ССЫЛКА ${i+1}</span>
+        <div style="display:flex;align-items:center;gap:6px">
+          <button class="ep-fav-btn${l.fav?' active':''}" id="ep-lnk-fav-${i}" onclick="epToggleFav(${i})" title="Избранное">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Избранное
+          </button>
+          <div class="ep-move-btns">
+          <button class="ep-move-btn" onclick="epMoveLink(${i},-1)" ${i===0?'disabled':''} title="Вверх">
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </button>
+          <button class="ep-move-btn" onclick="epMoveLink(${i},1)" ${i===n-1?'disabled':''} title="Вниз">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          </div>
+        </div>
+      </div>
+      <div class="ep-field" style="margin-bottom:8px"><label>Тип источника</label>
+        <select class="ep-select" id="ep-lnk-type-${i}" onchange="epToggleLnkCustom(${i})">
+          <option value="">— выбрать —</option>${typeOptions}
+        </select>
+      </div>
+      <div id="ep-lnk-custom-wrap-${i}" style="display:none;margin-bottom:8px">
+        <input class="ep-input" id="ep-lnk-custom-${i}" value="${esc(l.typeCustom||'')}" placeholder="Введите тип источника…"/>
+      </div>
+      <div class="ep-lnk-tags-row">
+        <input class="ep-input" id="ep-lnk-tag2-${i}" value="${esc(l.tag2||'')}" placeholder="Тег 2 (необязательно)"/>
+        <input class="ep-input" id="ep-lnk-tag3-${i}" value="${esc(l.tag3||'')}" placeholder="Тег 3 (необязательно)"/>
+      </div>
+      <textarea class="ep-textarea" id="ep-lnk-note-${i}" style="min-height:60px" placeholder="Заметка по ссылке…">${esc(l.note||'')}</textarea>
+      <textarea class="ep-textarea" id="ep-lnk-cite-${i}" style="min-height:56px;margin-top:8px" placeholder="Текст для цитирования…">${esc(l.cite||'')}</textarea>
+      <input class="ep-input" id="ep-lnk-url-${i}" value="${esc(l.url||'')}" placeholder="https://… (ссылка на статью)" style="margin-top:8px"/>
+      <input class="ep-input" id="ep-lnk-pdf-${i}" value="${esc(l.pdf||'')}" placeholder="Ссылка на PDF файл (необязательно)" style="margin-top:8px"/>
+      <button class="ep-remove-btn" onclick="epRemoveLink(${i})">Удалить ссылку</button>
+    </div>`).join('');
+  links.forEach((l,i)=>{ const sel=document.getElementById(`ep-lnk-type-${i}`); if(sel){ sel.value=LINK_TYPES.includes(l.type)?l.type:(l.typeCustom?'Заполнить':''); epToggleLnkCustom(i); } });
+}
+function epToggleLnkCustom(i) { const sel=document.getElementById(`ep-lnk-type-${i}`),wrap=document.getElementById(`ep-lnk-custom-wrap-${i}`); if(sel&&wrap) wrap.style.display=sel.value==='Заполнить'?'block':'none'; }
+function epToggleFav(i) {
+  epSyncLinks();
+  currentDrug.links[i].fav = !currentDrug.links[i].fav;
+  renderEpLinks(currentDrug.links);
+}
+function epAddLink() { epSyncLinks(); currentDrug.links.push({type:'',tag2:'',tag3:'',note:'',cite:'',url:'',pdf:'',fav:false}); renderEpLinks(currentDrug.links); }
+function epRemoveLink(i) { epSyncLinks(); currentDrug.links.splice(i,1); renderEpLinks(currentDrug.links); }
+function epMoveLink(i, dir) { epSyncLinks(); const arr=currentDrug.links; const j=i+dir; if(j<0||j>=arr.length)return; [arr[i],arr[j]]=[arr[j],arr[i]]; renderEpLinks(arr); }
+function epSyncLinks() {
+  (currentDrug.links||[]).forEach((_,i)=>{
+    const sel=document.getElementById(`ep-lnk-type-${i}`),cust=document.getElementById(`ep-lnk-custom-${i}`);
+    const t2=document.getElementById(`ep-lnk-tag2-${i}`),t3=document.getElementById(`ep-lnk-tag3-${i}`);
+    const note=document.getElementById(`ep-lnk-note-${i}`),cite=document.getElementById(`ep-lnk-cite-${i}`),url=document.getElementById(`ep-lnk-url-${i}`);
+    if(sel){ currentDrug.links[i].type=sel.value==='Заполнить'?(cust?cust.value.trim():''):sel.value; currentDrug.links[i].typeCustom=cust?cust.value.trim():''; }
+    if(t2) currentDrug.links[i].tag2=t2.value.trim();
+    if(t3) currentDrug.links[i].tag3=t3.value.trim();
+    if(note)currentDrug.links[i].note=note.value.trim();
+    if(cite)currentDrug.links[i].cite=cite.value.trim();
+    if(url) currentDrug.links[i].url=url.value.trim();
+    const pdf=document.getElementById(`ep-lnk-pdf-${i}`);
+    if(pdf) currentDrug.links[i].pdf=pdf.value.trim();
+    // fav is toggled directly, no input to sync
+  });
+}
+
+// ══════════════════════════════════════════════
+//  APPLY EDITS
+// ══════════════════════════════════════════════
+async function applyEdits() {
+  const btn = document.getElementById('ep-save-btn-fixed');
+  btn.disabled = true; btn.textContent = 'Сохранение…';
+
+  currentDrug.name     = document.getElementById('ep-name').value.trim();
+  currentDrug.subtitle = document.getElementById('ep-subtitle').value.trim();
+  currentDrug.trade    = document.getElementById('ep-trade').value.trim();
+  currentDrug.qlInteraction = document.getElementById('ep-ql-interaction').value.trim();
+  currentDrug.qlActivity    = document.getElementById('ep-ql-activity').value.trim();
+  epSyncInstrLinks();
+  currentDrug.instrLinks = (currentDrug.instrLinks||[]).filter(l => l.url && l.url.trim());
+  currentDrug.tags = {
+    green:  document.getElementById('ep-tag-green').value.trim(),
+    yellow: document.getElementById('ep-tag-yellow').value.trim(),
+    red:    document.getElementById('ep-tag-red').value.trim(),
+    violet: document.getElementById('ep-tag-violet').value.trim(),
+  };
+  epSyncNotes();    currentDrug.facts   = (currentDrug.facts||[]).filter(f => typeof f==='string' ? f.trim() : (f.text||f.title||'').trim());
+  epSyncDosages();  currentDrug.dosages = (currentDrug.dosages||[]).filter(d=>d.title||d.body);
+  epSyncLinks();    currentDrug.links   = (currentDrug.links||[]).filter(l=>l.type||l.note||l.url);
+
+  try {
+    await dbUpdate(currentDrug);
+    const idx = drugs.findIndex(d => d.id === currentDrug.id);
+    if (idx > -1) drugs[idx] = JSON.parse(JSON.stringify(currentDrug));
+    renderDrugPage(currentDrug);
+    showToast('✓ Сохранено');
+  } catch(e) {
+    showToast('Ошибка при сохранении');
+  }
+  btn.disabled = false; btn.textContent = 'Применить изменения';
+}
+
+async function deleteDrugFromEditor() {
+  if (!confirm(`Удалить «${currentDrug.name}» из справочника? Это действие нельзя отменить.`)) return;
+  try {
+    await dbDelete(currentDrug.id);
+    drugs = drugs.filter(d => d.id !== currentDrug.id);
+    showToast('Препарат удалён');
+    updateCatalogCount();
+    goBack();
+  } catch(e) {
+    showToast('Ошибка при удалении');
+  }
+}
+
+// ══════════════════════════════════════════════
+//  CATALOG
+// ══════════════════════════════════════════════
+function toggleCatalog() {
+  document.getElementById('calc-overlay').classList.remove('open');
+  document.getElementById('topics-overlay').classList.remove('open');
+  const overlay = document.getElementById('catalog-overlay');
+  const isOpen = overlay.classList.toggle('open');
+  if (isOpen) renderCatalogList(drugs);
+}
+
+function renderCatalogList(items) {
+  const sorted = [...items].sort((a,b) => a.name.localeCompare(b.name, 'ru'));
+  document.getElementById('catalog-count').textContent = drugs.length;
+  if (!sorted.length) {
+    document.getElementById('catalog-list').innerHTML = '<div class="catalog-empty">Препараты не найдены</div>';
+    return;
+  }
+  let html = '';
+  let lastLetter = '';
+  sorted.forEach(d => {
+    const letter = d.name.charAt(0).toUpperCase();
+    if (letter !== lastLetter) {
+      lastLetter = letter;
+      html += `<div class="catalog-letter">${letter}</div>`;
+    }
+    html += `<div class="catalog-item" onclick="openDrugFromCatalog('${d.id}')">
+      <div>
+        <div class="catalog-item-name">${d.name}</div>
+        ${d.subtitle ? `<div class="catalog-item-sub">${d.subtitle}</div>` : ''}
+      </div>
+      <span class="catalog-arrow">›</span>
+    </div>`;
+  });
+  document.getElementById('catalog-list').innerHTML = html;
+}
+
+function openDrugFromCatalog(id) {
+  document.getElementById('catalog-overlay').classList.remove('open');
+  openDrug(id);
+}
+
+function esc(str) { return (str||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function nl2br(str) { return esc(str).replace(/\n/g,'<br>'); }
+
+// ══════════════════════════════════════════════
+//  INFO BUBBLE MODAL
+// ══════════════════════════════════════════════
+function openInfoModal(idx, type) {
+  let text = '';
+  if (type === 'dosage') text = currentDrug.dosages[idx]?.info || '';
+  if (!text.trim()) return;
+  document.getElementById('info-modal-body').textContent = text;
+  document.getElementById('info-overlay').classList.add('open');
+}
+function closeInfoModal() {
+  document.getElementById('info-overlay').classList.remove('open');
+}
+
+// ══════════════════════════════════════════════
+//  CALCULATORS
+// ══════════════════════════════════════════════
+const CALC_IDS = ['bsa','schwartz','crconv','cg'];
+
+function toggleCalc() {
+  document.getElementById('topics-overlay').classList.remove('open');
+  document.getElementById('catalog-overlay').classList.remove('open');
+  document.getElementById('calc-overlay').classList.toggle('open');
+}
+function closeCalc() {
+  document.getElementById('calc-overlay').classList.remove('open');
+}
+function openCalcModal(id) {
+  closeCalc();
+  CALC_IDS.forEach(c => {
+    const el = document.getElementById(c + '-overlay');
+    if (el) el.classList.remove('open');
+  });
+  // reset inputs
+  if (id === 'bsa') {
+    document.getElementById('bsa-h').value = '';
+    document.getElementById('bsa-w').value = '';
+    document.getElementById('bsa-result').classList.remove('show');
+  } else if (id === 'schwartz') {
+    document.getElementById('sch-h').value  = '';
+    document.getElementById('sch-cr').value = '';
+    document.getElementById('sch-unit').value = 'umol';
+    document.getElementById('sch-result').classList.remove('show');
+  } else if (id === 'crconv') {
+    ['cr-umol','cr-mgdl','cr-mmol'].forEach(x => document.getElementById(x).value = '');
+  } else if (id === 'cg') {
+    ['cg-age','cg-wt','cg-cr'].forEach(x => document.getElementById(x).value = '');
+    document.getElementById('cg-unit').value = 'umol';
+    document.getElementById('cg-sex').value  = 'm';
+    document.getElementById('cg-result').classList.remove('show');
+  }
+  document.getElementById(id + '-overlay').classList.add('open');
+}
+function closeCalcModal(id) {
+  document.getElementById(id + '-overlay').classList.remove('open');
+}
+
+// BSA
+function calcBSALive() {
+  const h = parseFloat(document.getElementById('bsa-h').value);
+  const w = parseFloat(document.getElementById('bsa-w').value);
+  const res = document.getElementById('bsa-result');
+  if (!h || !w || h <= 0 || w <= 0) { res.classList.remove('show'); return; }
+  document.getElementById('bsa-val').textContent = Math.sqrt((h * w) / 3600).toFixed(2);
+  res.classList.add('show');
+}
+
+// Schwartz 2009 (Bedside)
+function calcSchwartzLive() {
+  const h    = parseFloat(document.getElementById('sch-h').value);
+  const crRaw = parseFloat(document.getElementById('sch-cr').value);
+  const unit = document.getElementById('sch-unit').value;
+  const res  = document.getElementById('sch-result');
+  if (!h || !crRaw || h <= 0 || crRaw <= 0) { res.classList.remove('show'); return; }
+  // convert to mg/dL
+  let crMgdl;
+  if      (unit === 'umol') crMgdl = crRaw / 88.4;
+  else if (unit === 'mmol') crMgdl = crRaw * 1000 / 88.4;
+  else                      crMgdl = crRaw;
+  const gfr = 0.413 * h / crMgdl;
+  document.getElementById('sch-val').textContent = gfr.toFixed(1);
+  res.classList.add('show');
+}
+
+// Creatinine converter — мкмоль/л ↔ мг/дл ↔ ммоль/л
+function convertCr(from) {
+  const val = parseFloat(document.getElementById('cr-' + from).value);
+  const fields = ['umol','mgdl','mmol'];
+  if (isNaN(val) || val < 0) {
+    fields.filter(f => f !== from).forEach(f => document.getElementById('cr-' + f).value = '');
+    return;
+  }
+  let umol;
+  if      (from === 'umol') umol = val;
+  else if (from === 'mgdl') umol = val * 88.4;
+  else if (from === 'mmol') umol = val * 1000;
+  const mgdl = umol / 88.4;
+  const mmol = umol / 1000;
+  if (from !== 'umol') document.getElementById('cr-umol').value = +umol.toFixed(2);
+  if (from !== 'mgdl') document.getElementById('cr-mgdl').value = +mgdl.toFixed(4);
+  if (from !== 'mmol') document.getElementById('cr-mmol').value = +mmol.toFixed(4);
+}
+
+// Cockcroft–Gault
+function calcCGLive() {
+  const age   = parseFloat(document.getElementById('cg-age').value);
+  const wt    = parseFloat(document.getElementById('cg-wt').value);
+  const crRaw = parseFloat(document.getElementById('cg-cr').value);
+  const unit  = document.getElementById('cg-unit').value;
+  const sex   = document.getElementById('cg-sex').value;
+  const res   = document.getElementById('cg-result');
+  if (!age || !wt || !crRaw || age <= 0 || wt <= 0 || crRaw <= 0) { res.classList.remove('show'); return; }
+  // convert to mg/dL
+  let crMgdl;
+  if      (unit === 'umol') crMgdl = crRaw / 88.4;
+  else if (unit === 'mmol') crMgdl = crRaw * 1000 / 88.4;
+  else                      crMgdl = crRaw;
+  // CG formula: (140 - age) × weight / (72 × Scr) × [0.85 if female]
+  let ck = (140 - age) * wt / (72 * crMgdl);
+  if (sex === 'f') ck *= 0.85;
+  document.getElementById('cg-val').textContent = ck.toFixed(1);
+  res.classList.add('show');
+}
+
+// ══════════════════════════════════════════════
+//  TOPICS (Supabase)
+// ══════════════════════════════════════════════
+let topics = [];
+let currentTopic = null;
+let topicEditorOpen = false;
+
+async function dbGetTopics() {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/topics?select=*`, { headers: HEADERS });
+  return await r.json();
+}
+async function dbInsertTopic(t) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/topics`, {
+    method:'POST', headers:{...HEADERS,'Prefer':'return=representation'},
+    body: JSON.stringify({id:t.id, data:t})
+  });
+  return await r.json();
+}
+async function dbUpdateTopic(t) {
+  await fetch(`${SUPABASE_URL}/rest/v1/topics?id=eq.${t.id}`, {
+    method:'PATCH', headers:{...HEADERS,'Prefer':'return=minimal'},
+    body: JSON.stringify({data:t})
+  });
+}
+async function dbDeleteTopic(id) {
+  await fetch(`${SUPABASE_URL}/rest/v1/topics?id=eq.${id}`, {method:'DELETE', headers:HEADERS});
+}
+
+function tryOpenTemplates() {
+  if (!isAdmin) {
+    openPwdModal();
+    // After password success, open templates
+    window._pendingAfterAuth = () => toggleTopics();
+    return;
+  }
+  toggleTopics();
+}
+
+function toggleTopics() {
+  document.getElementById('calc-overlay').classList.remove('open');
+  document.getElementById('catalog-overlay').classList.remove('open');
+  const o = document.getElementById('topics-overlay');
+  const opening = !o.classList.contains('open');
+  o.classList.toggle('open');
+  if (opening) renderTopicsList();
+}
+function closeTopics() { document.getElementById('topics-overlay').classList.remove('open'); }
+
+function renderTopicsList() {
+  const sorted = [...topics].sort((a,b) => a.title.localeCompare(b.title, 'ru'));
+  document.getElementById('topics-count').textContent = topics.length;
+  const list = document.getElementById('topics-list');
+  if (!sorted.length) {
+    list.innerHTML = '<div class="panel-empty">Шаблоны не добавлены</div>'; return;
+  }
+  list.innerHTML = sorted.map(t => `
+    <div class="panel-item" onclick="openTopicPage('${t.id}')">
+      <div>
+        <div class="panel-item-name">${t.title}</div>
+        ${(t.notes||[]).length ? `<div class="panel-item-desc">${((t.notes[0]&&t.notes[0].text)||'').split('\n')[0].substring(0,60)}</div>` : (t.note&&t.note.trim() ? `<div class="panel-item-desc">${t.note.split('\n')[0].substring(0,60)}</div>` : '')}
+      </div>
+      <span class="catalog-arrow">›</span>
+    </div>`).join('');
+}
+
+async function addTopic() {
+  const inp = document.getElementById('add-topic-input');
+  const title = inp.value.trim();
+  if (!title) return;
+  const btn = document.getElementById('add-topic-btn');
+  btn.disabled = true;
+  const topic = {id:'topic_'+Date.now(), title, notes:[]};
+  try {
+    await dbInsertTopic(topic);
+    topics.push(topic);
+    inp.value = '';
+    renderTopicsList();
+    showToast('Шаблон добавлен');
+    openTopicPage(topic.id);
+  } catch(e) { showToast('Ошибка при добавлении'); }
+  btn.disabled = false;
+}
+
+function openTopicPage(id) {
+  const topic = topics.find(t => t.id === id);
+  if (!topic) return;
+  currentTopic = JSON.parse(JSON.stringify(topic));
+  topicEditorOpen = false;
+  document.getElementById('topics-overlay').classList.remove('open');
+  document.getElementById('search-page').style.display = 'none';
+  document.getElementById('drug-page').style.display   = 'none';
+  document.getElementById('topic-page').style.display  = 'block';
+  document.getElementById('header-btns-fixed').style.display = 'none';
+  document.getElementById('topic-editor-panel').classList.remove('open');
+  document.getElementById('topic-edit-btn').classList.remove('active');
+  document.getElementById('topic-edit-btn').innerHTML = svgEdit() + ' <span>Редактировать</span>';
+  renderTopicPage(currentTopic);
+  updateTopicLockState();
+  window.scrollTo(0,0);
+}
+
+function renderTopicPage(topic) {
+  document.getElementById('topic-header-title').textContent = topic.title;
+  document.getElementById('topic-title').textContent = topic.title;
+  // support legacy single note
+  const notes = topic.notes && topic.notes.length
+    ? topic.notes
+    : (topic.note && topic.note.trim() ? [{title:'', text: topic.note}] : []);
+  const block = document.getElementById('topic-notes-block');
+  const list  = document.getElementById('topic-notes-list');
+  const visible = notes.filter(n => (n.text||n.title||'').trim());
+  if (visible.length) {
+    list.innerHTML = visible.map(n => `
+      <div class="facts-card">
+        ${n.title && n.title.trim() ? `<div class="facts-card-title">${esc(n.title)}</div>` : ''}
+        <div class="facts-card-body">${nl2br(n.text||'')}</div>
+      </div>`).join('');
+    block.style.display = '';
+  } else { block.style.display = 'none'; }
+}
+
+function goBackFromTopic() {
+  document.getElementById('topic-page').style.display  = 'none';
+  document.getElementById('search-page').style.display = 'flex';
+  document.getElementById('header-btns-fixed').style.display = 'flex';
+  updateLockState();
+}
+
+function toggleTopicEditor() {
+  topicEditorOpen = !topicEditorOpen;
+  document.getElementById('topic-editor-panel').classList.toggle('open', topicEditorOpen);
+  const btn = document.getElementById('topic-edit-btn');
+  btn.classList.toggle('active', topicEditorOpen);
+  btn.innerHTML = svgEdit() + (topicEditorOpen ? ' Закрыть' : ' Редактировать');
+  if (topicEditorOpen) {
+    document.getElementById('tep-title').value = currentTopic.title || '';
+    // migrate legacy single note
+    if (!currentTopic.notes) {
+      currentTopic.notes = currentTopic.note && currentTopic.note.trim()
+        ? [{title:'', text: currentTopic.note}] : [];
+    }
+    renderTepNotes(currentTopic.notes);
+    updateTopicLockState();
+  }
+}
+
+function updateTopicLockState() {
+  const el = document.getElementById('tep-lock-delete');
+  if (el) el.style.display = isAdmin ? 'none' : 'flex';
+}
+
+async function applyTopicEdits() {
+  const btn = document.getElementById('tep-save-btn');
+  btn.disabled = true; btn.textContent = 'Сохранение…';
+  currentTopic.title = document.getElementById('tep-title').value.trim();
+  tepSyncNotes();
+  currentTopic.notes = (currentTopic.notes||[]).filter(n => (n.text||n.title||'').trim());
+  try {
+    await dbUpdateTopic(currentTopic);
+    const idx = topics.findIndex(t => t.id === currentTopic.id);
+    if (idx > -1) topics[idx] = JSON.parse(JSON.stringify(currentTopic));
+    renderTopicPage(currentTopic);
+    showToast('✓ Сохранено');
+  } catch(e) { showToast('Ошибка при сохранении'); }
+  btn.disabled = false; btn.textContent = 'Применить изменения';
+}
+
+function renderTepNotes(notes) {
+  const n = notes.length;
+  document.getElementById('tep-notes').innerHTML = notes.map((v,i) => `
+    <div class="ep-dos-item">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-size:.7rem;font-weight:700;color:var(--ep-section-lbl-color);letter-spacing:.06em">БЛОК ${i+1}</span>
+        <div class="ep-move-btns">
+          <button class="ep-move-btn" onclick="tepMoveNote(${i},-1)" ${i===0?'disabled':''}>
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </button>
+          <button class="ep-move-btn" onclick="tepMoveNote(${i},1)" ${i===n-1?'disabled':''}>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+      <input class="ep-input" id="tep-note-title-${i}" value="${esc(v.title||'')}" placeholder="Заголовок (необязательно)"/>
+      <textarea class="ep-textarea" id="tep-note-text-${i}" style="min-height:80px">${esc(v.text||'')}</textarea>
+      <button class="ep-remove-btn" onclick="tepRemoveNote(${i})">Удалить блок</button>
+    </div>`).join('');
+}
+function tepSyncNotes() {
+  (currentTopic.notes||[]).forEach((_,i) => {
+    const t = document.getElementById(`tep-note-title-${i}`);
+    const x = document.getElementById(`tep-note-text-${i}`);
+    if (x) currentTopic.notes[i] = {title: t?t.value.trim():'', text: x.value};
+  });
+}
+function tepAddNote() {
+  tepSyncNotes();
+  if (!currentTopic.notes) currentTopic.notes = [];
+  currentTopic.notes.push({title:'', text:''});
+  renderTepNotes(currentTopic.notes);
+  setTimeout(()=>{ const el=document.getElementById(`tep-note-text-${currentTopic.notes.length-1}`); if(el)el.focus(); },50);
+}
+function tepRemoveNote(i) { tepSyncNotes(); currentTopic.notes.splice(i,1); renderTepNotes(currentTopic.notes); }
+function tepMoveNote(i, dir) { tepSyncNotes(); const arr=currentTopic.notes; const j=i+dir; if(j<0||j>=arr.length)return; [arr[i],arr[j]]=[arr[j],arr[i]]; renderTepNotes(arr); }
+
+async function deleteTopicFromEditor() {
+  if (!confirm(`Удалить шаблон «${currentTopic.title}»? Это действие нельзя отменить.`)) return;
+  try {
+    await dbDeleteTopic(currentTopic.id);
+    topics = topics.filter(t => t.id !== currentTopic.id);
+    showToast('Шаблон удалён');
+    goBackFromTopic();
+  } catch(e) { showToast('Ошибка при удалении'); }
+}
+</script>
+</body>
+</html>
