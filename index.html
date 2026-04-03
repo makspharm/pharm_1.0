@@ -491,8 +491,8 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
       </button>
     </div>
     <div class="center-modal-body">
-      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="bsa-h" type="number" placeholder="напр. 170" oninput="calcBSALive()"/></div>
-      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="bsa-w" type="number" placeholder="напр. 70" oninput="calcBSALive()"/></div>
+      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="bsa-h" type="number" placeholder="170" oninput="calcBSALive()"/></div>
+      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="bsa-w" type="number" placeholder="70" oninput="calcBSALive()"/></div>
       <div class="calc-result" id="bsa-result">
         <div class="calc-result-val" id="bsa-val">—</div>
         <div class="calc-result-label">м²</div>
@@ -512,11 +512,11 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
     </div>
     <div class="center-modal-body">
       <div style="font-size:.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">Bedside Schwartz 2009 · коэффициент <strong style="color:var(--text)">0.413</strong></div>
-      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="sch-h" type="number" placeholder="напр. 130" oninput="calcSchwartzLive()"/></div>
+      <div class="calc-field"><label>Рост (см)</label><input class="calc-input" id="sch-h" type="number" placeholder="130" oninput="calcSchwartzLive()"/></div>
       <div class="calc-field">
         <label>Сывороточный креатинин</label>
         <div style="display:flex;gap:8px;align-items:center">
-          <input class="calc-input" id="sch-cr" type="number" placeholder="напр. 88.4" oninput="calcSchwartzLive()" style="flex:1"/>
+          <input class="calc-input" id="sch-cr" type="number" placeholder="88.4" oninput="calcSchwartzLive()" style="flex:1"/>
           <select class="calc-input" id="sch-unit" onchange="calcSchwartzLive()" style="flex:0 0 110px;padding:10px 8px;cursor:pointer">
             <option value="umol">мкмоль/л</option>
             <option value="mgdl">мг/дл</option>
@@ -545,15 +545,15 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
       <div style="font-size:.72rem;color:var(--muted);margin-bottom:16px">Введите значение в любом поле — остальные пересчитаются автоматически</div>
       <div class="calc-field">
         <label>мкмоль/л</label>
-        <input class="calc-input" id="cr-umol" type="number" placeholder="напр. 88.4" oninput="convertCr('umol')"/>
+        <input class="calc-input" id="cr-umol" type="number" placeholder="88.4" oninput="convertCr('umol')"/>
       </div>
       <div class="calc-field">
         <label>мг/дл</label>
-        <input class="calc-input" id="cr-mgdl" type="number" placeholder="напр. 1.0" oninput="convertCr('mgdl')"/>
+        <input class="calc-input" id="cr-mgdl" type="number" placeholder="1.0" oninput="convertCr('mgdl')"/>
       </div>
       <div class="calc-field" style="margin-bottom:0">
         <label>ммоль/л</label>
-        <input class="calc-input" id="cr-mmol" type="number" placeholder="напр. 0.0884" oninput="convertCr('mmol')"/>
+        <input class="calc-input" id="cr-mmol" type="number" placeholder="0.0884" oninput="convertCr('mmol')"/>
       </div>
     </div>
   </div>
@@ -570,12 +570,12 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
     </div>
     <div class="center-modal-body">
       <div style="font-size:.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">Cockcroft–Gault 1976 · результат в мл/мин</div>
-      <div class="calc-field"><label>Возраст (лет)</label><input class="calc-input" id="cg-age" type="number" placeholder="напр. 60" oninput="calcCGLive()"/></div>
-      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="cg-wt" type="number" placeholder="напр. 70" oninput="calcCGLive()"/></div>
+      <div class="calc-field"><label>Возраст (лет)</label><input class="calc-input" id="cg-age" type="number" placeholder="60" oninput="calcCGLive()"/></div>
+      <div class="calc-field"><label>Масса тела (кг)</label><input class="calc-input" id="cg-wt" type="number" placeholder="70" oninput="calcCGLive()"/></div>
       <div class="calc-field">
         <label>Сывороточный креатинин</label>
         <div style="display:flex;gap:8px;align-items:center">
-          <input class="calc-input" id="cg-cr" type="number" placeholder="напр. 88.4" oninput="calcCGLive()" style="flex:1"/>
+          <input class="calc-input" id="cg-cr" type="number" placeholder="88.4" oninput="calcCGLive()" style="flex:1"/>
           <select class="calc-input" id="cg-unit" onchange="calcCGLive()" style="flex:0 0 110px;padding:10px 8px;cursor:pointer">
             <option value="umol">мкмоль/л</option>
             <option value="mgdl">мг/дл</option>
