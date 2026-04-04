@@ -510,9 +510,14 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
         <div class="calc-result-val" id="bsa-val">—</div>
         <div class="calc-result-label">м²</div>
       </div>
-      <div class="calc-note calc-note-empty">
-        <!-- Добавь <div class="calc-note-text"> для видимого текста/ссылки,
-             или блок с кнопкой «Источники» — см. пример в calc-note Шварца -->
+     <div class="calc-note">
+        <!-- кнопка «Источники» + скрытый блок — убери оба если цитат нет -->
+        <button class="calc-note-toggle" style="margin-top:8px" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Источники <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="calc-note-body">
+          <div class="calc-note-text">Mosteller RD. Simplified calculation of body-surface area. N Engl J Med. 1987 Oct 22;317(17):1098. doi:10.1056/NEJM198710223171717. PMID:3657876</div>
+        </div>
       </div>
     </div>
   </div>
