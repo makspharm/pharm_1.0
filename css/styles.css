@@ -1,6 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#333333;--text:#111;--muted:#777;--border:#e0e0e0;--white:#fff;
+  --bg:ffffff;--text:#111;--muted:#777;--border:#e0e0e0;--white:#fff;
   --surface:#f0f0ee;--surface2:#e8e8e6;
   --instr-btn:#f0f0ee;--instr-btn-hover:#e0e0de;
   --cite-bg:#333333;
