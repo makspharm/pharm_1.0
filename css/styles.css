@@ -246,7 +246,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
 .instr-link-item{padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border)}
 .instr-link-item:last-child{border-bottom:none}
 .instr-link-name{font-size:.85rem;color:var(--text)}
-.instr-link-btn{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .15s;flex-shrink:0}
+.instr-link-btn{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;font-weight:900;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .15s;flex-shrink:0}
 .instr-link-btn:hover{color:var(--text)}
 .instr-link-btn svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.2}
 
