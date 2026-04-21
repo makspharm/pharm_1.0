@@ -423,7 +423,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
 .calc-note-body.open{max-height:400px;opacity:1;margin-top:10px}
 .instr-link-item:has(a[href="https://lk.regmed.ru/Register/EAEU_SmPC"])
 .instr-link-name::after {
-  content: "ОХЛП — общая характеристика лекарственного препарата";
+  content: "ОХЛП — общая характеристика лекарственного препарата. ОХЛП является основным источником информации для медицинских работников о безопасном и эффективном использовании лекарственного препарата. Инструкция по медицинскому применению лекарственного препарата (листок-вкладыш — ЛВ) составляется в соответствии с ОХЛП.";
   display: block;
   font-size: 0.7rem;
   color: var(--muted);
