@@ -421,3 +421,13 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);min
 .calc-note-toggle.open svg{transform:rotate(180deg)}
 .calc-note-body{overflow:hidden;max-height:0;opacity:0;transition:max-height .28s ease,opacity .22s ease;margin-top:0;display:flex;flex-direction:column;gap:6px}
 .calc-note-body.open{max-height:400px;opacity:1;margin-top:10px}
+.instr-link-item:has(a[href="https://lk.regmed.ru/Register/EAEU_SmPC"])
+.instr-link-name::after {
+  content: "ОХЛП — общая характеристика лекарственного препарата";
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: normal;
+  margin-top: 2px;
+  line-height: 1.3;
+}
