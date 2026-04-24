@@ -65,7 +65,7 @@ async function checkPassword() {
 // ══════════════════════════════════════════════
 
 function updateLockState() {
-  const locks = ['ep-lock-main', 'ep-lock-tags', 'ep-lock-notes', 'ep-lock-dosages', 'ep-lock-ql', 'ep-lock-delete', 'tep-lock-delete'];
+  const locks = ['ep-lock-main', 'ep-lock-tags', 'ep-lock-groups', 'ep-lock-notes', 'ep-lock-dosages', 'ep-lock-ql', 'ep-lock-delete', 'tep-lock-delete'];
   locks.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = isAdmin ? 'none' : 'flex';

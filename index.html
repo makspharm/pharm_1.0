@@ -62,12 +62,23 @@
     <svg class="theme-icon-sun"  viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   </button>
 </div>
+<!-- ═══ DRUG GROUPS DEFINITION ═══
+     Чтобы добавить новую группу — добавьте сюда новый <div>.
+     data-group-id     — уникальный идентификатор (латиница, без пробелов)
+     data-group-label  — название группы (отображается в фильтрах и редакторе)
+     data-group-color  — цвет: red | yellow | green | violet
+-->
+<div id="drug-groups-definition" style="display:none">
+  <div data-group-id="qt" data-group-label="Удлинение QT" data-group-color="red"></div>
+</div>
+
 <div class="catalog-overlay" id="catalog-overlay" onclick="if(event.target===this)toggleCatalog()">
   <div class="catalog-modal">
     <div class="catalog-header">
       <span class="catalog-header-title">Все лекарственные средства</span>
       <span class="catalog-count" id="catalog-count">0</span>
     </div>
+    <div class="catalog-filters" id="catalog-filters" style="display:none"></div>
     <div class="catalog-list" id="catalog-list"></div>
   </div>
 </div>
@@ -575,6 +586,15 @@
           <div class="ep-tag-row"><span class="ep-tag-dot red"></span><span class="ep-tag-lbl">Важное</span><input class="ep-tag-input" id="ep-tag-red" type="text" placeholder=" "/></div>
           <div class="ep-tag-row"><span class="ep-tag-dot violet"></span><span class="ep-tag-lbl">АТХ</span><input class="ep-tag-input" id="ep-tag-violet" type="text" placeholder="необязательно"/></div>
           <div class="ep-lock-overlay" id="ep-lock-tags" onclick="openPwdModal()">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Только для администратора</span>
+          </div>
+        </div>
+        <div class="ep-section ep-locked" id="ep-section-groups">
+          <div class="ep-section-label">Группы препаратов</div>
+          <div class="ep-groups-hint">Отметьте группы, к которым относится этот препарат</div>
+          <div id="ep-groups-list"></div>
+          <div class="ep-lock-overlay" id="ep-lock-groups" onclick="openPwdModal()">
             <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <span>Только для администратора</span>
           </div>

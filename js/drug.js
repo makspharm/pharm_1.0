@@ -298,6 +298,43 @@ function fillEditorFromDrug(drug) {
   renderEpNotes(drug.facts    || []);
   renderEpDosages(drug.dosages || []);
   renderEpLinks(drug.links    || []);
+  renderEpGroups(drug.groups  || []);
+}
+
+// ══════════════════════════════════════════════
+//  EDITOR — GROUPS (checkboxes)
+// ══════════════════════════════════════════════
+
+function renderEpGroups(activeGroups) {
+  const container = document.getElementById('ep-groups-list');
+  if (!container) return;
+  const groups = typeof getDrugGroups === 'function' ? getDrugGroups() : [];
+  if (!groups.length) {
+    container.closest('.ep-section') && (container.closest('.ep-section').style.display = 'none');
+    return;
+  }
+  container.closest('.ep-section') && (container.closest('.ep-section').style.display = '');
+  container.innerHTML = groups.map(g => {
+    const checked = activeGroups.includes(g.id);
+    return `<label class="ep-group-checkbox${checked ? ' checked' : ''}">
+      <input type="checkbox" id="ep-group-${g.id}" value="${g.id}" ${checked ? 'checked' : ''}
+        onchange="this.closest('label').classList.toggle('checked', this.checked)"/>
+      <span class="ep-group-cb-box">
+        <svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="ep-group-cb-label">${g.label}</span>
+    </label>`;
+  }).join('');
+}
+
+function epSyncGroups() {
+  const groups = typeof getDrugGroups === 'function' ? getDrugGroups() : [];
+  currentDrug.groups = groups
+    .filter(g => {
+      const el = document.getElementById('ep-group-' + g.id);
+      return el && el.checked;
+    })
+    .map(g => g.id);
 }
 
 // ══════════════════════════════════════════════
@@ -626,6 +663,7 @@ async function applyEdits() {
   epSyncNotes();    currentDrug.facts   = (currentDrug.facts   || []).filter(f => typeof f === 'string' ? f.trim() : (f.text || f.title || '').trim());
   epSyncDosages();  currentDrug.dosages = (currentDrug.dosages || []).filter(d => d.title || d.body);
   epSyncLinks();    currentDrug.links   = (currentDrug.links   || []).filter(l => l.type || l.note || l.url);
+  epSyncGroups();
 
   try {
     await dbUpdate(currentDrug);
