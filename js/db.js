@@ -1,65 +1,49 @@
 // ══════════════════════════════════════════════
-//  DATABASE — DRUGS
+//  DATABASE — Firebase Realtime Database
+// ══════════════════════════════════════════════
+
+// ══════════════════════════════════════════════
+//  DRUGS
 // ══════════════════════════════════════════════
 
 async function dbGetAll() {
-  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs?select=*`, { headers: HEADERS });
-  return await r.json();
+  const snap = await firebaseDB.ref('drugs').once('value');
+  if (!snap.exists()) return [];
+  return Object.values(snap.val()).map(item => ({ data: item.data }));
 }
 
 async function dbInsert(drug) {
-  const r = await fetch(`${SUPABASE_URL}/rest/v1/drugs`, {
-    method: 'POST',
-    headers: { ...HEADERS, 'Prefer': 'return=representation' },
-    body: JSON.stringify({ id: drug.id, data: drug })
-  });
-  return await r.json();
+  await firebaseDB.ref('drugs/' + drug.id).set({ id: drug.id, data: drug });
+  return [{ data: drug }];
 }
 
 async function dbUpdate(drug) {
-  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${drug.id}`, {
-    method: 'PATCH',
-    headers: { ...HEADERS, 'Prefer': 'return=minimal' },
-    body: JSON.stringify({ data: drug })
-  });
+  await firebaseDB.ref('drugs/' + drug.id).update({ data: drug });
 }
 
 async function dbDelete(id) {
-  await fetch(`${SUPABASE_URL}/rest/v1/drugs?id=eq.${id}`, {
-    method: 'DELETE',
-    headers: HEADERS
-  });
+  await firebaseDB.ref('drugs/' + id).remove();
 }
 
 // ══════════════════════════════════════════════
-//  DATABASE — TOPICS
+//  TOPICS
 // ══════════════════════════════════════════════
 
 async function dbGetTopics() {
-  const r = await fetch(`${SUPABASE_URL}/rest/v1/topics?select=*`, { headers: HEADERS });
-  return await r.json();
+  const snap = await firebaseDB.ref('topics').once('value');
+  if (!snap.exists()) return [];
+  return Object.values(snap.val()).map(item => ({ data: item.data }));
 }
 
 async function dbInsertTopic(t) {
-  const r = await fetch(`${SUPABASE_URL}/rest/v1/topics`, {
-    method: 'POST',
-    headers: { ...HEADERS, 'Prefer': 'return=representation' },
-    body: JSON.stringify({ id: t.id, data: t })
-  });
-  return await r.json();
+  await firebaseDB.ref('topics/' + t.id).set({ id: t.id, data: t });
+  return [{ data: t }];
 }
 
 async function dbUpdateTopic(t) {
-  await fetch(`${SUPABASE_URL}/rest/v1/topics?id=eq.${t.id}`, {
-    method: 'PATCH',
-    headers: { ...HEADERS, 'Prefer': 'return=minimal' },
-    body: JSON.stringify({ data: t })
-  });
+  await firebaseDB.ref('topics/' + t.id).update({ data: t });
 }
 
 async function dbDeleteTopic(id) {
-  await fetch(`${SUPABASE_URL}/rest/v1/topics?id=eq.${id}`, {
-    method: 'DELETE',
-    headers: HEADERS
-  });
+  await firebaseDB.ref('topics/' + id).remove();
 }

@@ -1,13 +1,20 @@
 // ══════════════════════════════════════════════
-//  SUPABASE CONFIG
+//  FIREBASE CONFIG
 // ══════════════════════════════════════════════
-const SUPABASE_URL = 'https://rczexrioikgtylrmwria.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjemV4cmlvaWtndHlscm13cmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzczMTMsImV4cCI6MjA4OTAxMzMxM30.74I267z6epyhEebzrejQdidn_d0QGN955GHXAVxhcY0';
-const HEADERS = {
-  'Content-Type': 'application/json',
-  'apikey': SUPABASE_KEY,
-  'Authorization': 'Bearer ' + SUPABASE_KEY
+// Firebase SDK подключается в index.html ПЕРЕД этим файлом (см. комментарий там)
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA8wbxxdJLy7scoqnXM-TmV8_8EbMPMngI",
+  authDomain: "pharm-4e3f1.firebaseapp.com",
+  databaseURL: "https://pharm-4e3f1-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pharm-4e3f1",
+  storageBucket: "pharm-4e3f1.firebasestorage.app",
+  messagingSenderId: "63614966601",
+  appId: "1:63614966601:web:1c29dd91a98e97481a9898"
 };
+
+firebase.initializeApp(firebaseConfig);
+const firebaseDB = firebase.database();
 
 // ══════════════════════════════════════════════
 //  CONSTANTS
