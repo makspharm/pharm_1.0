@@ -42,20 +42,9 @@ function toggleCatalog() {
 
 function toggleCatalogFiltersPanel() {
   catalogFiltersOpen = !catalogFiltersOpen;
-  const panel = document.getElementById('catalog-filters');
-  const btn   = document.getElementById('catalog-filter-btn');
-  if (!panel || !btn) return;
-
-  if (catalogFiltersOpen) {
-    panel.style.display = 'flex';
-    // next frame so transition fires
-    requestAnimationFrame(() => panel.classList.add('open'));
-  } else {
-    panel.classList.remove('open');
-    panel.addEventListener('transitionend', () => {
-      if (!catalogFiltersOpen) panel.style.display = 'none';
-    }, { once: true });
-  }
+  const wrap = document.getElementById('catalog-filters-wrap');
+  if (!wrap) return;
+  wrap.classList.toggle('open', catalogFiltersOpen);
   updateFilterBtnState();
 }
 
@@ -84,7 +73,7 @@ function updateFilterBtnState() {
   const activeCount = catalogActiveFilters.size;
   const isOpen = catalogFiltersOpen;
 
-  // Badge
+  // Badge — только когда реально выбран фильтр
   let badge = btn.querySelector('.cf-btn-badge');
   if (activeCount > 0) {
     if (!badge) {
@@ -93,12 +82,14 @@ function updateFilterBtnState() {
       btn.appendChild(badge);
     }
     badge.textContent = activeCount;
-  } else if (badge) {
-    badge.remove();
+  } else {
+    if (badge) badge.remove();
   }
 
-  // Active state when filters are open or any filter is selected
-  btn.classList.toggle('active', isOpen || activeCount > 0);
+  // Кнопка подсвечивается тёмным только когда панель открыта
+  btn.classList.toggle('active', isOpen);
+  // Дополнительный класс — есть активные фильтры, но панель закрыта
+  btn.classList.toggle('has-filters', activeCount > 0 && !isOpen);
 
   // Chevron rotation
   const chevron = btn.querySelector('.cf-btn-chevron');
@@ -144,30 +135,32 @@ function renderCatalogFilters() {
     </button>`;
   });
 
-  // Inject filter button into header if not yet present
+  // Inject filter button into .catalog-header-right (defined in HTML)
   let filterBtn = document.getElementById('catalog-filter-btn');
   if (!filterBtn && hasAny) {
-    const header = document.querySelector('.catalog-header');
-    if (header) {
+    const right = document.querySelector('.catalog-header-right');
+    if (right) {
       filterBtn = document.createElement('button');
       filterBtn.id = 'catalog-filter-btn';
       filterBtn.className = 'catalog-filter-btn';
       filterBtn.title = 'Фильтры';
       filterBtn.onclick = toggleCatalogFiltersPanel;
       filterBtn.innerHTML = `<svg class="cf-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg><span class="cf-btn-label">Фильтры</span><svg class="cf-btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>`;
-      header.appendChild(filterBtn);
+      right.appendChild(filterBtn);
     }
   } else if (filterBtn && !hasAny) {
     filterBtn.remove();
   }
 
   container.innerHTML = html;
-  // Panel visibility: keep current open state, just don't show if empty
+  // Если фильтров нет — закрываем панель и сбрасываем состояние
+  const wrap = document.getElementById('catalog-filters-wrap');
   if (!hasAny) {
-    container.style.display = 'none';
+    if (wrap) wrap.classList.remove('open');
     catalogFiltersOpen = false;
-  } else if (!catalogFiltersOpen) {
-    container.style.display = 'none';
+  } else if (wrap) {
+    // Синхронизируем класс с текущим состоянием (на случай ре-рендера)
+    wrap.classList.toggle('open', catalogFiltersOpen);
   }
 
   updateFilterBtnState();
@@ -211,19 +204,10 @@ function renderCatalogList(items) {
       html += `<div class="catalog-letter">${letter}</div>`;
     }
 
-    // Group badges for this drug
-    const drugGroupIds = d.groups || [];
-    const groupBadges = drugGroupIds
-      .map(gid => groupMap[gid])
-      .filter(Boolean)
-      .map(g => `<span class="catalog-group-badge">${g.label}</span>`)
-      .join('');
-
     html += `<div class="catalog-item" onclick="openDrugFromCatalog('${d.id}')">
       <div style="flex:1;min-width:0">
         <div class="catalog-item-name">${d.name}</div>
         ${d.subtitle ? `<div class="catalog-item-sub">${d.subtitle}</div>` : ''}
-        ${groupBadges ? `<div class="catalog-item-groups">${groupBadges}</div>` : ''}
       </div>
       <span class="catalog-arrow">›</span>
     </div>`;

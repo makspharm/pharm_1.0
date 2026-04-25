@@ -69,17 +69,24 @@
      data-group-color  — цвет: red | yellow | green | violet
 -->
 <div id="drug-groups-definition" style="display:none">
-  <div data-group-id="qt" data-group-label="Может удлинять интервал QT" data-group-color="red"></div>
+  <div data-group-id="qt" data-group-label="Могут удлинять интервал QT" data-group-color="red"></div>
   <div data-group-id="nd" data-group-label="Эффективность не доказана" data-group-color="red"></div>
+  <div data-group-id="ab" data-group-label="Антибактериальные препараты" data-group-color="red"></div>
+  <div data-group-id="nt" data-group-label="Нефротоксичные" data-group-color="red"></div>
 </div>
 
 <div class="catalog-overlay" id="catalog-overlay" onclick="if(event.target===this)toggleCatalog()">
   <div class="catalog-modal">
     <div class="catalog-header">
       <span class="catalog-header-title">Все лекарственные средства</span>
-      <span class="catalog-count" id="catalog-count">0</span>
+      <div class="catalog-header-right">
+        <span class="catalog-count" id="catalog-count">0</span>
+        <!-- кнопка фильтров добавляется через JS если есть фильтры -->
+      </div>
     </div>
-    <div class="catalog-filters" id="catalog-filters" style="display:none"></div>
+    <div class="catalog-filters-wrap" id="catalog-filters-wrap">
+      <div class="catalog-filters" id="catalog-filters"></div>
+    </div>
     <div class="catalog-list" id="catalog-list"></div>
   </div>
 </div>
