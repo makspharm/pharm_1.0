@@ -10,7 +10,7 @@ async function init() {
   } catch (e) {
     showToast('Ошибка загрузки данных');
   }
-  if (window._usingFallback) showToast('⚠️ Офлайн-режим: данные могут быть неактуальны');
+  if (window._usingFallback) showToast('Подключен локальный JSON');
   document.getElementById('loading-screen').style.display = 'none';
   document.getElementById('search-page').style.display    = 'flex';
   document.getElementById('catalog-count').textContent    = drugs.length;
