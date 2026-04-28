@@ -1,0 +1,3117 @@
+{
+  "drugs": {
+    "drug_1773444161871": {
+      "data": {
+        "dosages": [
+          {
+            "body": "90 мг/кг каждые 6 ч в/в (расчет по комбинации) [длительностью введения не < 30 мин]",
+            "info": "",
+            "tag1": "если m > 50 кг  используются взрослые дозы",
+            "tag2": "",
+            "tag3": "Имеются данные о применении продленных и непрерывных инфузиях",
+            "tagr": "Оценка функции почек",
+            "tagv": "< 2 лет off-label",
+            "title": "Дети с 2 до 12 лет [при фебрильной нейтропении]"
+          },
+          {
+            "body": "4,5 мг/кг каждые 6 ч в/в (расчет по комбинации) [длительностью введения не < 30 мин]",
+            "info": "",
+            "tag1": "если m < 50 кг  используются детские дозы",
+            "tag2": "",
+            "tag3": "Имеются данные о применении продленных и непрерывных инфузиях",
+            "tagr": "Оценка функции почек",
+            "tagv": "",
+            "title": "У детей  с 12 лет (при условии m > 50) и у взрослых [при фебрильной нейтропении]"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "- фебрильная нейтропения; \n- интраабдоминальные инфекции",
+            "title": "Основными показаниями являются: "
+          },
+          {
+            "info": "",
+            "text": "в том числе к Pseudomonas aeruginosa",
+            "title": "Обладает активностью в отношении"
+          },
+          {
+            "info": "",
+            "text": "При КК (у детей 2 - 12 лет)< 50 мл/мин необходима коррекция дозы\nПри КК (у взрослых и детей с m > 50 кг)< 40 мл/мин необходима коррекция дозы",
+            "title": "Коррекция дозы"
+          },
+          {
+            "info": "",
+            "text": "Повышается риск нефротоксичности (ОПП) при совместном применении с ванкомицином",
+            "title": "Лекарственные взаимодействия"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1773444161871",
+        "instrLinks": [
+          {
+            "name": "ГРЛС",
+            "url": "https://grls.minzdrav.gov.ru/GRLS.aspx?RegNumber=&MnnR=Пиперациллин%2b%5bТазобактам%5d&lf=&TradeNmR=&OwnerName=&MnfOrg=&MnfOrgCountry=&isfs=0&regtype=1%2c6&pageSize=10&order=Registered&orderType=desc&pageNum=1&token=64dbbcf9-958c-48b1-9707-590adb2ca8d4"
+          },
+          {
+            "name": "Инструкция к Пилактам",
+            "url": "https://disk.yandex.ru/i/RKdUfwFkSGayHw"
+          },
+          {
+            "name": "ОХЛП к Рацобактам",
+            "url": "https://disk.yandex.ru/i/f5nnt0NN0Cnyuw"
+          },
+          {
+            "name": "ОХЛП к Пиперациллин + [тазобактам]",
+            "url": "https://disk.yandex.ru/i/h6bLatcdCYlZkg"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/i/QtMNPahbmeG2Dg",
+        "links": [
+          {
+            "cite": "Rosanova MT, Cuellar-Pompa L, Lede R. Eficacia y seguridad del tratamiento empírico con piperacilina/tazobactan como monoterapia en episodios de neutropenia y fiebre en niños con cáncer: revisión sistemática y meta-análisis [Efficacy and safety of empirical treatment with piperacillin/tazobactan as monotherapy in episodes of neutropenia and fever in children with cancer: systematic review and meta-analysis]. Rev Chilena Infectol. 2021 Aug;38(4):488-494. Spanish. doi: 10.4067/S0716-10182021000400488. PMID: 34652393.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Cистематический обзор и метаанализ",
+            "typeCustom": "Cистематический обзор и метаанализ",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34652393/"
+          },
+          {
+            "cite": "Mohammad S, Ghazal H, Rahimeh W, Khan M, Al Balas M, El-Dahiyat F. Comparative Risk of Acute Kidney Injury with Piperacillin-Tazobactam Plus Teicoplanin Versus Piperacillin-Tazobactam Plus Vancomycin: A Systematic Review and Meta-Analysis. Drug Saf. 2026 Mar;49(3):291-302. doi: 10.1007/s40264-025-01611-z. Epub 2025 Sep 12. PMID: 40940625.",
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Метаанализ",
+            "typeCustom": "",
+            "url": ""
+          },
+          {
+            "cite": "Laporte-Amargos J, Ulldemolins M, Hernández-Mitre MP, Roberts JA, Rigo-Bonnin R, Carmona-Torre F, Huguet M, Puerta-Alcalde P, Arnan M, Del Pozo JL, Torrent A, García-Vidal C, Sureda A, Bergas A, Sastre-Escolà E, Carratalà J, Gudiol C. Population pharmacokinetics and optimized dosing of piperacillin-tazobactam in hematological patients with febrile neutropenia. Antimicrob Agents Chemother. 2026 Jan 7;70(1):e0125325. doi: 10.1128/aac.01253-25. Epub 2025 Nov 25. PMID: 41288084; PMCID: PMC12777563.",
+            "fav": false,
+            "heading": "",
+            "note": "Целесообразность применения пролонгированных или непрерывных инфузий пиперациллина/тазобактама при первичном лечении пациентов с фебрильной нейтропенией, особенно у пациентов с более высоким клиренсом креатинина или при подозрении на инфекции, вызванные менее чувствительными патогенами, такими как Pseudomonas aeruginosa",
+            "pdf": "",
+            "tag2": "Сравнение продлённых инфузии и 30 минутных",
+            "tag3": "Взрослая выборка, фебрильная нейтропения",
+            "tagr": "",
+            "type": "Популяционная фармакокинетика и оптимизация дозировки",
+            "typeCustom": "Популяционная фармакокинетика и оптимизация дозировки",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41288084/"
+          },
+          {
+            "cite": "ФКР: Коклюш у детей 2025 г. ID: 1023_1",
+            "fav": true,
+            "heading": "",
+            "note": "#Пиперациллин-тазобактам (J01CR05)– рекомендовано внутривенное введение детям с коклюшем тяжелой степени тяжести, в том числе, младше 2 месяцев жизни. Рекомендованная разовая доза 40-50 мг/кг каждые 8 часов в течение 1-2 недель. Терапия эффективна при сочетанной инфекции с Streptococcus pneumoniae, Haemophilus influenzae, Moraxella catarrhalis",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1023_1"
+          }
+        ],
+        "name": "Пиперациллин/тазобактам",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/piperacillin-tazobactam.html",
+        "subtitle": "Пиперациллин + [тазобактам]",
+        "tags": {
+          "green": "Ингибиторозащищенный уреидопенициллин",
+          "red": "",
+          "violet": "АТХ J01CR05",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Тазоцин, Зосин, Рацобактам, Пилактам, Пиперациллин + [тазобактам]"
+      },
+      "id": "drug_1773444161871"
+    },
+    "drug_1773485634398": {
+      "data": {
+        "dosages": [
+          {
+            "body": "15 - 20 мг/кг/ 24 ч",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Фебрильная нейтропения"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab",
+          "nt"
+        ],
+        "id": "drug_1773485634398",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/i/V6LKdgtcYmnPZg"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/i/V6LKdgtcYmnPZg",
+        "name": "Амикацин",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/amikacin.html",
+        "subtitle": "Амикацин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; аминогликозиды; другие аминогликозиды",
+          "red": "Нефротоксичный",
+          "violet": "АТХ J01GB06",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Селемицин"
+      },
+      "id": "drug_1773485634398"
+    },
+    "drug_1773645374088": {
+      "data": {
+        "dosages": [
+          {
+            "body": "50 мг/кг каждые 8 часов",
+            "info": "",
+            "tag1": "если m > 40 кг взрослые дозы",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети > 2 месяцев (< 40 кг) [при фебрильной нейтропении]"
+          },
+          {
+            "body": "50 мг/кг за 30-60 минут в/в до оперативного вмешательства ",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Предоперационная профилактика"
+          },
+          {
+            "body": "Цефепим 2 г каждые 8 ч в/в",
+            "info": "",
+            "tag1": "если m < 40 кг детские дозы",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети (> 40 кг) и взрослые [при фебрильной нейтропении]"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "в том числе Pseudomonas aeruginosa",
+            "title": "Обладает активностью в отношении "
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1773645374088",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/i/kBZCgWDnLrEChQ"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/i/kBZCgWDnLrEChQ",
+        "links": [
+          {
+            "cite": "Averbuch D, Vanbiervliet Y, Baccelli F, Mikulska M, Neofytos D, Garcia-Vidal C, Aguilar-Guisado M, Blijlevens N, Munoz P, Cordonnier C, Akova M, Calandra T. Empirical and targeted antimicrobial therapy in patients with febrile neutropenia and haematological malignancy or after haematopoietic cell transplantation: recommendations from the 10th European Conference on Infections in Leukaemia. Lancet Infect Dis. 2025 Nov 25:S1473-3099(25)00619-X. doi: 10.1016/S1473-3099(25)00619-X. Epub ahead of print. PMID: 41314221.",
+            "heading": "",
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/H2jl7vhycQsVxQ",
+            "tag2": "ECIL-10",
+            "tag3": "выбор АБТ при фебрильной нейтропении",
+            "tagr": "",
+            "type": "Обзор",
+            "typeCustom": "Обзор",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41314221/"
+          },
+          {
+            "cite": "Сакаева Д.Д., Борисов К. Е., Булавина И.С. и соавт. Фебрильная нейтропения. Практические рекомендации RUSSCO, часть 2. Злокачественные опухоли 2024;14(3s2):61–70.",
+            "heading": "",
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/TCdKZND-fgZ7sw",
+            "tag2": "RUSSCO",
+            "tag3": "Фебрильная нейтропения",
+            "tagr": "",
+            "type": "Практические рекомендации",
+            "typeCustom": "Практические рекомендации",
+            "url": "https://rosoncoweb.ru/standarts/RUSSCO/2024/2024-2-04.pdf"
+          },
+          {
+            "cite": "ФКР: Острые миелоидные лейкозы 2024 г. ID:\n586_3",
+            "heading": "",
+            "note": "Рекомендуется всем пациентам с ОМЛ при развитиии ФН в течение не более 60 минут инициировать эмпирическую терапию бета-лактамным антибактериальным препаратом, пенициллиными (комбинации пенициллинов, включая комбинации с ингибиторами бета-лактамаз; цефалоспорины третьего либо четвертого поколения), с активностью против грамположительных и грамотрицательных бактерий, включая синегнойную палочку. \n\nРекомендуется всем пациентам с ОМЛ и фебрильной нейтропенией при стабильном клиническом состоянием (адекватный уровень сознания, нормальные показатели гемодинамики, отсутствие клиники локальной инфекции) назначение бета-лактамных антибактериальных препаратов, пенициллинов: цефалоспоринов (ЦФ) третьего, четвертого поколения либо #пиперациллин/тазобактама в комбинации с аминогликозидами.",
+            "pdf": "",
+            "tag2": "при ОМЛ",
+            "tag3": "Фебрильная нейтропения",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/586_3"
+          }
+        ],
+        "name": "Цефепим",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/cefepime.html",
+        "subtitle": "Цефепим",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины четвертого поколения",
+          "red": "",
+          "violet": "АТХ J01DE01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Эфипим®, Цефепим"
+      },
+      "id": "drug_1773645374088"
+    },
+    "drug_1773646365652": {
+      "data": {
+        "id": "drug_1773646365652",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "Averbuch D, Vanbiervliet Y, Baccelli F, Mikulska M, Neofytos D, Garcia-Vidal C, Aguilar-Guisado M, Blijlevens N, Munoz P, Cordonnier C, Akova M, Calandra T. Empirical and targeted antimicrobial therapy in patients with febrile neutropenia and haematological malignancy or after haematopoietic cell transplantation: recommendations from the 10th European Conference on Infections in Leukaemia. Lancet Infect Dis. 2025 Nov 25:S1473-3099(25)00619-X. doi: 10.1016/S1473-3099(25)00619-X. Epub ahead of print. PMID: 41314221.",
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/H2jl7vhycQsVxQ",
+            "tag2": "ECIL-10",
+            "tag3": "выбор АБТ при фебрильной нейтропении",
+            "type": "Обзор",
+            "typeCustom": "Обзор",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41314221/"
+          },
+          {
+            "cite": "Сакаева Д.Д., Борисов К. Е., Булавина И.С. и соавт. Фебрильная нейтропения.\nПрактические рекомендации RUSSCO, часть 2. Злокачественные опухоли 2024;14(3s2):61–70.",
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/TCdKZND-fgZ7sw",
+            "tag2": "RUSSCO",
+            "tag3": "Фебрильная нейтропения",
+            "type": "Практические рекомендации",
+            "typeCustom": "Практические рекомендации",
+            "url": "https://rosoncoweb.ru/standarts/RUSSCO/2024/2024-2-04.pdf"
+          },
+          {
+            "cite": "Солопова Г.Г., Опыт внедрения алгоритма эмпирической антибактериальной терапии при развитии фебрильной нейтропении в Центре детской гематологии/онкологии 2017; Т. 16, № 3: 35–47. DOI:10.24287/1726-1708-2017-16-3-35-47",
+            "note": "",
+            "pdf": "https://hemoncim.com/jour/article/viewFile/66/67",
+            "tag2": "Рогачева",
+            "tag3": "Фебрильная нейтропения",
+            "type": "Статья",
+            "typeCustom": "Статья",
+            "url": "//medj.rucml.ru/journal/4e432d48454d4f4e43494d2d41525449434c452d323031372d31362d332d302d33352d3437/"
+          }
+        ],
+        "name": "ФЕБРИЛЬНАЯ НЕЙТРОПЕНИЯ",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        }
+      },
+      "id": "drug_1773646365652"
+    },
+    "drug_1773648137117": {
+      "data": {
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1773648137117",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "КР: Острый лимфобластный лейкоз 2024 г. ID: 529_2",
+            "fav": true,
+            "heading": "",
+            "note": "Всем пациентам младше 18 лет с ОЛЛ/ЛБЛ, ОЛНЛ, получающим химиотерапию, рекомендуется универсальная профилактика пневмоцистной пневмонии #ко-тримоксазолом [сульфометоксазол + триметоприм]** на протяжении всего периода лечения",
+            "pdf": "",
+            "tag2": "Профилактика пневмоцистной пневмонии",
+            "tag3": "Обоснование при ОЛЛ, ЛБЛ, ОЛНЛ",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/529_2"
+          },
+          {
+            "cite": "КР: ВИЧ-инфекция у детей 2024 г. ID: 459_2",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "Профилактика пневмоцистной пневмонии и токсоплазмоза",
+            "tag3": "Обоснование при ВИЧ-инфекции",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/459_2"
+          },
+          {
+            "cite": "КР: Аутоиммунная гемолитическая анемия 2025 г. ID: 1027_1",
+            "fav": true,
+            "heading": "",
+            "note": "Рекомендовано всем пациентам с АИГА, получающим высокие дозы ГКС (более 1 мг/гк/сут.), профилактическое назначение антибактериального препарата системного действия -  ко-тримоксазол [Сульфаметоксазол + Триметоприм]**",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "Обоснование при АИГА",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1027_1"
+          },
+          {
+            "cite": "Proudfoot R, Phillips B, Wilne S. Guidelines for the Prophylaxis of Pneumocystis jirovecii Pneumonia (PJP) in Children With Solid Tumors. J Pediatr Hematol Oncol. 2017 Apr;39(3):194-202. doi: 10.1097/MPH.0000000000000771. PMID: 28267082.",
+            "heading": "",
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/R6wOPJcG7c_i3w",
+            "tag2": "Профилактика пневмоцистной пневмонии",
+            "tag3": "Обоснование при солидных опухолях (Нейробластома, Лимфома ходжкина и др.)",
+            "tagr": "",
+            "type": "Практическое руководство",
+            "typeCustom": "Практическое руководство",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28267082/"
+          },
+          {
+            "cite": "Cosimato I, Santella B, Rufolo S, Sabatini P, Galdiero M, Capunzo M, Boccia G, Folliero V, Franci G. Current Epidemiological Status and Antibiotic Resistance Profile of Serratia marcescens. Antibiotics (Basel). 2024 Apr 3;13(4):323. doi: 10.3390/antibiotics13040323. PMID: 38666999; PMCID: PMC11047617.",
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38666999/"
+          }
+        ],
+        "name": "Ко-тримоксазол",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/sulfamethoxazole-trimethoprim.html",
+        "subtitle": "Триметоприм + сульфаметоксазол / Sulfamethoxazole And Trimethoprim",
+        "tags": {
+          "green": "Противомикробное средство комбинированное",
+          "red": "",
+          "violet": "АТХ J01EE01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Бисептол"
+      },
+      "id": "drug_1773648137117"
+    },
+    "drug_1773649405167": {
+      "data": {
+        "id": "drug_1773649405167",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/i/enNX4otw3J6xrg"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/i/enNX4otw3J6xrg",
+        "links": [
+          {
+            "cite": "ФКР: Острый лимфобластный лейкоз 2024 г. ID: 529_2",
+            "heading": "",
+            "note": "Есть в перечислении препаратов, используемые в терапии вирусных инфекций",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "при ТГСК",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/529_2"
+          },
+          {
+            "cite": "Tatebe Y, Ushio S, Esumi S, Sada H, Ochi M, Tamefusa K, Ishida H, Fujiwara K, Kanamitsu K, Washio K, Katsube R, Murakawa K, Zamami Y. Low-dose acyclovir for prophylaxis of varicella-zoster virus reactivation after hematopoietic stem cell transplantation in children. Pediatr Blood Cancer. 2022 Dec;69(12):e29979. doi: 10.1002/pbc.29979. Epub 2022 Sep 24. PMID: 36151963.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36151963/"
+          }
+        ],
+        "name": "Ацикловир",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Ацикловир",
+        "tags": {
+          "green": "",
+          "red": "до 3 лет (для таблеток)",
+          "violet": "",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1773649405167"
+    },
+    "drug_1773651692692": {
+      "data": {
+        "dosages": [
+          {
+            "body": "40 мг/кг каждые 8 ч в/в \n\n*Возможность применения в режиме продленной инфузии до 3-х часов (on-label)",
+            "info": "",
+            "tag1": "если m > 50 кг используются взрослые дозы",
+            "tag2": "< 3 месяцев off-label",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "дети с 3 месяцев до 12 лет (вес < 50) [при фебрильной нейтропении]"
+          },
+          {
+            "body": "1 г каждые 8 ч в/в \nили\n2 г каждые 8 ч в/в\n\n*Возможность применения  в режиме продленной инфузии до 3-х часов (on-label)",
+            "info": "",
+            "tag1": "если m < 50 кг используются детские дозы",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети (вес > 50) и взрослые [при фебрильной нейтропении]"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "КК < 51 мл/мин требует коррекцию дозы",
+            "title": "Коррекция дозы"
+          },
+          {
+            "info": "",
+            "text": "Избегать совместное применения с вальпроевой кислотой [Конвулекс, Депакин и т.п.](приводит к выраженному снижению концентрации вальпроевой кислоты в крови)",
+            "title": "Лекарственные взаимодействия"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1773651692692",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/d/oFgjAcrezRP0_g"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/d/oFgjAcrezRP0_g",
+        "name": "Меропинем",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/meropenem.html",
+        "subtitle": "Меропинем",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; карбапенемы",
+          "red": "",
+          "violet": "АТХ J01DH02",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Меронем®"
+      },
+      "id": "drug_1773651692692"
+    },
+    "drug_1773652854510": {
+      "data": {
+        "id": "drug_1773652854510",
+        "instrUrl": "",
+        "name": "Ганцикловир",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Ганцикловир",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1773652854510"
+    },
+    "drug_1773653406064": {
+      "data": {
+        "dosages": [
+          {
+            "body": "10 мг/кг каждые 6 ч в/в (в течение не менее 60 мин)",
+            "info": "",
+            "tag1": "в/в",
+            "tag2": "Рекомендуемая суточная доза 40 мг/кг",
+            "tag3": "",
+            "tagr": "Оценка функции почек",
+            "tagv": "",
+            "title": "Детям с 1 года до 12 лет"
+          },
+          {
+            "body": "0,5 г каждые 6 ч в/в (в течение не менее 60 мин)\nили\n1 г каждые 12 ч в/в (в течение не менее 60 мин)",
+            "info": "",
+            "tag1": "в/в",
+            "tag2": "Максимальная суточная доза не > 2,0 г (Максимальная разовая доза – 1,0 г)",
+            "tag3": "",
+            "tagr": "Оценка функции почек",
+            "tagv": "",
+            "title": "Дети с 12 лет и взрослые "
+          },
+          {
+            "body": "0,125 г каждые 6 ч (per os)",
+            "info": "",
+            "tag1": "Перорально",
+            "tag2": "Максимальная суточная доза не > 2,0 г",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Clostridium difficile-ассоциированная инфекция"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "- Псевдомембранозный колит, вызванный Clostridium difficile\n- Энтероколит, вызванный Staphylococcus aureus",
+            "title": "Показания для перорального применения"
+          },
+          {
+            "info": "",
+            "text": "Повышается риск нефротоксичности (ОПП) при совместном применении с пиперациллин/тазобактамом ",
+            "title": "Лекарственные взаимодействия"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab",
+          "nt"
+        ],
+        "id": "drug_1773653406064",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/i/Rwbw-9Zv_yWrPA"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/i/Rwbw-9Zv_yWrPA",
+        "links": [
+          {
+            "cite": "ФКР: Энтероколит, вызванный Clostridioides difficile (C. difficile) 2024 г. ID:\n878_1",
+            "fav": true,
+            "heading": "",
+            "note": "Рекомендуется назначение #Ванкомицина** (125 мг перорально 4 раза в день в течение 10 дней) пациентам с первым эпизодом энтероколита, вызванного C. difficile, лёгкой/умеренной и тяжёлой и степени тяжести в качестве препарата первой линии лечения. \n\nНе рекомендуется назначение Рифаксимина пациентам с первым эпизодом энтероколита, вызванного C. difficile, лёгкой/умеренной степени тяжести в качестве первой линии терапии\n\nРекомендуется назначение #Ванкомицина** 500 мг перорально или через зонд 4 раза в день пациентам с осложнённым течением клостридиальной инфекции в качестве первой линии консервативного лечения",
+            "pdf": "",
+            "tag2": "Ванкомицин (per os)",
+            "tag3": "Clostridium difficile-ассоциированная инфекция",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/878_1"
+          },
+          {
+            "cite": "Ortenberg E.A. С. difficile infection: clinical and pharmacoeconomic assessment of treatment regimens in antibiotic-associated diarrhea. Clinical Microbiology and Antimicrobial Chemotherapy. 2022;24(4):303-307. DOI: 10.36488/cmac.2022.4.303-307.",
+            "heading": "",
+            "note": "Данная статья представляет собой обзор наиболее крупных публикаций, в основном 2017–2022 гг., посвященных клинико-экономической оценке рекомендуемых алгоритмов терапии Clostridioides difficile инфекции у пациентов с антибиотикоассоциированной диареей (ААД) различной тяжести, включая псевдомембранозный колит. Анализ публикаций показывает, что рекомендации профессиональных медицинских сообществ России, Европейского союза, США, а также метаанализы едины в высокой оценке роли ванкомицина для лечения ААД и псевдомембранозного колита. Оценка роли метронидазола и фидаксомицина не является столь однозначной. Имеются клинико-экономические основания для более широкого применения тейкопланина.",
+            "pdf": "https://disk.yandex.ru/i/1u6P36y5743A6Q",
+            "tag2": "КМАХ",
+            "tag3": "Clostridium difficile-ассоциированная инфекция",
+            "tagr": "",
+            "type": "Обзор",
+            "typeCustom": "Обзор",
+            "url": "https://cmac-journal.ru/publication/2022/4/cmac-2022-t24-n4-p303/"
+          }
+        ],
+        "name": "Ванкомицин",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/vancomycin.html",
+        "subtitle": "Ванкомицин",
+        "tags": {
+          "green": "Гликопептидный антибиотик",
+          "red": "Нефротоксичный",
+          "violet": "",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Ванкобакт, Позимицин, Ванкорус"
+      },
+      "id": "drug_1773653406064"
+    },
+    "drug_1773656807359": {
+      "data": {
+        "dosages": [
+          {
+            "body": "10 мг/кг каждые 8 часов в/в",
+            "info": "У недоношенных новорожденных в возрасте менее 7 дней (беременность менее 34 недель) системный клиренс линезолида ниже, а значения увеличения площади под кривой «концентрация-время» (AUC) выше, чем у большинства новорожденных и детей. Этим новорожденным следует начинать лечение с режима дозирования 10 мг/кг каждые 12 часов. Можно рассмотреть возможность использования режима дозы 10 мг/кг каждые 8 часов у новорожденных с неоптимальным клиническим ответом. Все новорожденные должны получать 10 мг/кг каждые 8 часов в течение 7 дней после рождения.",
+            "tag1": "",
+            "tag2": "Время введения 30–120 минут",
+            "tag3": "",
+            "tagr": "Оценка показателей крови",
+            "tagv": "",
+            "title": "Новорожденные и дети до 11 лет"
+          },
+          {
+            "body": "600 мг каждые 12 часов в/в",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "Оценка показателей крови",
+            "tagv": "",
+            "title": "Дети с 12 лет и взрослые"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "- Staphylococcus aureus, в том числе MRSA (метициллинрезистентный)\n- VRE (резистентные к ванкомицину Enterococcus faecium)",
+            "title": "Обладает активностью в отношении (в том числе)"
+          }
+        ],
+        "groupId": "",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1773656807359",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Зивокс®, раствор для инфузий)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=d108f29d-c1db-4cfc-b609-9b02049d5e10"
+          },
+          {
+            "name": "ОХЛП (Зивокс®, раствор для инфузий)",
+            "url": "https://disk.yandex.ru/i/ZN1dpfjdSSlWsQ"
+          }
+        ],
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "Zhu L, Zeng X, Shi Y, Wu Y, Zhang X, Xu S, Yu X, Huang L. Effectiveness, Safety, and Pharmacokinetics of Linezolid in Pediatric Bacterial Central Nervous System Infections. J Infect Dis. 2025 Aug 14;232(2):430-440. doi: 10.1093/infdis/jiaf169. PMID: 40179267.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "Линезолид",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/linezolid.html",
+        "subtitle": "Линезолид",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие антибактериальные средства; представитель класса оксазолидинонов",
+          "red": "",
+          "violet": "АТХ J01XX08",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Зивокс®, Линезолид"
+      },
+      "id": "drug_1773656807359"
+    },
+    "drug_1773661138495": {
+      "data": {
+        "id": "drug_1773661138495",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Острый лимфобластный лейкоз 2024 г. ID: 529_2",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/529_2"
+          }
+        ],
+        "name": "Метотрексат",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Метотрексат",
+        "tags": {
+          "green": "Противоопухолевые средства; антиметаболиты; аналоги фолиевой кислоты",
+          "red": "",
+          "violet": "АТХ L01BA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Метотрексат-Эбеве®"
+      },
+      "id": "drug_1773661138495"
+    },
+    "drug_1773664476617": {
+      "data": {
+        "id": "drug_1773664476617",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "2021",
+            "type": "Национальная программа",
+            "typeCustom": "Национальная программа",
+            "url": ""
+          },
+          {
+            "cite": "Национальная программа «Недостаточность витамина D у детей и подростков Российской Федерации: современные подходы к коррекции» / Союз педиатров России [и др.]. — М.: ПедиатрЪ, 2018. — 96 с.",
+            "note": "",
+            "pdf": "https://mamazanuda.ru/wp-content/uploads/2019/04/vitamin-D-2018-full.pdf",
+            "tag2": "",
+            "tag3": "2018",
+            "type": "Национальная программа",
+            "typeCustom": "Национальная программа",
+            "url": ""
+          }
+        ],
+        "name": "Витамин D3",
+        "subtitle": "Колекальциферол",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        }
+      },
+      "id": "drug_1773664476617"
+    },
+    "drug_1773957902373": {
+      "data": {
+        "dosages": [
+          {
+            "body": "10 мг/кг каждые 6 ч в/в (первые 3 дозы) → затем 6 мг/кг каждые 24 ч (поддерживающая доза)",
+            "info": "",
+            "tag1": "в/в",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с 2  месяцев до 16 лет"
+          },
+          {
+            "body": "400 мг единоразово в/в → затем 200 мг каждые 24 ч (поддерживающая доза)",
+            "info": "",
+            "tag1": "в/в",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети > 16 лет и взрослые"
+          },
+          {
+            "body": "200 мг каждые 2 ч (per os)",
+            "info": "",
+            "tag1": "Перорально",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Псевдомембранозный колит, вызванный С.difficile"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "id": "drug_1773957902373",
+        "instrUrl": "",
+        "name": "Тейкопланин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Гликопептидный антибиотик",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1773957902373"
+    },
+    "drug_1773963373002": {
+      "data": {
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "qt",
+          "ab"
+        ],
+        "id": "drug_1773963373002",
+        "instrUrl": "",
+        "name": "Эритромицин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Эритромицин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; макролиды, линкозамины и стрептограмины; макролиды",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ J01FA01",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1773963373002"
+    },
+    "drug_1773989990021": {
+      "data": {
+        "dosages": [
+          {
+            "body": "",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дозирование препарата у детей аналогичны взрослым дозам"
+          },
+          {
+            "body": "(0,5 млн ЕД) 5 мкг/кг/ 24 ч в/в или подкожно ",
+            "info": "",
+            "tag1": "Первая доза препарата должна вводиться не < 24 часа после цитотоксической химиотерапии",
+            "tag2": "Отмена препарата не < 24 часа до начала введения химиотерапии",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Цитотоксическая химиотерапия"
+          }
+        ],
+        "groupId": "",
+        "id": "drug_1773989990021",
+        "instrLinks": [
+          {
+            "name": "Инструкция / ОХЛП",
+            "url": "https://disk.yandex.ru/d/ywdgmgx-gYzf1A"
+          }
+        ],
+        "instrUrl": "https://disk.yandex.ru/d/ywdgmgx-gYzf1A",
+        "links": [
+          {
+            "cite": "КР: Острый лимфобластный лейкоз 2024 г. ID: 529_2",
+            "fav": true,
+            "note": "Пациентам младше 18 лет с ОЛЛ/ЛБЛ, ОЛНЛ назначение гранулоцитарного колониестимулирующего фактора (Г-КСФ) (группа L03AA по АТХ-классификации) рекомендуется только в случаях развития тяжелых жизнеугрожающих инфекций",
+            "pdf": "",
+            "tag2": "Обоснование применение филграстима при ОЛЛ, ЛБЛ, ОЛНЛ",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/529_2"
+          },
+          {
+            "cite": "КР: Злокачественные новообразования почек, почечных лоханок, мочеточника, других и неуточненных мочевых органов 2024 г. ID: 67_2",
+            "fav": true,
+            "note": "На фоне проводимой терапии возможно развитие индуцированной аплазии кроветворения, что может потребовать терапии колониестимулирующими факторами, а также трансфузий компонентов крови.",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/67_2"
+          },
+          {
+            "cite": "Smith TJ, Bohlke K, Lyman GH, Carson KR, Crawford J, Cross SJ, Goldberg JM, Khatcheressian JL, Leighl NB, Perkins CL, Somlo G, Wade JL, Wozniak AJ, Armitage JO; American Society of Clinical Oncology. Recommendations for the Use of WBC Growth Factors: American Society of Clinical Oncology Clinical Practice Guideline Update. J Clin Oncol. 2015 Oct 1;33(28):3199-212. doi: 10.1200/JCO.2015.62.3488. Epub 2015 Jul 13. PMID: 26169616.",
+            "fav": false,
+            "note": "",
+            "pdf": "https://disk.yandex.ru/i/YfVUg_yMV7j5rA",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Гайд от ASCO",
+            "typeCustom": "Гайд от ASCO",
+            "url": "https://ascopubs.org/doi/10.1200/JCO.2015.62.3488"
+          }
+        ],
+        "name": "Филграстим",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/filgrastim.html",
+        "subtitle": "",
+        "tags": {
+          "green": "Гранулоцитарный колониестимулирующий фактор (Г-КСФ)",
+          "red": "Возрастные ограничения отсутствуют",
+          "violet": "АТХ L03AA02",
+          "yellow": ""
+        },
+        "trade": "Лейкостим, Теваграстим, Нейпоген"
+      },
+      "id": "drug_1773989990021"
+    },
+    "drug_1774341727204": {
+      "data": {
+        "id": "drug_1774341727204",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: ВИЧ-инфекция у детей 2024 г. ID:\n459_2",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "Ламивудин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Противовирусные средства системного действия; противовирусные средства прямого действия; нуклеозидные и нуклеотидные ингибиторы обратной транскриптазы",
+          "red": "",
+          "violet": "АТХ J05AF05",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1774341727204"
+    },
+    "drug_1774346431503": {
+      "data": {
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1774346431503",
+        "instrUrl": "",
+        "name": "Цефоперазон/сульбактам",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Цефоперазон + [Сульбактам]",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины третьего поколения",
+          "red": "",
+          "violet": "АТХ J01DD",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Сульцеф, Цебанекс®"
+      },
+      "id": "drug_1774346431503"
+    },
+    "drug_1774347558068": {
+      "data": {
+        "id": "drug_1774347558068",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Саркомы мягких тканей 2025 г. ID:\n515_3",
+            "fav": false,
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "Темозоломид",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1774347558068"
+    },
+    "drug_1774347653132": {
+      "data": {
+        "groupId": "grp_1775815052228",
+        "id": "drug_1774347653132",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Саркомы мягких тканей 2025 г. ID:\n515_3",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "Винкристин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Винкристин",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1774347653132"
+    },
+    "drug_1774352264672": {
+      "data": {
+        "id": "drug_1774352264672",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Иммунная тромбоцитопения 2024 г. ID:\n699_2",
+            "fav": false,
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/699_2"
+          }
+        ],
+        "name": "Ромиплостим",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Пептидный агонист тромбопоэтиновых рецепторов",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1774352264672"
+    },
+    "drug_1774353148015": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Омепразол является ингибитором изофермента CYP2C19, поэтому совместное применение омепразола с препаратами, в метаболизме которых принимает участие изофермент CYP2C19, такими как варфарин и другие антагонисты витамина К, цилостазол, диазепам, фенитоин, может привести к увеличению концентраций этих препаратов в плазме крови и потребовать снижения дозы.",
+            "title": "Лекарственные взаимодействия"
+          }
+        ],
+        "id": "drug_1774353148015",
+        "instrLinks": [
+          {
+            "name": "ГРЛС (Омез®, лиофилизат для приготовления раствора для инфузий)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=4b313ff1-0d0e-4c9f-8d2b-8ef75f772d67"
+          },
+          {
+            "name": "ГРЛС (Омез®, капсулы кишечнорастворимые)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=87778439-4f89-42d8-86f0-053c10f48db0"
+          }
+        ],
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "Проценко С.А., Антимоник Н.Ю., Баллюзек М.Ф., Берштейн Л.М., Жукова Н.В., Новик А.В. и соавт. Практические рекомендации по управлению иммуноопосредованными нежелательными явлениями. Злокачественные опухоли : Практические рекомендации RUSSCO #3s2, 2022 (том 12). 203–241. DOI: 10.18027/2224-5057-2022-12-3s2-203-241",
+            "fav": false,
+            "group": "При ГКС",
+            "heading": "",
+            "note": "При применении ГКС необходимо применение противоязвенной терапии (омепразол или другие ингибиторы протонной помпы) и препаратов калия (аспаркам или панангин внутрь по 1 табл. 3 раза в день или другие препараты в эквивалентных дозах)",
+            "pdf": "https://rosoncoweb.ru/standarts/RUSSCO/2022/2022-49.pdf",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Практическое руководство (RUSSCO)",
+            "typeCustom": "Практическое руководство (RUSSCO)",
+            "url": "https://www.malignanttumors.org/jour/article/view/1074"
+          },
+          {
+            "cite": "Alla D, Shah DJ, Seepana M, Salian RB, Alla SSM, Krishna Mohanan M, Sabıroğlu M, Vegesna MSS, Singh A, Gupta S, Shivalingappa Rekha S. Safety of Proton Pump Inhibitors in Pediatric Population: A Systematic Review. Glob Pediatr Health. 2024 Apr 29;11:2333794X241248967. doi: 10.1177/2333794X241248967. PMID: 38685999; PMCID: PMC11057350.",
+            "fav": false,
+            "group": "",
+            "heading": "",
+            "note": "Заключение: ингибиторы протонной помпы следует назначать только в случае необходимости",
+            "pdf": "",
+            "tag2": "Безопасность ингибиторов протонной помпы у детей",
+            "tag3": "",
+            "tagr": "",
+            "type": "Систематический обзор",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38685999/"
+          },
+          {
+            "cite": "КР: Иммунная тромбоцитопения 2024 г. ID: 699_2",
+            "fav": true,
+            "group": "",
+            "heading": "",
+            "note": "Рекомендуется применение гастропротективных средств при терапии ГКС во всех случаях  \n\nКомментарии: применяют ингибиторы протоновой помпы и/или антациды.",
+            "pdf": "",
+            "tag2": "Обоснование применения при диагнозе иммунная тромбоцитопения (D69.3)",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/699_2"
+          },
+          {
+            "cite": "КР: Аутоиммунная гемолитическая анемия 2025 г. ID: 1027_1",
+            "fav": true,
+            "group": "",
+            "heading": "",
+            "note": "Число осложнений со стороны верхних отделов желудочно-кишечного тракта (ЖКТ) увеличивается в 2,2–4,2 раза у пациентов, получающих ГКС. Требуется пациентам длительно принимающим ГКС назначение антацидного лечения (например, ингибиторов протонного насоса)",
+            "pdf": "",
+            "tag2": "Обоснование применения при диагнозе аутоиммунная гемолитическая анемия (D59.1, D59.8, D59.9)",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1027_1"
+          },
+          {
+            "cite": "КР: Агрессивные нефолликулярные лимфомы - диффузная В-клеточная крупноклеточная лимфома, В-клеточная лимфома высокой степени злокачественности с перестройкой генов c-MYC и BCL2/BCL6, первичная медиастинальная В-клеточная лимфома, медиастинальная лимфома серой зоны, лимфома Беркитта, плазмобластная лимфома 2024 г. ID: 129_3",
+            "fav": true,
+            "group": "",
+            "heading": "",
+            "note": "Язва желудка или двенадцатиперстной кишки является одним из серьёзных побочных эффектов терапии ГКС. В связи с ульцерогенностью, при использовании ГКС необходимо проводить антисекреторную терапию с целью профилактики стероидных язв\n\nВ настоящее время с антисекреторной целью для профилактики язвенной болезни желудка и двенадцатиперстной кишки, в том числе на фоне терапии глюкокортикоидами, применяются два класса препаратов: ингибиторы протонного насоса и блокаторы Н2-гистаминовых рецепторов",
+            "pdf": "",
+            "tag2": "Обоснование применения при лимфомах (C83.3, C83.7, C83.8, C83.9, C85.7, C85.2, C91.8)",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": ""
+          },
+          {
+            "cite": "Caplan A, Fett N, Rosenbach M, Werth VP, Micheletti RG. Prevention and management of glucocorticoid-induced side effects: A comprehensive review: Gastrointestinal and endocrinologic side effects. J Am Acad Dermatol. 2017 Jan;76(1):11-16. doi: 10.1016/j.jaad.2016.02.1239. PMID: 27986133.",
+            "fav": false,
+            "group": "",
+            "heading": "",
+            "note": "",
+            "pdf": "https://sci-hub.ru/10.1016/j.jaad.2016.02.1239",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27986133/"
+          }
+        ],
+        "name": "Омепразол",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/omeprazole.html",
+        "subtitle": "Омепразол",
+        "tags": {
+          "green": "Средства для лечения кислотозависимых заболеваний; противоязвенные средства для лечения гастроэзофагеальной рефлюксной болезни (ГЭРБ); ингибиторы протонного насоса",
+          "red": "Метаболизируется изоферментами CYP2C19 и CYP3A4",
+          "violet": "АТХ A02BC01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Омез®"
+      },
+      "id": "drug_1774353148015"
+    },
+    "drug_1774354063861": {
+      "data": {
+        "id": "drug_1774354063861",
+        "instrUrl": "",
+        "name": "Этамзилат",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Этамзилат",
+        "tags": {
+          "green": "Гемостатические средства; витамин K и другие гемостатические средства; другие гемостатические средства системного действия",
+          "red": "",
+          "violet": "АТХ B02BX01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Дицинон, Этамзилат"
+      },
+      "id": "drug_1774354063861"
+    },
+    "drug_1774354425413": {
+      "data": {
+        "id": "drug_1774354425413",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Иммунная тромбоцитопения 2024 г. ID:\n699_2",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/699_2"
+          }
+        ],
+        "name": "Преднизолон",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Преднизолон",
+        "tags": {
+          "green": "Кортикостероиды системного действия; глюкокортикоиды",
+          "red": "",
+          "violet": "АТХ H02AB06",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Преднизолон буфус®"
+      },
+      "id": "drug_1774354425413"
+    },
+    "drug_1774355537740": {
+      "data": {
+        "id": "drug_1774355537740",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Агрессивные нефолликулярные лимфомы - диффузная В-клеточная крупноклеточная лимфома, В-клеточная лимфома высокой степени злокачественности с перестройкой генов c-MYC и BCL2/BCL6, первичная медиастинальная В-клеточная лимфома, медиастинальная лимфома серой зоны, лимфома Беркитта, плазмобластная лимфома. 2024 г. ID:\n129_3",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/129_3"
+          },
+          {
+            "cite": "ФКР: Иммунная тромбоцитопения 2024 г. ID:\n699_2",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/699_2"
+          },
+          {
+            "cite": "ФКР: Аутоиммунная гемолитическая анемия 2025 г. ID:\n1027_1",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1027_1"
+          }
+        ],
+        "name": "Ритуксимаб",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": "Мабтера®, Ацеллбиа"
+      },
+      "id": "drug_1774355537740"
+    },
+    "drug_1774356950755": {
+      "data": {
+        "id": "drug_1774356950755",
+        "instrUrl": "",
+        "name": "Иммуноглобулин человека нормальный",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Иммуноглобулин человека нормальный (ВВИГ)",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Сигардис, Привиджен, Октагам"
+      },
+      "id": "drug_1774356950755"
+    },
+    "drug_1774435424014": {
+      "data": {
+        "id": "drug_1774435424014",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Аутоиммунная гемолитическая анемия 2025 г. ID:\n1027_1",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1027_1"
+          }
+        ],
+        "name": "Микофенолата мофетил (ММФ)",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Микофенолата мофетил",
+        "tags": {
+          "green": "Иммунодепрессанты, селективные иммунодепрессанты",
+          "red": "",
+          "violet": "АТХ L04AA06",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1774435424014"
+    },
+    "drug_1774506950714": {
+      "data": {
+        "groupId": "grp_1775816865566",
+        "groups": [
+          "qt",
+          "ab"
+        ],
+        "id": "drug_1774506950714",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "ФКР: Коклюш у детей 2025 г. ID: 1023_1",
+            "fav": true,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/1023_1"
+          }
+        ],
+        "name": "Азитромицин",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/azithromycin.html",
+        "subtitle": "Азитромицин / Azithromycin",
+        "tags": {
+          "green": "Макролид",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ J01FA10",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Сумамед®"
+      },
+      "id": "drug_1774506950714"
+    },
+    "drug_1774510601625": {
+      "data": {
+        "id": "drug_1774510601625",
+        "instrUrl": "",
+        "name": "Диазепам",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Диазепам / Diazepam",
+        "tags": {
+          "green": "Психолептики; анксиолитические средства; производные бензодиазепина",
+          "red": "Противопоказание детский возраст до 30 дней включительно",
+          "violet": "АТХ N05BA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Сибазон, Релиум"
+      },
+      "id": "drug_1774510601625"
+    },
+    "drug_1774521142886": {
+      "data": {
+        "dosages": [
+          {
+            "body": "2 мг/кг каждые 8 часов в/в",
+            "info": "",
+            "tag1": "< 1 месяц off-label",
+            "tag2": "6 мг/кг в сутки",
+            "tag3": "",
+            "tagr": "Оценка функции почек",
+            "tagv": "",
+            "title": "Детям от 1 месяца до 2 лет"
+          },
+          {
+            "body": "1 мг/кг каждые 8 часов в/в",
+            "info": "",
+            "tag1": "в/в",
+            "tag2": "3–5 мг/кг в сутки",
+            "tag3": "",
+            "tagr": "Оценка функции почек",
+            "tagv": "",
+            "title": "Детям от  2-х лет"
+          },
+          {
+            "body": "120 – 160 мг один раз в сутки",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Пациентам с инфекционно-воспалительными заболеваниями мочевыводящих путей и нормальной функцией почек"
+          },
+          {
+            "body": "240 – 280 мг один раз в сутки",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "При гонореи"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab",
+          "nt"
+        ],
+        "id": "drug_1774521142886",
+        "instrUrl": "",
+        "name": "Гентамицин",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/gentamicin.html",
+        "subtitle": "Гентамицин / Gentamicin",
+        "tags": {
+          "green": "Аминогликозид",
+          "red": "Противопоказан  новорожденным (до 1 месяца), в том числе недоношенным детям",
+          "violet": "АТХ J01GB03",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1774521142886"
+    },
+    "drug_1774606801652": {
+      "data": {
+        "dosages": [
+          {
+            "body": "Вариант дозирования с учетом максимальных суточных доз:\n\nЦефепим + сульбактама: 25 мг/кг каждые 8 ч (расчет по цефепиму) \n+\nЦефепима: 25 мг/кг каждые 8 ч ",
+            "info": "Согласно инструкции к препарату дети должны получать ЛС в дозе 50 мг/кг каждые 12 часов (расчёт по цефепиму), однако это выходит за пределы разрешённой максимальной суточной дозы сульбактама (80 мг/кг в сутки) \n\nПоэтому есть необходимость в снижении дозы препарата цефепим + сульбактам и добавление препарата цефепим",
+            "tag1": "Максимальная доза цефепима 150 мг/кг в сутки",
+            "tag2": "Максимальная суточная доза сульбактама 80 мг/кг в сутки",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети от 2 месяцев (с массой тела < 40 кг)"
+          },
+          {
+            "body": "2 г каждые 12 ч (расчет по цефепиму)[длительностью введения не < 30 мин]",
+            "info": "",
+            "tag1": "Максимальная разовая доза 2 г",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с 2 лет (с массой тела > 40 кг) и взрослые"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "",
+            "title": "Коррекция дозы (осуществляется по КК)"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "id": "drug_1774606801652",
+        "instrUrl": "",
+        "links": [
+          {
+            "cite": "Wareham DW, Momin MHFA, Phee LM, Hornsey M, Standing JF. Cefepime/sulbactam as an enhanced antimicrobial combination therapy for the treatment of MDR Gram-negative infections. J Antimicrob Chemother. 2020 Jan 1;75(1):135-139. doi: 10.1093/jac/dkz420. PMID: 31617905.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31617905/"
+          }
+        ],
+        "name": "Цефепим/сульбактам",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Цефепим + сульбактам / Cefepim and Sulbactam",
+        "tags": {
+          "green": "Ингибиторозащищенный цефалоспорин IV поколения",
+          "red": "С 2 месяцев",
+          "violet": "АТХ J01DE51",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Максиктам"
+      },
+      "id": "drug_1774606801652"
+    },
+    "drug_1774870459797": {
+      "data": {
+        "dosages": [
+          {
+            "body": "100 мг/кг каждые 8 ч  ",
+            "info": "",
+            "tag1": "Максимальная суточная доза 200-400 мг/кг в сутки",
+            "tag2": "Можно использовать продленные инфузии",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с рождения"
+          }
+        ],
+        "groupId": "",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1774870459797",
+        "links": [
+          {
+            "cite": "Falagas ME, Kontogiannis DS, Romanos LT, Ragias D, Agoranou ME, Kakoullis SA. Intravenous Fosfomycin for Gram-Negative and Gram-Positive Bacterial Infections: A Systematic Review of the Clinical Evidence. Antibiotics (Basel). 2025 Nov 23;14(12):1193. doi: 10.3390/antibiotics14121193. PMID: 41463696; PMCID: PMC12729521.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Систематический обзор",
+            "typeCustom": "",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12729521/#sec6-antibiotics-14-01193"
+          },
+          {
+            "cite": "Antonello RM, Di Bella S, Maraolo AE, Luzzati R. Fosfomycin in continuous or prolonged infusion for systemic bacterial infections: a systematic review of its dosing regimen proposal from in vitro, in vivo and clinical studies. Eur J Clin Microbiol Infect Dis. 2021 Jun;40(6):1117-1126. doi: 10.1007/s10096-021-04181-x. Epub 2021 Feb 18. PMID: 33604721; PMCID: PMC8139892.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33604721/"
+          },
+          {
+            "cite": "Grabein B, Graninger W, Rodríguez Baño J, Dinh A, Liesenfeld DB. Intravenous fosfomycin-back to the future. Systematic review and meta-analysis of the clinical literature. Clin Microbiol Infect. 2017 Jun;23(6):363-372. doi: 10.1016/j.cmi.2016.12.005. Epub 2016 Dec 9. PMID: 27956267.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Метаанализ",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27956267/"
+          },
+          {
+            "cite": "Williams PC. Potential of fosfomycin in treating multidrug-resistant infections in children. J Paediatr Child Health. 2020 Jun;56(6):864-872. doi: 10.1111/jpc.14883. Epub 2020 Apr 15. PMID: 32294306.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Нарративный обзор",
+            "typeCustom": "Нарративный обзор",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32294306/"
+          },
+          {
+            "cite": "Dizi Işık A, Akkoç G, Ergenç Z, Yılmaz S, Aslan Tuncay S, Parlak B, Canizci Erdemli P, Büyüktaş Aytaç D, Abacı Çapar MÇ, Öcal Demir S, Kepenekli E. The use of fosfomycin in infections caused by multidrug-resistant pathogens, especially pneumonia in children: a five-year retrospective single-centre experience. J Antimicrob Chemother. 2024 Sep 3;79(9):2179-2185. doi: 10.1093/jac/dkae204. PMID: 39001717.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39001717/"
+          }
+        ],
+        "name": "Фосфомицин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Фосфомицин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие антибактериальные средства;  производные фосфоновой кислоты",
+          "red": "",
+          "violet": "АТХ J01XX01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Уробактоцин, Фосфомицин"
+      },
+      "id": "drug_1774870459797"
+    },
+    "drug_1774874536012": {
+      "data": {
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1774874536012",
+        "links": [
+          {
+            "cite": "Zhou XP, Ye XJ, Shen JP, Lan JP, Jiang HF, Zhang J, Zhang XJ, Li L, Qian SX, Tong HY. Salvage tigecycline in high risk febrile neutropenic patients with hematological malignancies: a prospective multicenter study. Leuk Lymphoma. 2018 Nov;59(11):2679-2685. doi: 10.1080/10428194.2018.1436173. Epub 2018 Feb 16. PMID: 29448851.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "Тигециклин",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/tigecycline.html",
+        "subtitle": "Тигециклин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; тетрациклины",
+          "red": "",
+          "violet": "АТХ J01AA12",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Тигацил®, Тибакт, Тигециклин, Тигецивер"
+      },
+      "id": "drug_1774874536012"
+    },
+    "drug_1774949263820": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Пикамилон® в таблетках и в растворе для внутривенного и внутримышечного введения противопоказан у детей (у детей старше 3 лет применяется только при расстройствах мочеиспускания)\n",
+            "title": "Возрастные ограничения"
+          }
+        ],
+        "id": "drug_1774949263820",
+        "instrLinks": [
+          {
+            "name": "ГРЛС (Пикамилон®, таблетки)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=6e891258-52a6-40ff-821a-53d76bac1093"
+          },
+          {
+            "name": "MEDIQ (Пикамилон)",
+            "url": "https://mediqlab.com/drugs/beedd4c0-f1ff-47c9-a803-3e9f16103be0"
+          },
+          {
+            "name": "ГРЛС (Пикамилон®, раствор для внутривенного и внутримышечного введения)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=cd968e2a-a39e-46ca-9989-358080699180"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Захаров В.В., Бородулина И.В., Вахнина Н.В. Лечение больных с хронической ишемией головного мозга: опыт применения комбинированного нейропротективного препарата Пикамилон Гинкго. Журнал неврологии и психиатрии им. С.С. Корсакова. 2022;122(9):95‑103.",
+            "fav": false,
+            "heading": "",
+            "note": "Сравнение клинической эффективности и безопасности препаратов Пикамилон Гинкго и гинкго билоба у пациентов с когнитивными нарушениями при сосудистых заболеваниях головного мозга (хронической ишемии головного мозга)\n\nКомбинация стандартизированного экстракта гинкго билоба с препаратом «Пикамилон» имеет преимущество перед монотерапией экстрактом гинкго билоба у пациентов с хронической ишемией головного мозга, поскольку способствует более значительному регрессу когнитивных нарушений и улучшению качества жизни",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "РКИ",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36168693/"
+          }
+        ],
+        "name": "Никотиноил гамма-аминомасляная кислота",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Психоаналептики; психостимуляторы, средства, применяемые при синдроме дефицита внимания с гиперактивностью, и ноотропные средства; другие психостимуляторы и ноотропные средства",
+          "red": "Эффективность не доказана",
+          "violet": "",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Пикамилон®"
+      },
+      "id": "drug_1774949263820"
+    },
+    "drug_1775025967248": {
+      "data": {
+        "id": "drug_1775025967248",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "MEDIQ (Фенибут)",
+            "url": "https://mediqlab.com/drugs/24c7b530-c91b-4082-b0a5-d83fecb921f3"
+          },
+          {
+            "name": "ГРЛС (Фенибут, таблетки)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=a3cf7a75-0826-45cb-a643-5aeedfd23e30"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Kupats E, Vrublevska J, Zvejniece B, Vavers E, Stelfa G, Zvejniece L, Dambrova M. Safety and Tolerability of the Anxiolytic and Nootropic Drug Phenibut: A Systematic Review of Clinical Trials and Case Reports. Pharmacopsychiatry. 2020 Sep;53(5):201-208. doi: 10.1055/a-1151-5017. Epub 2020 Apr 27. PMID: 32340063.",
+            "fav": false,
+            "note": "Согласно результатам систематического обзора, фенибут в терапевтических дозах безопасен и хорошо переносится, вызывая лишь незначительные побочные эффекты",
+            "pdf": "https://disk.yandex.ru/i/VpzC6wmg3RqBow",
+            "tag2": "11 клинических исследований фенибута (583 пациента)",
+            "tag3": "Оценка безопасности",
+            "tagr": "",
+            "type": "Систематический обзор",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32340063/"
+          },
+          {
+            "cite": "Esin OR, Khayrullin IK, Esin RG, Malova LA. Effektivnost' korotkogo i prolongirovannogo kursovogo lecheniya trevozhnogo rasstroistva preparatom Anvifen [The effectiveness of short and prolonged course treatment of anxiety with Anvifen]. Zh Nevrol Psikhiatr Im S S Korsakova. 2022;122(12):68-73. Russian. doi: 10.17116/jnevro202212212168. PMID: 36537634.",
+            "fav": false,
+            "note": "Анвифен эффективно устраняет симптомы тревожности, но эффект от короткого курса длится менее 1 месяца, а при длительном лечении — более 1 месяца. Авторы рекомендуют проводить длительное лечение тревожности препаратом Анвифен не менее 2 месяцев",
+            "pdf": "",
+            "tag2": "Эффективность краткосрочного и длительного курсового лечения тревожных расстройств",
+            "tag3": "",
+            "tagr": "",
+            "type": "РКИ",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36537634/"
+          },
+          {
+            "cite": "ФКР: Головная боль напряжения 2024 г. ID: 810_1",
+            "fav": true,
+            "note": "Рекомендуется при недостаточной эффективности немедикаментозных методик и невозможности проведения профилактического лечения амитриптилином (противопоказания к применению или развитие нежелательных явлений) [4, 25, 32] проведение лечения ноотропными препаратами (N06BX другие психостимуляторы и ноотропные препараты) с седативным действием: препаратами #аминофенилмасляной кислоты - N06BX22) в дозе 15–20 мг/кг в день перорально в 2–3 приема у детей с частой эпизодической и хронической формами ГБН",
+            "pdf": "",
+            "tag2": "Головная боль напряжения",
+            "tag3": "Дети",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": "https://cr.minzdrav.gov.ru/view-cr/810_1"
+          }
+        ],
+        "name": "Аминофенилмасляная кислота",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Аминофенилмасляная кислота",
+        "tags": {
+          "green": "Другие психостимуляторы и ноотропные препараты с седативным действием",
+          "red": "Эффективность не доказана",
+          "violet": "АТХ N06BX22",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Фенибут, Анвифен, Бифрен, Нообут, Ноофен"
+      },
+      "id": "drug_1775025967248"
+    },
+    "drug_1775027509010": {
+      "data": {
+        "dosages": [
+          {
+            "body": "37,5 мг/кг каждые 12 ч в/в  (расчет по комбинации)",
+            "info": "в ранний неонатальный период",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с рождения до 7 дней (в том числе недоношенные новорожденные)"
+          },
+          {
+            "body": "50 мг/кг каждые 8 ч в/в (расчет по комбинации)",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети в возрасте от 7 дней до 28 дней"
+          },
+          {
+            "body": "50 мг/кг каждые 8 ч в/в (расчет по комбинации)\nили\n50 мг/кг каждые 6 ч в/в  (расчет по комбинации)",
+            "info": "",
+            "tag1": "Если m > 40 кг взрослые дозы",
+            "tag2": "При тяжелом течении инфекции доза может быть увеличена до 300 мг/кг/сут",
+            "tag3": "Максимальная разовая доза 75 мг/кг",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети старше 1 месяца и до 12 лет (или с массой тела менее 40 кг)"
+          },
+          {
+            "body": "1,5 г каждые 6 ч в/в (расчет по комбинации)\nили\n3 г каждые 6 ч в/в (расчет по комбинации)",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "Максимальная суточная доза сульбактама не должна превышать 4 г",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети старше 12 лет и с массой тела более 40 кг"
+          },
+          {
+            "body": "1,5 г в/в за 30-60 минут до разреза\nили\n3 г в/в за  30-60 минут до разреза",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Предоперационная антибиотикопрофилактика (взрослые)"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "КК < 30 мл/мин требует коррекции дозы\nУ детей коррекция дозы (как и у взрослых) осуществляется путем увеличение интервала введения ",
+            "title": "Коррекция дозы (осуществляется по КК)"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1775027509010",
+        "instrLinks": [
+          {
+            "name": "ОХЛП (Сультасин® порошок для приготовления раствора для внутривенного и внутримышечного введения)",
+            "url": "https://disk.yandex.ru/i/CvTzbWWGz2Bvww"
+          }
+        ],
+        "name": "Ампициллин/сульбактам",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/ampicillin-sulbactam-index.html",
+        "subtitle": "Ампициллин + [сульбактам]",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; бета-лактамные антибактериальные средства, пенициллины; комбинации пенициллинов, включая комбинации с ингибиторами бета-лактамаз",
+          "red": "",
+          "violet": "АТХ J01CR01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Сультасин®, Амибактам, Комплисан, Дуактилам, Рампинам, Ампициллин + сульбактам"
+      },
+      "id": "drug_1775027509010"
+    },
+    "drug_1775035707660": {
+      "data": {
+        "id": "drug_1775035707660",
+        "instrLinks": [
+          {
+            "name": "MEDIQ",
+            "url": "https://mediqlab.com/drugs/fae6694f-c132-4828-914b-e788b9f134d6"
+          },
+          {
+            "name": "ОХЛП (Эниксум®, раствор для инъекций)",
+            "url": "https://disk.yandex.ru/i/2yyUjdeenFfQhg"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Faustino EVS, Shabanova V, Raffini LJ, Kandil SB, Li S, Pinto MG, Cholette JM, Hanson SJ, Nellis ME, Silva CT, Chima R, Sharathkumar A, Thomas KA, McPartland T, Tala JA, Spinella PC; CRETE Trial Investigators and the Pediatric Critical Care Blood Research Network (BloodNet) of the Pediatric Acute Lung Injury and Sepsis Investigators Network (PALISI). Efficacy of Early Prophylaxis Against Catheter-Associated Thrombosis in Critically Ill Children: A Bayesian Phase 2b Randomized Clinical Trial. Crit Care Med. 2021 Mar 1;49(3):e235-e246. doi: 10.1097/CCM.0000000000004784. PMID: 33372745; PMCID: PMC7902342.",
+            "fav": true,
+            "heading": "",
+            "note": "Полученные данные свидетельствуют об эффективности и безопасности ранней профилактики, что должно быть подтверждено в ходе ключевого рандомизированного клинического исследования.",
+            "pdf": "",
+            "tag2": "Байесовское рандомизированное клиническое исследование фазы 2b",
+            "tag3": "",
+            "tagr": "",
+            "type": "РКИ",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33372745/"
+          }
+        ],
+        "name": "Эноксапарин натрия",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/enoxaparin.html",
+        "subtitle": "Эноксапарин натрия / Enoxaparin",
+        "tags": {
+          "green": "Антитромботические средства; группа гепарина",
+          "red": "",
+          "violet": "ATX B01AB02",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Эноксапарин, Эниксум, Гемапаксан, Клексан, Фленокс НЕО, Эноксапарин натрия, Эноксапарин-Бинергия"
+      },
+      "id": "drug_1775035707660"
+    },
+    "drug_1775041267955": {
+      "data": {
+        "id": "drug_1775041267955",
+        "instrLinks": [
+          {
+            "name": "MEDIQ",
+            "url": "https://mediqlab.com/drugs/fb40133d-8191-48a2-a670-da84f11b7476"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Simental-Mendía M, Sánchez-García A, Simental-Mendía LE. Effect of ursodeoxycholic acid on liver markers: A systematic review and meta-analysis of randomized placebo-controlled clinical trials. Br J Clin Pharmacol. 2020 Aug;86(8):1476-1488. doi: 10.1111/bcp.14311. Epub 2020 Apr 27. PMID: 32285958; PMCID: PMC7373700.",
+            "fav": false,
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Метаанализ",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32285958/"
+          }
+        ],
+        "name": "Урсодезоксихолевая кислота",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Урсодезоксихолевая кислота (УДХК)",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": "Эсхол, Гринтерол, Ливодекса, Укрлив, Урбихол, Урдокса, Урсодез, Урсодекс, Урсодиолизин, Урсолив, Урсомик, Урсоприм, Урсором С, Урсосан, Урсофальк, Урсохол, Урцевел, Холудексан, Урсолизин, Экурохол"
+      },
+      "id": "drug_1775041267955"
+    },
+    "drug_1775114209734": {
+      "data": {
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1775114209734",
+        "name": "Цефиксим",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Цефиксим",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины третьего поколения",
+          "red": "",
+          "violet": "АТХ J01DD08",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Панцеф®, Супракс®"
+      },
+      "id": "drug_1775114209734"
+    },
+    "drug_1775220651187": {
+      "data": {
+        "id": "drug_1775220651187",
+        "name": "Каспофунгин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Каспофунгин",
+        "tags": {
+          "green": "Противогрибковые средства системного действия; другие противогрибковые средства системного действия",
+          "red": "",
+          "violet": "АТХ J02AX04",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Максканд®, Лектофунгин, Каспоминер, Каспофунгин"
+      },
+      "id": "drug_1775220651187"
+    },
+    "drug_1775457474779": {
+      "data": {
+        "dosages": [
+          {
+            "body": "20 мг/кг каждые 8 ч в/в по цефтазидиму (2-х часовая инфузия)",
+            "info": "Комбинация состоит из: 20 мг/кг (цефтазидима) + 5 мг/кг (авибактама)",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "при рСКФ < 50 мл/мин на 1,73 м2 коррекция",
+            "tagv": "",
+            "title": "Новорожденные, с 0 до 28 дней (доношенные)"
+          },
+          {
+            "body": "30 мг/кг каждые 8 ч в/в по цефтазидиму (2-х часовая инфузия)",
+            "info": "Комбинация состоит из: 30 мг/кг (цефтазидима) + 7,5 мг/кг (авибактама)",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "при рСКФ < 50 мл/мин на 1,73 м2 коррекция",
+            "tagv": "",
+            "title": "Дети с 28 дней до 3 месяцев (доношенные)"
+          },
+          {
+            "body": "40 мг/кг каждые 8 ч в/в по цефтазидиму (2-х часовая инфузия)",
+            "info": "Комбинация состоит из: 40 мг/кг (цефтазидима) + 10 мг/кг (авибактама)",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "при рСКФ < 50 мл/мин на 1,73 м2 коррекция",
+            "tagv": "",
+            "title": "Дети от 3 месяцев до 6 месяцев"
+          },
+          {
+            "body": "50 мг/кг каждые 8 ч в/в по цефтазидиму (2-х часовая инфузия)",
+            "info": "Комбинация состоит из: 50 мг/кг (цефтазидима) + 12,5 мг/кг (авибактама)",
+            "tag1": "при m > 40 кг использовать взрослые дозы",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "при рСКФ < 50 мл/мин на 1,73 м2 коррекция",
+            "tagv": "",
+            "title": "От 6 месяцев до 18 лет"
+          }
+        ],
+        "facts": [
+          {
+            "info": "",
+            "text": "Фиксированное соотношение  4 : 1 цефтазидим : авибактам",
+            "title": "Соотношение компонентов"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1775457474779",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ОХЛП (Завицефта, порошок для приготовления концентрата для приготовления раствора для инфузий)",
+            "url": "https://disk.yandex.ru/i/qbQJjuo8gl3jLQ"
+          },
+          {
+            "name": "ГРЛС (Завицефта, порошок для приготовления концентрата для приготовления раствора для инфузий)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=ba280928-2f6a-4a14-84a3-ca952520b094"
+          }
+        ],
+        "name": "Цефтазидим/авибактам",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/avibactam-ceftazidime.html",
+        "subtitle": "Цефтазидим + [Авибактам]",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины третьего поколения",
+          "red": "",
+          "violet": "J01DD52",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Завицефта, Авцефт"
+      },
+      "id": "drug_1775457474779"
+    },
+    "drug_1775548591081": {
+      "data": {
+        "dosages": [
+          {
+            "body": "Недоношенным детям в возрасте до 41 недели включительно (суммарно гестационный и хронологический возраст) применение цефтриаксона противопоказано",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Недоношенные дети"
+          },
+          {
+            "body": "",
+            "info": "",
+            "tag1": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "Гипербилирубинемия, желтуха или ацидоз",
+            "tagv": "",
+            "title": "Доношенные новорожденные (с 0 до 28 дней)"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1775548591081",
+        "name": "Цефтриаксон",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/search.php?searchterm=ceftriaxone&a=1",
+        "subtitle": "Цефтриаксон / Ceftriaxone",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины третьего поколения",
+          "red": "",
+          "violet": "АТХ J01DD04",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1775548591081"
+    },
+    "drug_1775557793387": {
+      "data": {
+        "dosages": [
+          {
+            "body": "30 мг/кг каждые 8 часов",
+            "info": "",
+            "tag1": "",
+            "tag2": "Максимальная суточная доза 120 мг/кг",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с 9 месяцев до 12 лет"
+          },
+          {
+            "body": "30 мг/кг каждые 6 часов",
+            "info": "",
+            "tag1": "",
+            "tag2": "Максимальная суточная доза 120 мг/кг",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с 9 месяцев до 12 лет [при тяжелых  и жизнеугрожающих инфекцях]"
+          },
+          {
+            "body": "2 г каждые 6-8 часов",
+            "info": "",
+            "tag1": "",
+            "tag2": "Максимальная суточная доза  8 г",
+            "tag3": "",
+            "tagr": "",
+            "tagv": "",
+            "title": "Дети с 12 лет и взрослые [Тяжелые или жизнеугрожающие инфекции, или инфекции, вызванные Р. aeruginosa]"
+          }
+        ],
+        "groupId": "grp_1775810189653",
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1775557793387",
+        "name": "Азтреонам",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Азтреонам",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; монобактамы",
+          "red": "",
+          "violet": "АТХ J01DF01",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Азтреобакт, Азликтера"
+      },
+      "id": "drug_1775557793387"
+    },
+    "drug_1775643755654": {
+      "data": {
+        "id": "drug_1775643755654",
+        "name": "Тиоктовая кислота",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Альфа-липоевая кислота",
+        "tags": {
+          "green": "",
+          "red": "Эффективность не доказана",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": "Тиоктовая кислота"
+      },
+      "id": "drug_1775643755654"
+    },
+    "drug_1775717678622": {
+      "data": {
+        "id": "drug_1775717678622",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Креон®, капсулы кишечнорастворимые)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=358b0fec-ba4a-46f3-a8ee-da7ebff0f377"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Хатьков И.Е., Маев И.В., Бордин Д.С., Кононенко И.Б., Кучерявый Ю.А., Покатаев И.А., Снеговой А.В., Трякин А.А., Феоктистова П.С., Жукова Л.Г. Место ферментозаместительной терапии при экзокринной и нутритивной недостаточности у пациентов с онкологическими заболеваниями. Современная Онкология. 2024;26(3):380–389. DOI: 10.26442/18151434.2024.3.203007",
+            "fav": false,
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Нарративный обзор",
+            "typeCustom": "Нарративный обзор",
+            "url": "https://cyberleninka.ru/article/n/mesto-fermentozamestitelnoy-terapii-pri-ekzokrinnoy-i-nutritivnoy-nedostatochnosti-u-patsientov-s-onkologicheskimi-zabolevaniyami/viewer"
+          }
+        ],
+        "name": "Панкреатин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Препараты, способствующие пищеварению, включая ферментные препараты; ферментные препараты",
+          "red": "",
+          "violet": "АТХ A09AA02",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Креон®"
+      },
+      "id": "drug_1775717678622"
+    },
+    "drug_1775805082263": {
+      "data": {
+        "groupId": "",
+        "id": "drug_1775805082263",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Диакарб®, таблетки)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=2115dab9-1171-40bc-831e-3d6fc75381bd"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Fernández-García MÁ, Cantarín-Extremera V, Andión-Catalán M, Duat-Rodríguez A, Jiménez-Echevarría S, Bermejo-Arnedo I, Hortigüela-Saeta M, Rekarte-García S, Babín-López L, Ruano Domínguez D. Secondary Intracranial Hypertension in Pediatric Patients With Leukemia. Pediatr Neurol. 2017 Dec;77:48-53. doi: 10.1016/j.pediatrneurol.2017.08.013. Epub 2017 Sep 1. PMID: 29097019.",
+            "fav": false,
+            "note": "У пациентов с гематоонкологическими заболеваниями и вторичной внутричерепной гипертензией может не проявляться типичная симптоматика. Таким образом, диагностика и выявление этого заболевания у таких пациентов могут быть затруднительными. Сопутствующие факторы разнообразны и не имеют очевидной причинно-следственной связи. Для постановки диагноза необходимо сохранять высокую степень настороженности, поскольку при своевременном лечении прогноз благоприятный.\n\nАцетазоламид эффективен в качестве терапии первой линии и вызывает мало побочных эффектов",
+            "pdf": "https://sci-hub.ru/10.1016/j.pediatrneurol.2017.08.013",
+            "tag2": "Применение у детей с гематологическими заболеваниями при вторичной внутричерепной гипертензии",
+            "tag3": "Средний возраст 10,6 лет",
+            "tagr": "",
+            "type": "Ретроспективный анализ",
+            "typeCustom": "Ретроспективный анализ",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29097019/"
+          },
+          {
+            "cite": "Del Monte F, Bucchino L, Versace A, Tardivo I, Castagno E, Pieri G, Pilloni G, Felici E, Urbino AF. Infantile idiopathic intracranial hypertension: case report and review of the literature. Ital J Pediatr. 2022 Jan 10;48(1):3. doi: 10.1186/s13052-021-01191-5. PMID: 35012609; PMCID: PMC8743694.",
+            "fav": false,
+            "note": "После постановки диагноза «идиопатическая внутричерепная гипертензия» был назначен пероральный прием ацетазоламида и кортикостероидов, что привело к постепенному исчезновению симптомов",
+            "pdf": "",
+            "tag2": "Применение у 8-ми месячного ребенка",
+            "tag3": "",
+            "tagr": "",
+            "type": "Клинический случай и обзор литературы",
+            "typeCustom": "Клинический случай и обзор литературы",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35012609/"
+          }
+        ],
+        "name": "Ацетазоламид",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/acetazolamide.html",
+        "subtitle": "Ацетазоламид / Acetazolamide",
+        "tags": {
+          "green": "Диуретическое средство",
+          "red": "",
+          "violet": "АТХ: S01EC01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Диакарб®"
+      },
+      "id": "drug_1775805082263"
+    },
+    "drug_1776164371715": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Бензобарбитал, вальпроевая кислота, габапентин, зонисамид, карбамазепин, клоназепам, лакосамид, ламотриджин, леветирацетам, окскарбазепин, примидон, топирамат, фенитоин, фенобарбитал, эсликарбазепин",
+            "title": "В России при фокальных формах эпилепсии в режиме монотерапии разрешены к применению:"
+          }
+        ],
+        "id": "drug_1776164371715",
+        "instrLinks": [
+          {
+            "name": "Эпилепсия и эпилептический статус у взрослых и детей",
+            "url": "https://cr.minzdrav.gov.ru/preview-cr/741_1"
+          }
+        ],
+        "links": [
+          {
+            "cite": "КР: Эпилепсия и эпилептический статус у взрослых и детей 2022 г. ID: 741_1",
+            "fav": false,
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "КР",
+            "typeCustom": "",
+            "url": ""
+          }
+        ],
+        "name": "ЭПИЛЕПСИЯ И ЭПИЛЕПТИЧЕСКИЙ СТАТУС У ВЗРОСЛЫХ И ДЕТЕЙ",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1776164371715"
+    },
+    "drug_1776240162503": {
+      "data": {
+        "id": "drug_1776240162503",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Lin C, Narayan HK, Trovillion E, Armenian S, Alejandro L, Kuo DJ. Serum Carnitine Concentrations and Cardiac Function in Pediatric, Adolescent and Young Adult Oncology Patients Receiving High-Dose Anthracyclines. J Pediatr Pharmacol Ther. 2024 Oct;29(5):475-481. doi: 10.5863/1551-6776-29.5.475. Epub 2024 Oct 14. PMID: 39411421; PMCID: PMC11472407.",
+            "fav": false,
+            "heading": "",
+            "note": "Выводы: Результаты этого небольшого пилотного исследования позволяют предположить, что существует взаимосвязь между концентрацией карнитина в сыворотке крови и функцией сердца после терапии антрациклинами, которую следует изучить в более масштабных исследованиях",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "Для обоснования цитировать вместе со 2-ой статьей",
+            "type": "Проспективное исследование",
+            "typeCustom": "Проспективное исследование",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39411421/"
+          },
+          {
+            "cite": "Armenian SH, Gelehrter SK, Vase T, Venkatramani R, Landier W, Wilson KD, Herrera C, Reichman L, Menteer JD, Mascarenhas L, Freyer DR, Venkataraman K, Bhatia S. Carnitine and cardiac dysfunction in childhood cancer survivors treated with anthracyclines. Cancer Epidemiol Biomarkers Prev. 2014 Jun;23(6):1109-14. doi: 10.1158/1055-9965.EPI-13-1384. Epub 2014 Apr 9. Erratum in: Cancer Epidemiol Biomarkers Prev. 2014 Sep;23(9):1952. PMID: 24718281; PMCID: PMC4053243.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "Для обоснования цитировать вместе со 1-ой статьей",
+            "type": "Поперечное (cross-sectional) исследование",
+            "typeCustom": "Поперечное (cross-sectional) исследование",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24718281/"
+          }
+        ],
+        "name": "Левокарнитин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Другие средства для лечения заболеваний желудочно-кишечного тракта и нарушений обмена веществ; аминокислоты и их производные",
+          "red": "Эффективность не доказана",
+          "violet": "АТХ A16AA01",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Элькар®, L-карнитин, Л-Карнитин, Карнифит"
+      },
+      "id": "drug_1776240162503"
+    },
+    "drug_1776327404635": {
+      "data": {
+        "id": "drug_1776327404635",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Belsky JA, Stanek JR, O'Brien SH. Prevalence and management of constipation in pediatric acute lymphoblastic leukemia in U.S. children's hospitals. Pediatr Blood Cancer. 2020 Nov;67(11):e28659. doi: 10.1002/pbc.28659. Epub 2020 Sep 7. PMID: 32893981.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32893981/"
+          }
+        ],
+        "name": "Лактулоза",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "Средства для лечения запоров; осмотические слабительные средства",
+          "red": "",
+          "violet": "АТХ A06AD11",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Дюфалак®"
+      },
+      "id": "drug_1776327404635"
+    },
+    "drug_1776329803534": {
+      "data": {
+        "id": "drug_1776329803534",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Нейромультивит",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Пиридоксин + тиамин + цианокобаламин",
+        "tags": {
+          "green": "Витамины; витамин B1 и его комбинации с витаминами B6 и B12; витамин B1 в комбинации с витаминами B6 и/или B12",
+          "red": "",
+          "violet": "АТХ A11DB",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Нейромультивит®"
+      },
+      "id": "drug_1776329803534"
+    },
+    "drug_1776418291143": {
+      "data": {
+        "groups": [
+          "ab"
+        ],
+        "id": "drug_1776418291143",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Цефазолин",
+        "qlActivity": "https://amrbook.ru/activity",
+        "qlInteraction": "",
+        "subtitle": "Цефазолин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; другие бета-лактамные антибактериальные средства; цефалоспорины первого поколения",
+          "red": "",
+          "violet": "АТХ J01DB04",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Нацеф®, Орпин®, Цефазолин"
+      },
+      "id": "drug_1776418291143"
+    },
+    "drug_1776421921499": {
+      "data": {
+        "id": "drug_1776421921499",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "MEDIQ (Реамберин)",
+            "url": "https://mediqlab.com/drugs/4825eeb1-7256-4371-a97c-46ff20db7202?ysclid=mo2t5eu3rm738559523"
+          }
+        ],
+        "links": [
+          {
+            "cite": "Спичак И. И., Наумов П. В., Волосников Д. К. Опыт применения препарата «Реамберин» в детской онкологической практике // Педиатрический вестник Южного Урала. 2014. №1-2.",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "https://cyberleninka.ru/article/n/opyt-primeneniya-preparata-reamberin-v-detskoy-onkologicheskoy-praktike/viewer",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "",
+            "typeCustom": "",
+            "url": "https://cyberleninka.ru/article/n/opyt-primeneniya-preparata-reamberin-v-detskoy-onkologicheskoy-praktike"
+          }
+        ],
+        "name": "Реамберин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Меглюмина натрия сукцинат",
+        "tags": {
+          "green": "Растворы влияющие на водно-электролитный баланс",
+          "red": "Эффективность не доказана",
+          "violet": "АТХ B05BB",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Реамберин®"
+      },
+      "id": "drug_1776421921499"
+    },
+    "drug_1776424774833": {
+      "data": {
+        "id": "drug_1776424774833",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Амлодипин",
+        "qlActivity": "",
+        "qlInteraction": "https://www.drugs.com/drug-interactions/amlodipine.html",
+        "subtitle": "Амлодипин",
+        "tags": {
+          "green": "Блокаторы кальциевых каналов; селективные блокаторы кальциевых каналов с преимущественным действием на сосуды; производные дигидропиридина",
+          "red": "",
+          "violet": "АТХ C08CA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Кардилопин®, Амлодипин"
+      },
+      "id": "drug_1776424774833"
+    },
+    "drug_1776764546344": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Препарат Верошпирон® не предназначен для применения у детей до 3 лет",
+            "title": "Возрастные ограничения"
+          }
+        ],
+        "id": "drug_1776764546344",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Верошпирон®, таблетки)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=39edb657-dd99-441e-8844-e4c60fc21159"
+          }
+        ],
+        "name": "Спиронолактон",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Спиронолактон",
+        "tags": {
+          "green": "Диуретики; антагонисты альдостерона и другие калийсберегающие препараты; антагонисты альдостерона",
+          "red": "",
+          "violet": "АТХ C03DA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Верошпирон®"
+      },
+      "id": "drug_1776764546344"
+    },
+    "drug_1776774961327": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "- Нейропатическая боль\n- Эпилепсия",
+            "title": "Основными показаниями являются: "
+          },
+          {
+            "info": "",
+            "text": " 3600 мг/сут",
+            "title": "Максимальной суточная доза"
+          }
+        ],
+        "id": "drug_1776774961327",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Габапентин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Габапентин",
+        "tags": {
+          "green": "Анальгетики; другие анальгетики и антипиретики; габапентиноиды, противоэпилептическое средство",
+          "red": "",
+          "violet": "АТХ N03AX12",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Конвалис®, Катэна, Тебантин, Габагамма, Габапентин"
+      },
+      "id": "drug_1776774961327"
+    },
+    "drug_1776848488071": {
+      "data": {
+        "id": "drug_1776848488071",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Фосапрепитант",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        }
+      },
+      "id": "drug_1776848488071"
+    },
+    "drug_1776848741579": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Препарат Маалокс® противопоказан детям в возрасте до 15 лет.",
+            "title": "Возрастные ограничения "
+          }
+        ],
+        "id": "drug_1776848741579",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Маалокс®, таблетки жевательные)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=cf9f052f-3895-4ee9-8762-0a0130350176"
+          }
+        ],
+        "name": "Алгелдрат + магния гидроксид",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Алгелдрат + магния гидроксид",
+        "tags": {
+          "green": "Препараты для лечения заболеваний, связанных с нарушением кислотности; антациды; комбинированные и комплексные препараты алюминия, кальция и магния",
+          "red": "",
+          "violet": "АТХ A02AD01",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Маалокс® Алмагель"
+      },
+      "id": "drug_1776848741579"
+    },
+    "drug_1776849403358": {
+      "data": {
+        "id": "drug_1776849403358",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Калия и магния аспарагинат",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Калия и магния аспарагинат",
+        "tags": {
+          "green": "Минеральные добавки; другие минеральные добавки; другие минеральные вещества",
+          "red": "",
+          "violet": "АТХ A12CX",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Панангин®, Аспаркам"
+      },
+      "id": "drug_1776849403358"
+    },
+    "drug_1776857193738": {
+      "data": {
+        "id": "drug_1776857193738",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Самеликс®, таблетки кишечнорастворимые, покрытые пленочной оболочкой)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=97357958-f457-4a4f-9354-d26f194d84d5"
+          }
+        ],
+        "name": "Адеметионин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Адеметионин",
+        "tags": {
+          "green": "Другие средства для лечения заболеваний желудочно-кишечного тракта и нарушений обмена веществ; аминокислоты и их производные",
+          "red": "Эффективность не доказана",
+          "violet": "АТХ A16AA02",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Самеликс®"
+      },
+      "id": "drug_1776857193738"
+    },
+    "drug_1776858332622": {
+      "data": {
+        "id": "drug_1776858332622",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Кальций Д3",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Кальция карбонат + колекальциферол",
+        "tags": {
+          "green": "Кальциево-фосфорного обмена регулятор",
+          "red": "",
+          "violet": "АТХ A12AX",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": ""
+      },
+      "id": "drug_1776858332622"
+    },
+    "drug_1776859067966": {
+      "data": {
+        "id": "drug_1776859067966",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Цитофлавин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Инозин + никотинамид + рибофлавин + янтарная кислота",
+        "tags": {
+          "green": "Другие средства для лечения заболеваний нервной системы",
+          "red": "",
+          "violet": "АТХ N07XX",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Цитофлавин®"
+      },
+      "id": "drug_1776859067966"
+    },
+    "drug_1776859207430": {
+      "data": {
+        "id": "drug_1776859207430",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Лейковорин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Кальция фолинат",
+        "tags": {
+          "green": "Прочие лечебные средства; средства, снижающие токсичность противоопухолевой терапии",
+          "red": "",
+          "violet": "АТХ V03AF03",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Лейковорин-ЛЭНС®, Лейковорин"
+      },
+      "id": "drug_1776859207430"
+    },
+    "drug_1777019565486": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "Церукал® в форме таблеток противопоказан у детей до 15 лет\nЦерукал® в форме раствора для внутривенного и внутримышечного введения  противопоказан у детей до 1 года\n",
+            "title": "Возрастные ограничения "
+          }
+        ],
+        "groups": [
+          "qt"
+        ],
+        "id": "drug_1777019565486",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Метоклопрамид",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Метоклопрамид",
+        "tags": {
+          "green": "Средства для лечения функциональных нарушений желудочно-кишечного тракта; стимуляторы моторики желудочно-кишечного тракта",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ A03FA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Церукал®, Церуглан, Метоклопрамид"
+      },
+      "id": "drug_1777019565486"
+    },
+    "drug_1777020712886": {
+      "data": {
+        "groups": [
+          "qt"
+        ],
+        "id": "drug_1777020712886",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Ондасетрон",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Ондасетрон",
+        "tags": {
+          "green": "Противорвотные средства; антагонисты серотониновых 5-НТ3-рецепторов",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ A04AA01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Латран®, Ондасетрон"
+      },
+      "id": "drug_1777020712886"
+    },
+    "drug_1777021677694": {
+      "data": {
+        "id": "drug_1777021677694",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Апрепитант",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Апрепитант",
+        "tags": {
+          "green": "Противорвотное средство - нейрокининовых рецепторов блокатор",
+          "red": "Метаболизируется изоферментами  CYP3A4 и CYP2C19",
+          "violet": "АТХ A04AD12",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Эменд®, Апрепитант"
+      },
+      "id": "drug_1777021677694"
+    },
+    "drug_1777022952631": {
+      "data": {
+        "id": "drug_1777022952631",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Фосапрепитант",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Фосапрепитант",
+        "tags": {
+          "green": "Противорвотное средство - нейрокининовых рецепторов блокатор",
+          "red": "Метаболизируется изоферментами CYP3A4 и CYP2C19",
+          "violet": "АТХ A04AD12",
+          "yellow": "Нет в перечне ЖНВЛП"
+        },
+        "trade": "Эменд® в/в, Фосапрепитант"
+      },
+      "id": "drug_1777022952631"
+    },
+    "drug_1777110883579": {
+      "data": {
+        "groups": [
+          "qt",
+          "ab"
+        ],
+        "id": "drug_1777110883579",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Ципрофлоксацин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Ципрофлоксацин",
+        "tags": {
+          "green": "Антибактериальные средства системного действия; производные хинолона; фторхинолоны",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ J01MA02",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Цифран®, Ципрофлоксацин"
+      },
+      "id": "drug_1777110883579"
+    },
+    "drug_1777111124503": {
+      "data": {
+        "facts": [
+          {
+            "info": "",
+            "text": "- Симптоматического лечения тревоги у взрослых;\n- Симптоматического лечения зуда аллергического происхождения у взрослых и детей в возрасте от 3 до 18 лет.\n",
+            "title": "Препарат Атаракс® показан к применению"
+          }
+        ],
+        "groups": [
+          "qt"
+        ],
+        "id": "drug_1777111124503",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          },
+          {
+            "name": "ГРЛС (Атаракс®, таблетки, покрытые пленочной оболочкой)",
+            "url": "https://grls.minzdrav.gov.ru/Grls_View_v2.aspx?routingGuid=4e2f2c02-4f37-4ad8-8d4a-27d65b0b9f57"
+          }
+        ],
+        "name": "Гидроксизин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Гидроксизин",
+        "tags": {
+          "green": "Психолептики; анксиолитические средства; производные дифенилметана",
+          "red": "Может удлинять интервал QT",
+          "violet": "АТХ N05BB01",
+          "yellow": "Есть в перечне ЖНВЛП"
+        },
+        "trade": "Атаракс®"
+      },
+      "id": "drug_1777111124503"
+    }
+  },
+  "topics": {
+    "topic_1774030355588": {
+      "data": {
+        "id": "topic_1774030355588",
+        "notes": [
+          {
+            "text": "",
+            "title": "Фебрильная нейтропения"
+          }
+        ],
+        "title": "Заключения"
+      },
+      "id": "topic_1774030355588"
+    },
+    "topic_1774262103960": {
+      "data": {
+        "id": "topic_1774262103960",
+        "notes": [
+          {
+            "text": "Состояние пациента Крайне тяжелое. Диагноз основной: ВПС: Коарктация аорты критическая. Гипоплазия дуги аорты. Дефект межжелудочковой перегородки (перимембранозный). Фенестрированная заслонка овального окна. Дуктус-зависимое системное кровообращение. Осложнения: НК IIБ стадии. Легочная гипертензия ассоциированная с ВПС. ОПП. ДН 3. Риск развития НЭК. Катетер-ассоциированный тромб в ПВЯВ. Фон: Недоношенность 36 1/7 нед, 1-й из двойни. Маловесный для гестационного возраста. Операция: Ангиокардиография, стентирование коарктации аорты от 18.02.26. \n\nЗаключение. учитывая развитие инфекции мочевыводящих путей: от 10.03 нарастание уровня СРБ до 31.60 мг/л, повышение уровня эозинофилов - 1.15 10^9/л, в ОАМ: гематурия - 325.00 кл/мкл, лейкоцитурия - 28.00 кл/мкл, бактериурия (++); результаты бактериологических посевов: от 07.03 из мочи и от 10.03 повторный высев из желудочного содержимого высев Enterococcus faecium (S - ванкомицин, тигециклин); а также принимая во внимание крайне тяжелое состояние пациента: критическую коарктацию аорты, потребность в комбинированной гемодинамической поддержке (добутамин, эпинефрин) и в респираторной поддержке путем ИВЛ с \"жесткими\" параметрами вентиляции. \n\nРекомендовано:. проведение курса АБТ оксазолидиноном, активным в отношении Гр(+) нозокомиальной флоры, в том числе VRE. Риск развития фармакологических взаимодействий связан с одновременным назначением более 5 лекарственных препаратов (в том числе, при одновременном приеме линезолида с добутамином и эпинефрином возможно увеличение вазопрессорного эффекта), в динамике показана оценка соотношения \"польза/риск\". \n\nНазначения:. Линезолид в дозе 10 мг/кг/8ч в/в (основание: КР Инфекция мочевых путей, 2024 г., ID: 281_3).",
+            "title": ""
+          }
+        ],
+        "title": "Консультации"
+      },
+      "id": "topic_1774262103960"
+    },
+    "topic_1774267830875": {
+      "data": {
+        "id": "topic_1774267830875",
+        "notes": [
+          {
+            "text": "Cohen-Wolkowiez M, Watt KM, Zhou C, Bloom BT, Poindexter B, Castro L, Gao J, Capparelli EV, Benjamin DK Jr, Smith PB. Developmental pharmacokinetics of piperacillin and tazobactam using plasma and dried blood spots from infants. Antimicrob Agents Chemother. 2014 May;58(5):2856-65. doi: 10.1128/AAC.02139-13. Epub 2014 Mar 10. PMID: 24614369; PMCID: PMC3993246.",
+            "title": ""
+          },
+          {
+            "text": "Jirasomprasert, T., Tian, LY., You, DP. et al. Population Pharmacokinetics and Dose Optimization of Piperacillin in Infants and Children with Pneumonia. Pediatr Drugs 27, 91–102 (2025). https://doi.org/10.1007/s40272-024-00664-4",
+            "title": ""
+          },
+          {
+            "text": "Цефоперазон-сульбактам демонстрирует превосходящую эффективность по сравнению с другими цефалоспоринами при лечении инфекций, особенно в случаях, связанных с полирезистентными микроорганизмами (Escherichia coli и Klebsiella pneumoniae , продуцирующие бета-лактамазы расширенного спектра (БЛРС), а также Acinetobacter baumannii, устойчивый к карбапенемам). Систематический обзор и метаанализ. В основном пишут про интраабдоминальную инфекцию\n\nSun W, Zhang J, Miao K, Ju L, Yuan H. Comparison of the efficacy of cefoperazone-sulbactam and other cephalosporins in the treatment of infections: A systematic review and meta-analysis. Medicine (Baltimore). 2025 Apr 25;104(17):e42182. doi: 10.1097/MD.0000000000042182. PMID: 40295277; PMCID: PMC12039989.",
+            "title": "Цефоперазон/сульбактам"
+          },
+          {
+            "text": "Тигециклин: безопасность у мелких детей, увеличение дозы в два раза\n\nIosifidis E, Violaki A, Michalopoulou E, Volakli E, Diamanti E, Koliouskas D, Antachopoulos C, Drossou-Agakidou V, Sdougka M, Roilides E. Use of Tigecycline in Pediatric Patients With Infections Predominantly Due to Extensively Drug-Resistant Gram-Negative Bacteria. J Pediatric Infect Dis Soc. 2017 Jun 1;6(2):123-128. doi: 10.1093/jpids/piw009. PMID: 27000866",
+            "title": ""
+          },
+          {
+            "text": "https://sci-hub.ru/10.1016/j.jaad.2016.02.1240",
+            "title": ""
+          },
+          {
+            "text": "Применение Фенибута при  невротических нарушениях (тревожность, фобии, нарушения сна, эмоциональная лабильность) на фоне последствий перинатального поражения нервной системы (ППНС). Хачатрян Лусине Грачиковна, Максимова Марина Сергеевна, Ожегова Ирина Юрьевна ФУНКЦИОНАЛЬНЫЕ ИСХОДЫ ПЕРИНАТАЛЬНОГО ПОРАЖЕНИЯ НЕРВНОЙ СИСТЕМЫ У ДЕТЕЙ И ПУТИ ИХ КОРРЕКЦИИ // Доктор.Ру. 2016. №6 (123).",
+            "title": "Фенибут"
+          },
+          {
+            "text": "ГКС + ИПП (вообще не надо так делать походу) \nOray, Merih; Abusamra, Khawla; Ebrahimiadib, Nazanin; Meese, Halea; Foster, C. Stephen . (2016). Long-term side effects of glucocorticoids. Expert Opinion on Drug Safety, (), 14740338.2016.1140743–. doi:10.1517/14740338.2016.1140743;  Locci, C.; Cuzzolin, L.; Cheri, G.; Saderi, L.; Sotgiu, G.; Antonucci, R. Clinical Use of Gastric Antisecretory Drugs in Hospitalized Pediatric Patients. J. Clin. Med. 2023, 12, 368. https://doi.org/10.3390/jcm12010368",
+            "title": ""
+          },
+          {
+            "text": "https://journal.chestnet.org/article/S0012-3692(12)60137-8/pdf",
+            "title": "Низкомолекулярный гепарин"
+          },
+          {
+            "text": "фосфомицин в терапии полирезистентных Гр(-) штаммов \n\nDurante-Mangoni E, Andini R, Zampino R. Management of carbapenem-resistant Enterobacteriaceae infections. Clin Microbiol Infect. 2019 Aug;25(8):943-950. doi: 10.1016/j.cmi.2019.04.013. Epub 2019 Apr 18. PMID: 31004767.",
+            "title": ""
+          },
+          {
+            "text": "Pagano L, Maschmeyer G, Lamoth F, Blennow O, Xhaard A, Spadea M, Busca A, Cordonnier C, Maertens J; ECIL. Primary antifungal prophylaxis in hematological malignancies. Updated clinical practice guidelines by the European Conference on Infections in Leukemia (ECIL). Leukemia. 2025 Jul;39(7):1547-1557. doi: 10.1038/s41375-025-02586-7. Epub 2025 Apr 9. PMID: 40200079; PMCID: PMC12208874.",
+            "title": "каспофунгин"
+          },
+          {
+            "text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022858/",
+            "title": ""
+          }
+        ],
+        "title": "Буфер"
+      },
+      "id": "topic_1774267830875"
+    },
+    "topic_1774342073169": {
+      "data": {
+        "id": "topic_1774342073169",
+        "notes": [
+          {
+            "text": "повышение СРБ до _ мг/л (от _ СРБ — _);",
+            "title": "Лабораторные данные"
+          }
+        ],
+        "title": "Шаблоны"
+      },
+      "id": "topic_1774342073169"
+    },
+    "topic_1775201898948": {
+      "data": {
+        "id": "topic_1775201898948",
+        "notes": [
+          {
+            "text": "https://pubmed.ncbi.nlm.nih.gov/19158356/",
+            "title": "2009"
+          },
+          {
+            "text": "Клинические рекомендации: Хроническая болезнь почек 2025 г. ID:713_2\n\n",
+            "title": "формула Шварца"
+          }
+        ],
+        "title": "СКФ"
+      },
+      "id": "topic_1775201898948"
+    },
+    "topic_1775648483966": {
+      "data": {
+        "id": "topic_1775648483966",
+        "notes": [
+          {
+            "text": "РКИ\nn = 228 (взрослая выборка), онкологические больные\nСтарое иcследование — 2000 год\nОмепразол эффективен для предотвращения гастродуоденальных повреждений, вызванных химиотерапией\nSartori S, Trevisani L, Nielsen I, Tassinari D, Panzini I, Abbasciano V. Randomized trial of omeprazole or ranitidine versus placebo in the prevention of chemotherapy-induced gastroduodenal injury. J Clin Oncol. 2000 Feb;18(3):463-7. doi: 10.1200/JCO.2000.18.3.463. PMID: 10653861.Копировать\nОткрыть статью",
+            "title": ""
+          },
+          {
+            "text": "Shalabi L, Ibrahim A, Elsawy MA, Zreigh S, Dervis M, Elshabrawi MN, Mourad S, Arafa MA, Abuelazm M. L-carnitine supplementation to prevent postoperative complications after cardiac surgery: A systematic review and meta-analysis of randomised clinical trials. Indian J Anaesth. 2025 Jun;69(6):547-560. doi: 10.4103/ija.ija_1325_24. Epub 2025 May 14. PMID: 40470390; PMCID: PMC12133040.",
+            "title": "Левокарнитин (Элькар)"
+          }
+        ],
+        "title": "Архивные ссылки"
+      },
+      "id": "topic_1775648483966"
+    }
+  }
+}
