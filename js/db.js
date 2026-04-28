@@ -3,7 +3,7 @@
 // ══════════════════════════════════════════════
 
 const FIREBASE_TIMEOUT_MS = 5000;
-const FALLBACK_URL = '/data/drugs.json';
+const FALLBACK_URL = '/pharm_1.0/data/drugs.json';
 
 function withTimeout(promise, ms) {
   const timeout = new Promise((_, reject) =>
