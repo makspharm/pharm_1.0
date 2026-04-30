@@ -2,7 +2,7 @@
 //  DATABASE — Firebase Realtime Database
 // ══════════════════════════════════════════════
 
-const FIREBASE_TIMEOUT_MS = 5000;
+const FIREBASE_TIMEOUT_MS = 2000;
 const FALLBACK_URL = '/pharm_1.0/data/drugs.json';
 
 function withTimeout(promise, ms) {
