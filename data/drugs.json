@@ -2524,6 +2524,19 @@
         ],
         "links": [
           {
+            "cite": "Спичак И.И., Копытова Е.В. Применение полиионного раствора реамберина в медицине и опыт его использования в детской онкологии. Онкология. Журнал им. П.А. Герцена. 2018;7(5):47‑55. DOI: 10.17116/onkolog2018705147",
+            "fav": false,
+            "heading": "",
+            "note": "",
+            "pdf": "",
+            "tag2": "",
+            "tag3": "",
+            "tagr": "",
+            "type": "Другое",
+            "typeCustom": "",
+            "url": "https://www.mediasphera.ru/issues/onkologiya-zhurnal-im-p-a-gertsena/2018/5/12305218X2018051047"
+          },
+          {
             "cite": "Спичак И. И., Наумов П. В., Волосников Д. К. Опыт применения препарата «Реамберин» в детской онкологической практике // Педиатрический вестник Южного Урала. 2014. №1-2.",
             "fav": false,
             "heading": "",
@@ -2987,19 +3000,6 @@
     }
   },
   "topics": {
-    "topic_1774030355588": {
-      "data": {
-        "id": "topic_1774030355588",
-        "notes": [
-          {
-            "text": "",
-            "title": "Фебрильная нейтропения"
-          }
-        ],
-        "title": "Заключения"
-      },
-      "id": "topic_1774030355588"
-    },
     "topic_1774262103960": {
       "data": {
         "id": "topic_1774262103960",
@@ -3012,106 +3012,6 @@
         "title": "Консультации"
       },
       "id": "topic_1774262103960"
-    },
-    "topic_1774267830875": {
-      "data": {
-        "id": "topic_1774267830875",
-        "notes": [
-          {
-            "text": "Cohen-Wolkowiez M, Watt KM, Zhou C, Bloom BT, Poindexter B, Castro L, Gao J, Capparelli EV, Benjamin DK Jr, Smith PB. Developmental pharmacokinetics of piperacillin and tazobactam using plasma and dried blood spots from infants. Antimicrob Agents Chemother. 2014 May;58(5):2856-65. doi: 10.1128/AAC.02139-13. Epub 2014 Mar 10. PMID: 24614369; PMCID: PMC3993246.",
-            "title": ""
-          },
-          {
-            "text": "Jirasomprasert, T., Tian, LY., You, DP. et al. Population Pharmacokinetics and Dose Optimization of Piperacillin in Infants and Children with Pneumonia. Pediatr Drugs 27, 91–102 (2025). https://doi.org/10.1007/s40272-024-00664-4",
-            "title": ""
-          },
-          {
-            "text": "Цефоперазон-сульбактам демонстрирует превосходящую эффективность по сравнению с другими цефалоспоринами при лечении инфекций, особенно в случаях, связанных с полирезистентными микроорганизмами (Escherichia coli и Klebsiella pneumoniae , продуцирующие бета-лактамазы расширенного спектра (БЛРС), а также Acinetobacter baumannii, устойчивый к карбапенемам). Систематический обзор и метаанализ. В основном пишут про интраабдоминальную инфекцию\n\nSun W, Zhang J, Miao K, Ju L, Yuan H. Comparison of the efficacy of cefoperazone-sulbactam and other cephalosporins in the treatment of infections: A systematic review and meta-analysis. Medicine (Baltimore). 2025 Apr 25;104(17):e42182. doi: 10.1097/MD.0000000000042182. PMID: 40295277; PMCID: PMC12039989.",
-            "title": "Цефоперазон/сульбактам"
-          },
-          {
-            "text": "Тигециклин: безопасность у мелких детей, увеличение дозы в два раза\n\nIosifidis E, Violaki A, Michalopoulou E, Volakli E, Diamanti E, Koliouskas D, Antachopoulos C, Drossou-Agakidou V, Sdougka M, Roilides E. Use of Tigecycline in Pediatric Patients With Infections Predominantly Due to Extensively Drug-Resistant Gram-Negative Bacteria. J Pediatric Infect Dis Soc. 2017 Jun 1;6(2):123-128. doi: 10.1093/jpids/piw009. PMID: 27000866",
-            "title": ""
-          },
-          {
-            "text": "https://sci-hub.ru/10.1016/j.jaad.2016.02.1240",
-            "title": ""
-          },
-          {
-            "text": "Применение Фенибута при  невротических нарушениях (тревожность, фобии, нарушения сна, эмоциональная лабильность) на фоне последствий перинатального поражения нервной системы (ППНС). Хачатрян Лусине Грачиковна, Максимова Марина Сергеевна, Ожегова Ирина Юрьевна ФУНКЦИОНАЛЬНЫЕ ИСХОДЫ ПЕРИНАТАЛЬНОГО ПОРАЖЕНИЯ НЕРВНОЙ СИСТЕМЫ У ДЕТЕЙ И ПУТИ ИХ КОРРЕКЦИИ // Доктор.Ру. 2016. №6 (123).",
-            "title": "Фенибут"
-          },
-          {
-            "text": "ГКС + ИПП (вообще не надо так делать походу) \nOray, Merih; Abusamra, Khawla; Ebrahimiadib, Nazanin; Meese, Halea; Foster, C. Stephen . (2016). Long-term side effects of glucocorticoids. Expert Opinion on Drug Safety, (), 14740338.2016.1140743–. doi:10.1517/14740338.2016.1140743;  Locci, C.; Cuzzolin, L.; Cheri, G.; Saderi, L.; Sotgiu, G.; Antonucci, R. Clinical Use of Gastric Antisecretory Drugs in Hospitalized Pediatric Patients. J. Clin. Med. 2023, 12, 368. https://doi.org/10.3390/jcm12010368",
-            "title": ""
-          },
-          {
-            "text": "https://journal.chestnet.org/article/S0012-3692(12)60137-8/pdf",
-            "title": "Низкомолекулярный гепарин"
-          },
-          {
-            "text": "фосфомицин в терапии полирезистентных Гр(-) штаммов \n\nDurante-Mangoni E, Andini R, Zampino R. Management of carbapenem-resistant Enterobacteriaceae infections. Clin Microbiol Infect. 2019 Aug;25(8):943-950. doi: 10.1016/j.cmi.2019.04.013. Epub 2019 Apr 18. PMID: 31004767.",
-            "title": ""
-          },
-          {
-            "text": "Pagano L, Maschmeyer G, Lamoth F, Blennow O, Xhaard A, Spadea M, Busca A, Cordonnier C, Maertens J; ECIL. Primary antifungal prophylaxis in hematological malignancies. Updated clinical practice guidelines by the European Conference on Infections in Leukemia (ECIL). Leukemia. 2025 Jul;39(7):1547-1557. doi: 10.1038/s41375-025-02586-7. Epub 2025 Apr 9. PMID: 40200079; PMCID: PMC12208874.",
-            "title": "каспофунгин"
-          },
-          {
-            "text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022858/",
-            "title": ""
-          }
-        ],
-        "title": "Буфер"
-      },
-      "id": "topic_1774267830875"
-    },
-    "topic_1774342073169": {
-      "data": {
-        "id": "topic_1774342073169",
-        "notes": [
-          {
-            "text": "повышение СРБ до _ мг/л (от _ СРБ — _);",
-            "title": "Лабораторные данные"
-          }
-        ],
-        "title": "Шаблоны"
-      },
-      "id": "topic_1774342073169"
-    },
-    "topic_1775201898948": {
-      "data": {
-        "id": "topic_1775201898948",
-        "notes": [
-          {
-            "text": "https://pubmed.ncbi.nlm.nih.gov/19158356/",
-            "title": "2009"
-          },
-          {
-            "text": "Клинические рекомендации: Хроническая болезнь почек 2025 г. ID:713_2\n\n",
-            "title": "формула Шварца"
-          }
-        ],
-        "title": "СКФ"
-      },
-      "id": "topic_1775201898948"
-    },
-    "topic_1775648483966": {
-      "data": {
-        "id": "topic_1775648483966",
-        "notes": [
-          {
-            "text": "РКИ\nn = 228 (взрослая выборка), онкологические больные\nСтарое иcследование — 2000 год\nОмепразол эффективен для предотвращения гастродуоденальных повреждений, вызванных химиотерапией\nSartori S, Trevisani L, Nielsen I, Tassinari D, Panzini I, Abbasciano V. Randomized trial of omeprazole or ranitidine versus placebo in the prevention of chemotherapy-induced gastroduodenal injury. J Clin Oncol. 2000 Feb;18(3):463-7. doi: 10.1200/JCO.2000.18.3.463. PMID: 10653861.Копировать\nОткрыть статью",
-            "title": ""
-          },
-          {
-            "text": "Shalabi L, Ibrahim A, Elsawy MA, Zreigh S, Dervis M, Elshabrawi MN, Mourad S, Arafa MA, Abuelazm M. L-carnitine supplementation to prevent postoperative complications after cardiac surgery: A systematic review and meta-analysis of randomised clinical trials. Indian J Anaesth. 2025 Jun;69(6):547-560. doi: 10.4103/ija.ija_1325_24. Epub 2025 May 14. PMID: 40470390; PMCID: PMC12133040.",
-            "title": "Левокарнитин (Элькар)"
-          }
-        ],
-        "title": "Архивные ссылки"
-      },
-      "id": "topic_1775648483966"
     }
   }
 }
