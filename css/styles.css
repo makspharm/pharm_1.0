@@ -2731,6 +2731,18 @@ html.dark .cf-btn-badge { color: var(--bg); }
   margin-top: 10px;
 }
 
+@media (max-width: 600px) {
+  .catalog-overlay {
+    padding: 70px 12px 12px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .catalog-modal {
+    width: 100%;
+    max-height: calc(100vh - 90px);
+  }
+}
 
 /* ═══════════════════════════════════════════════════════
    ТЁМНАЯ ТЕМА — точечные переопределения
