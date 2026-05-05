@@ -730,6 +730,9 @@
     },
     "drug_1773661138495": {
       "data": {
+        "groups": [
+          "nt"
+        ],
         "id": "drug_1773661138495",
         "instrUrl": "",
         "links": [
@@ -1046,6 +1049,9 @@
     "drug_1774347653132": {
       "data": {
         "groupId": "grp_1775815052228",
+        "groups": [
+          "CYP3A4"
+        ],
         "id": "drug_1774347653132",
         "instrUrl": "",
         "links": [
@@ -1116,6 +1122,9 @@
             "text": "Омепразол является ингибитором изофермента CYP2C19, поэтому совместное применение омепразола с препаратами, в метаболизме которых принимает участие изофермент CYP2C19, такими как варфарин и другие антагонисты витамина К, цилостазол, диазепам, фенитоин, может привести к увеличению концентраций этих препаратов в плазме крови и потребовать снижения дозы.",
             "title": "Лекарственные взаимодействия"
           }
+        ],
+        "groups": [
+          "CYP2C9"
         ],
         "id": "drug_1774353148015",
         "instrLinks": [
@@ -1395,13 +1404,14 @@
         "groupId": "grp_1775816865566",
         "groups": [
           "qt",
-          "ab"
+          "ab",
+          "CYP3A4"
         ],
         "id": "drug_1774506950714",
         "instrUrl": "",
         "links": [
           {
-            "cite": "ФКР: Коклюш у детей 2025 г. ID: 1023_1",
+            "cite": "КР: Коклюш у детей 2025 г. ID: 1023_1",
             "fav": true,
             "heading": "",
             "note": "",
@@ -2997,6 +3007,85 @@
         "trade": "Атаракс®"
       },
       "id": "drug_1777111124503"
+    },
+    "drug_1777819050736": {
+      "data": {
+        "groups": [
+          "CYP3A4"
+        ],
+        "id": "drug_1777819050736",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Сиролимус",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Сиролимус",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1777819050736"
+    },
+    "drug_1777819244103": {
+      "data": {
+        "groups": [
+          "nt",
+          "CYP3A4"
+        ],
+        "id": "drug_1777819244103",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Циклоспорин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "Циклоспорин",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1777819244103"
+    },
+    "drug_1777819663683": {
+      "data": {
+        "groups": [
+          "nt"
+        ],
+        "id": "drug_1777819663683",
+        "instrLinks": [
+          {
+            "name": "Реестр ОХЛП и ЛВ ЕАЭС",
+            "url": "https://lk.regmed.ru/Register/EAEU_SmPC"
+          }
+        ],
+        "name": "Цисплатин",
+        "qlActivity": "",
+        "qlInteraction": "",
+        "subtitle": "",
+        "tags": {
+          "green": "",
+          "red": "",
+          "violet": "",
+          "yellow": ""
+        },
+        "trade": ""
+      },
+      "id": "drug_1777819663683"
     }
   },
   "topics": {
